@@ -55,11 +55,13 @@ $selectuser_link = JRoute::_('index.php?option=com_jem&task=attendee.selectuser&
 				</label>
 			</td>
 			<td>
+			<span class="input-append">
 				<input type="text" name="username" id="username" readonly="readonly" value="<?php echo $this->row->username; ?>" />
 				<input type="hidden" name="uid" id="uid" value="<?php echo $this->row->uid; ?>" />
-				<a class="usermodal" title="<?php echo JText::_('COM_JEM_SELECT_USER'); ?>" href="<?php echo $selectuser_link; ?>" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+				<a class="btn usermodal" title="<?php echo JText::_('COM_JEM_SELECT_USER'); ?>" href="<?php echo $selectuser_link; ?>" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
 					<span><?php echo JText::_('COM_JEM_SELECT_USER')?></span>
 		</a>
+		</span>
 			</td>
 		</tr>
 		<?php if (!$this->row->id): ?>
