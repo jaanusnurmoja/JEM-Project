@@ -39,8 +39,8 @@ class JEMViewVenue extends JViewLegacy {
 
 		JHtml::_('behavior.framework');
 		JHTML::_('behavior.modal', 'a.modal');
-		JHTML::_('behavior.tooltip');
-		JHTML::_('behavior.formvalidation');
+		//JHTML::_('behavior.tooltip');
+		//JHTML::_('behavior.formvalidation');
 
 		//initialise variables
 		$document	= JFactory::getDocument();
@@ -49,7 +49,7 @@ class JEMViewVenue extends JViewLegacy {
 		$this->task 		= $task;
 
 		// CSS Stylesheet
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		//$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 		$document->addStyleSheet(JURI::root().'media/com_jem/css/geostyle.css');
 		$document->addScript(JURI::root().'media/com_jem/js/attachments.js');
 		//$document->addScript(JURI::root().'media/com_jem/js/geodata.js');

@@ -74,7 +74,7 @@ class JEMViewEvent extends JViewLegacy {
 
 		$document->addScriptDeclaration($js);
 
-		$this->resethits = "\n&nbsp;<input class=\"inputbox\" type=\"button\" onclick=\"jResetHits(0, '".JText::_('COM_JEM_NO_HITS')."');\" value=\"".JText::_('COM_JEM_NO_HITS')."\" onblur=\"seo_switch()\" />";
+		$this->resethits = "\n&nbsp;<input class=\"btn\" type=\"button\" onclick=\"jResetHits(0, '".JText::_('COM_JEM_NO_HITS')."');\" value=\"".JText::_('COM_JEM_NO_HITS')."\" onblur=\"seo_switch()\" />";
 
 		$this->addToolbar();
 		parent::display($tpl);

@@ -30,7 +30,7 @@ class JEMViewSettings extends JViewLegacy {
 
 		$jemsettings = $this->get('Data');
 		$document 	= JFactory::getDocument();
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		//$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 
 		$style = '
 		    div.current fieldset.radio input {
@@ -62,7 +62,8 @@ class JEMViewSettings extends JViewLegacy {
 			return false;
 		}
 		JHTML::_('behavior.modal', 'a.modal');
-		JHTML::_('behavior.tooltip');
+		//JHTML::_('behavior.tooltip');
+		JHtml::_('bootstrap.tooltip');
 		JHTML::_('behavior.formvalidation');
 		JHTML::_('behavior.framework');
 

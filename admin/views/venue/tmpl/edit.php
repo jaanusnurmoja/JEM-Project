@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 
 
-JHtml::_('behavior.tooltip');
+//JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHTML::_('behavior.keepalive');
 
@@ -155,8 +155,8 @@ function test()
 
 
     <script>
-      jQuery(function(){
-    	  jQuery("#geocomplete").geocomplete({
+      $(function(){
+    	  $("#geocomplete").geocomplete({
           map: ".map_canvas",
           /* location: "default address", */
           details: "form ",
@@ -202,162 +202,258 @@ function test()
 	class="form-validate" method="post" name="adminForm" id="venue-form" enctype="multipart/form-data">
 
 
-	<!-- START OF LEFT DIV -->
-	<div class="width-55 fltlft">
+	<!-- Begin Venue -->
+	<div class="span8 form-horizontal">
 
-<?php echo JHtml::_('tabs.start', 'det-pane'); ?>
-		<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_VENUE_INFO_TAB'), 'info' ); ?>
+	<fieldset>
+	<?php echo JHtml::_('bootstrap.startTabSet', 'venueTab', array('active' => 'venue-details')); ?>
 
-		<!-- START OF LEFT FIELDSET -->
+
+		<!--  VENUE-DETAILS TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'venueTab', 'venue-details', JText::_('COM_JEM_VENUE_INFO_TAB', true)); ?>
+
 		<fieldset class="adminform">
-			<legend>
-				<?php echo empty($this->item->id) ? JText::_('COM_JEM_NEW_VENUE') : JText::sprintf('COM_JEM_VENUE_DETAILS', $this->item->id); ?>
-			</legend>
 
-			<ul class="adminformlist">
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('venue');?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('venue'); ?>
+				</div>
+				</div>
 
 
-				<li><?php echo $this->form->getLabel('venue');?> <?php echo $this->form->getInput('venue'); ?>
-				</li>
 
-				<li><?php echo $this->form->getLabel('alias'); ?> <?php echo $this->form->getInput('alias'); ?>
-				</li>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('alias'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('alias'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('street'); ?> <?php echo $this->form->getInput('street'); ?>
-				</li>
 
-				<li><?php echo $this->form->getLabel('postalCode'); ?> <?php echo $this->form->getInput('postalCode'); ?>
-				</li>
 
-				<li><?php echo $this->form->getLabel('city'); ?> <?php echo $this->form->getInput('city'); ?>
-				</li>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('street'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('street'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('state'); ?> <?php echo $this->form->getInput('state'); ?>
-				</li>
 
-				<li><?php echo $this->form->getLabel('country'); ?> <?php echo $this->form->getInput('country'); ?>
-				</li>
 
-				<li><?php echo $this->form->getLabel('url'); ?> <?php echo $this->form->getInput('url'); ?>
-				</li>
-</ul>
-				<div>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('postalCode'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('postalCode'); ?>
+				</div>
+				</div>
+
+
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('city'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('city'); ?>
+				</div>
+				</div>
+
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('state'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('state'); ?>
+				</div>
+				</div>
+
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('country'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('country'); ?>
+				</div>
+				</div>
+
+
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('url'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('url'); ?>
+				</div>
+				</div>
+
+		</fieldset>
+
+
+
+
+		<fieldset class="adminform">
+			<div>
 				<?php echo $this->form->getLabel('locdescription'); ?>
 				<div class="clr"></div>
 				<?php echo $this->form->getInput('locdescription'); ?>
 			</div>
 
-</fieldset>
+		</fieldset>
+
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
-
-<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB'), 'attachments' ); ?>
+		<!-- VENUE-ATTACHMENTS TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'venueTab', 'venue-attachments', JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB', true)); ?>
 				<?php echo $this->loadTemplate('attachments'); ?>
-				<?php echo JHtml::_('tabs.end'); ?>
-		<!-- END OF LEFT DIV -->
-	</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
+		<!-- VENUE-PUBLISHING TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'venueTab', 'venue-publishing', JText::_('COM_JEM_FIELDSET_PUBLISHING', true)); ?>
 
-	<!--  START RIGHT DIV -->
-	<div class="width-40 fltrt">
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('id'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('id'); ?>
+				</div>
+				</div>
 
-		<!-- START OF SLIDERS -->
-		<?php echo JHtml::_('sliders.start', 'venue-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('published'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('published'); ?>
+				</div>
+				</div>
 
 
-
-
-		<!-- START OF PANEL PUBLISHING -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_FIELDSET_PUBLISHING'), 'publishing-details'); ?>
-
-
-		<!-- RETRIEVING OF FIELDSET PUBLISHING -->
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('id'); ?> <?php echo $this->form->getInput('id'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('published'); ?> <?php echo $this->form->getInput('published'); ?>
-				</li>
 				<?php foreach($this->form->getFieldset('publish') as $field): ?>
-				<li><?php echo $field->label; ?> <?php echo $field->input; ?>
-				</li>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $field->label; ?>
+				</div>
+					<div class="controls">
+				<?php echo $field->input; ?>
+				</div>
+				</div>
+
 				<?php endforeach; ?>
 
-			</ul>
-		</fieldset>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
 
-		<!-- START OF PANEL IMAGE -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_IMAGE'), 'image-event'); ?>
+		<!-- VENUE-IMAGE TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'venueTab', 'venue-image', JText::_('COM_JEM_IMAGE', true)); ?>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('locimage'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('locimage'); ?>
+				</div>
+				</div>
+
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('locimage'); ?> <?php echo $this->form->getInput('locimage'); ?>
-				</li>
-			</ul>
-		</fieldset>
 
+		<!-- VENUE-META TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'venueTab', 'venue-meta', JText::_('COM_JEM_METADATA_INFORMATION', true)); ?>
 
+		<input type="button" class="btn" value="<?php echo JText::_( 'COM_JEM_ADD_VENUE_CITY' ); ?>" onclick="meta()" />
 
-
-
-		<!-- START OF PANEL META -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_METADATA_INFORMATION'), 'meta-event'); ?>
-
-
-		<!-- RETRIEVING OF FIELDSET META -->
-		<fieldset class="panelform">
-		<input type="button" class="button" value="<?php echo JText::_( 'COM_JEM_ADD_VENUE_CITY' ); ?>" onclick="meta()" />
-			<ul class="adminformlist">
 				<?php foreach($this->form->getFieldset('meta') as $field): ?>
-				<li><?php echo $field->label; ?> <?php echo $field->input; ?>
-				</li>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $field->label; ?>
+				</div>
+					<div class="controls">
+				<?php echo $field->input; ?>
+				</div>
+				</div>
 				<?php endforeach; ?>
-			</ul>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+
+
+
+		<!-- VENUE-GEODATA TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'venueTab', 'venue-geodata', JText::_('COM_JEM_FIELDSET_GEODATA', true)); ?>
+
+
+
+		<fieldset class="adminform" id="geodata">
+
+ 				<input id="geocomplete" type="text" placeholder="<?php echo JText::_( 'COM_JEM_VENUE_ADDRPLACEHOLDER' ); ?>" value="" />
+      			<input id="find" class="btn" type="button" value="find" />
+     			 <br><br>
+ 				<div class="map_canvas"></div>
+
+     			 <a id="reset" href="#" style="display:none;">Reset Marker</a>
+
 		</fieldset>
 
 
+		<fieldset class="adminform">
 
-		<!-- START OF PANEL PUBLISHING -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_FIELDSET_GEODATA'), 'venue-geodata'); ?>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('latitude'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('latitude'); ?>
+				</div>
+				</div>
 
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('longitude'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('longitude'); ?>
+				</div>
+				</div>
 
-		<!-- START OF GEODATA -->
-<fieldset class="adminform" id="geodata">
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('map'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('map'); ?>
+				</div>
+				</div>
+		</fieldset>
 
- <input id="geocomplete" type="text" placeholder="<?php echo JText::_( 'COM_JEM_VENUE_ADDRPLACEHOLDER' ); ?>" value="" />
-      <input id="find" type="button" value="find" />
-      <br><br>
- <div class="map_canvas"></div>
-
-      <a id="reset" href="#" style="display:none;">Reset Marker</a>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 </fieldset>
 
 
-<fieldset class="adminform">
-<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('latitude'); ?> <?php echo $this->form->getInput('latitude'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('longitude'); ?> <?php echo $this->form->getInput('longitude'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('map'); ?> <?php echo $this->form->getInput('map'); ?>
-				</li>
-				</ul>
-
-			<div class="clr"></div>
-			</fieldset>
 
 
 
-
-
-	<?php echo JHtml::_('sliders.end'); ?>
 
 <input type="hidden" name="task" value="" />
 <input type="hidden" name="author_ip" value="<?php echo $this->item->author_ip; ?>" />

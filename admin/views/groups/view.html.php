@@ -43,8 +43,16 @@ defined('_JEXEC') or die;
 		//add css and submenu to document
 		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 
+		$style = '
+		thead {
+			border-top: 1px solid grey;
+		}
+		';
+
+		$document->addStyleDeclaration($style);
+
 		//add style to description of the tooltip (hastip)
-		JHTML::_('behavior.tooltip');
+		//JHTML::_('behavior.tooltip');
 
 		//assign data to template
 		//$this->lists		= $lists;

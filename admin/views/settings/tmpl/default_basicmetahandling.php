@@ -63,19 +63,19 @@ defined('_JEXEC') or die;
 							-->
 							</script>
 
-							<input class="inputbox" type="button" onclick="insert_keyword('[title]')" value="<?php echo JText::_( 'COM_JEM_EVENT_TITLE' ); ?>" />
-							<input class="inputbox" type="button" onclick="insert_keyword('[a_name]')" value="<?php echo JText::_( 'COM_JEM_VENUE' ); ?>" />
-							<input class="inputbox" type="button" onclick="insert_keyword('[dates]')" value="<?php echo JText::_( 'COM_JEM_DATE' ); ?>" />
+							<input class="btn" type="button" onclick="insert_keyword('[title]')" value="<?php echo JText::_( 'COM_JEM_EVENT_TITLE' ); ?>" />
+							<input class="btn" type="button" onclick="insert_keyword('[a_name]')" value="<?php echo JText::_( 'COM_JEM_VENUE' ); ?>" />
+							<input class="btn" type="button" onclick="insert_keyword('[dates]')" value="<?php echo JText::_( 'COM_JEM_DATE' ); ?>" />
 							<p>
-								<input class="inputbox" type="button" onclick="insert_keyword('[times]')" value="<?php echo JText::_( 'COM_JEM_EVENT_TIME' ); ?>" />
-								<input class="inputbox" type="button" onclick="insert_keyword('[enddates]')" value="<?php echo JText::_( 'COM_JEM_ENDDATE' ); ?>" />
-								<input class="inputbox" type="button" onclick="insert_keyword('[endtimes]')" value="<?php echo JText::_( 'COM_JEM_END_TIME' ); ?>" />
+								<input class="btn" type="button" onclick="insert_keyword('[times]')" value="<?php echo JText::_( 'COM_JEM_EVENT_TIME' ); ?>" />
+								<input class="btn" type="button" onclick="insert_keyword('[enddates]')" value="<?php echo JText::_( 'COM_JEM_ENDDATE' ); ?>" />
+								<input class="btn" type="button" onclick="insert_keyword('[endtimes]')" value="<?php echo JText::_( 'COM_JEM_END_TIME' ); ?>" />
 							</p>
 							<textarea name="meta_description" id="meta_description" cols="35" rows="3" class="inputbox"><?php echo $this->data->meta_description; ?></textarea>
 							<br/>
-							<input type="button" value="<?php echo JText::_( 'COM_JEM_META_DESCRIPTION_BUTTON' ); ?>" onclick="include_description()" />
+							<input class="btn" type="button" value="<?php echo JText::_( 'COM_JEM_META_DESCRIPTION_BUTTON' ); ?>" onclick="include_description()" />
 							&nbsp;
-							<span class="error hasTip" title="<?php echo JText::_( 'COM_JEM_WARNING' );?>::<?php echo JText::_( 'COM_JEM_META_DESCRIPTION_WARN' ); ?>">
+							<span class="hasTooltip" title="<?php echo JText::_( 'COM_JEM_WARNING' );?>::<?php echo JText::_( 'COM_JEM_META_DESCRIPTION_WARN' ); ?>">
 								<?php echo $this->WarningIcon(); ?>
 							</span>
 						</td>

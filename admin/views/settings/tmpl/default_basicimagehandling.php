@@ -22,25 +22,25 @@ defined('_JEXEC') or die;
 		 <?php echo $this->form->getInput('sizelimit'); ?>
 		 </div>
 				</div>
-				
-		
+
+
 			<div class="control-group">
-	<div class="control-label"> 
-		<?php echo $this->form->getLabel('imagehight'); ?> 
+	<div class="control-label">
+		<?php echo $this->form->getLabel('imagehight'); ?>
 		</div>
 	<div class="controls">
 		<?php echo $this->form->getInput('imagehight'); ?>
 		</div>
 				</div>
-		
-		
+
+
 			<div class="control-group">
 	<div class="control-label">
-		<?php echo $this->form->getLabel('imagewidth'); ?> 
+		<?php echo $this->form->getLabel('imagewidth'); ?>
 		</div>
 	<div class="controls">
 		<?php echo $this->form->getInput('imagewidth'); ?>
-			<span class="error hasTip" title="<?php echo JText::_('COM_JEM_WARNING');?>::<?php echo JText::_('COM_JEM_WARNING_MAX_IMAGEWIDTH'); ?>">
+			<span class="error hasTooltip" title="<?php echo JText::_('COM_JEM_WARNING');?>::<?php echo JText::_('COM_JEM_WARNING_MAX_IMAGEWIDTH'); ?>">
 				<?php echo $this->WarningIcon(); ?>
 			</span>
 		</div>
@@ -68,11 +68,11 @@ defined('_JEXEC') or die;
 						}
 		}
 		?>
-		
+
 
 			<div id="lb1" style="display:none" class="control-group">
 	<div class="control-label">
-		<?php echo $this->form->getLabel('lightbox'); ?> 
+		<?php echo $this->form->getLabel('lightbox'); ?>
 		</div>
 	<div class="controls">
 		<?php echo $this->form->getInput('lightbox'); ?>

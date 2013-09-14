@@ -49,10 +49,20 @@ defined('_JEXEC') or die;
 
 		JHtml::_('behavior.framework');
 
+
 		//add css and submenu to document
 		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 		$document->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
 		$document->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
+
+		$style = '
+		thead {
+			border-top: 1px solid grey;
+		}
+		';
+
+		$document->addStyleDeclaration($style);
+
 
 		if ($highlighter) {
 			$document->addScript($url.'media/com_jem/js/highlighter.js');
@@ -64,7 +74,7 @@ defined('_JEXEC') or die;
 		}
 
 		//add style to description of the tooltip (hastip)
-		JHTML::_('behavior.tooltip');
+		//JHTML::_('behavior.tooltip');
 
 		// add filter selection for the search
 		$filters = array();

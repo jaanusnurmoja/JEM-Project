@@ -37,7 +37,7 @@
 			
 				<field name="storeip" type="radio"
 			label="COM_JEM_STORE_IP" description="COM_JEM_STORE_IP_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -56,49 +56,49 @@
 			<field type="spacer" hr="false" />
 		<field name="filter" type="radio"
 			label="COM_JEM_FILTER" description="COM_JEM_FILTER_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="display" type="radio"
 			label="COM_JEM_DISPLAY_SELECT" description="COM_JEM_DISPLAY_SELECT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 
 		<field name="icons" type="radio"
 			label="COM_JEM_SHOW_ICONS" description="COM_JEM_SHOW_ICONS_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="show_print_icon" type="radio"
 			label="COM_JEM_PRINT_ICON" description="COM_JEM_PRINT_ICON_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 
 		<field name="show_archive_icon" type="radio"
 			label="COM_JEM_ARCHIVE_ICON" description="COM_JEM_ARCHIVE_ICON_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="show_email_icon" type="radio"
 			label="COM_JEM_EMAIL_ICON" description="COM_JEM_EMAIL_ICON_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 
 		<field name="events_ical" type="radio"
 			label="COM_JEM_SETTINGS_SHOW_EVENTS_ICAL" description="COM_JEM_SETTINGS_SHOW_EVENTS_ICAL_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
@@ -118,14 +118,14 @@
 
 		<field name="discatheader" type="radio"
 			label="COM_JEM_SETTINGS_SHOW_CATEGORY_IMAGES" description="COM_JEM_SETTINGS_SHOW_CATEGORY_IMAGES_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="displaymyevents" type="radio"
 			label="COM_JEM_SETTINGS_SHOW_MY_EVENTS" description="COM_JEM_SETTINGS_SHOW_MY_EVENTS_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>	
@@ -243,7 +243,7 @@
 			
 			<field name="gddisabled" type="radio"
 			label="COM_JEM_GD_LIBRARY" description="COM_JEM_GD_LIBRARY_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -254,7 +254,7 @@
 			
 			<field name="lightbox" type="radio"
 			label="COM_JEM_IMAGE_LIGHTBOX" description="COM_JEM_IMAGE_LIGHTBOX_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -291,7 +291,7 @@
 		
 			<field name="showtime" type="radio"
 			label="COM_JEM_DISPLAY_TIME" description="COM_JEM_DISPLAY_TIME_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 			</field>
@@ -314,7 +314,7 @@
 			
 			<field name="showcity" type="radio"
 			label="COM_JEM_DISPLAY_CITY_FRONT" description="COM_JEM_DISPLAY_CITY_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -335,7 +335,7 @@
 			
 			<field name="showatte" type="radio"
 			label="COM_JEM_DISPLAY_ATTENDEE_FRONT" description="COM_JEM_DISPLAY_ATTENDEE_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -356,7 +356,7 @@
 			
 			<field name="showtitle" type="radio"
 			label="COM_JEM_DISPLAY_TITLE_FRONT" description="COM_JEM_DISPLAY_TITLE_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -376,7 +376,7 @@
 		
 			<field name="showlocate" type="radio"
 			label="COM_JEM_DISPLAY_VENUE_FRONT" description="COM_JEM_DISPLAY_VENUE_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -387,7 +387,7 @@
 			
 			<field name="showlinkvenue" type="radio"
 			label="COM_JEM_DISPLAY_LINK_TO_VENUE_VIEW" description="COM_JEM_DISPLAY_LINK_TO_VENUE_VIEW_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -402,7 +402,7 @@
 		
 			<field name="showstate" type="radio"
 			label="COM_JEM_DISPLAY_STATE_FRONT" description="COM_JEM_DISPLAY_STATE_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -420,7 +420,7 @@
 		
 			<field name="showcat" type="radio"
 			label="COM_JEM_DISPLAY_CATEGORY_FRONT" description="COM_JEM_DISPLAY_CATEGORY_FRONT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -431,7 +431,7 @@
 			
 			<field name="catlinklist" type="radio"
 			label="COM_JEM_DISPLAY_LINK_TO_CATEGORY_VIEW" description="COM_JEM_DISPLAY_LINK_TO_CATEGORY_VIEW_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -446,7 +446,7 @@
 		
 			<field name="showeventimage" type="radio"
 			label="COM_JEM_LAYOUT_DISPLAY_EVENTIMAGE" description="COM_JEM_LAYOUT_DISPLAY_EVENTIMAGE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 			</field>
@@ -485,7 +485,7 @@
 		
 		<field name="evdelrec" type="radio"
 			label="COM_JEM_RECURSIVE" description="COM_JEM_RECURSIVE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JYES</option>
 		</field>
@@ -500,7 +500,7 @@
 		
 		<field name="evpubrec" type="radio"
 			label="COM_JEM_RECURSIVE" description="COM_JEM_RECURSIVE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -515,14 +515,14 @@
 		
 		<field name="eventeditrec" type="radio"
 			label="COM_JEM_RECURSIVE" description="COM_JEM_RECURSIVE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
 		
 		<field name="eventowner" type="radio"
 			label="COM_JEM_EDIT_EVENT_FRONTEND_USER" description="COM_JEM_EDIT_EVENT_FRONTEND_USER_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -547,7 +547,7 @@
 		
 		<field name="locdelrec" type="radio"
 			label="COM_JEM_RECURSIVE" description="COM_JEM_RECURSIVE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -562,7 +562,7 @@
 		
 		<field name="locpubrec" type="radio"
 			label="COM_JEM_RECURSIVE" description="COM_JEM_RECURSIVE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -577,7 +577,7 @@
 		
 		<field name="venueeditrec" type="radio"
 			label="COM_JEM_RECURSIVE" description="COM_JEM_RECURSIVE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -585,7 +585,7 @@
 		
 		<field name="venueowner" type="radio"
 			label="COM_JEM_EDIT_VENUE_FRONTEND_USER" description="COM_JEM_EDIT_VENUE_FRONTEND_USER_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -605,21 +605,21 @@
 		
 		<field name="showtimedetails" type="radio"
 			label="COM_JEM_DISPLAY_TIME" description="COM_JEM_DISPLAY_TIME_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="showevdescription" type="radio"
 			label="COM_JEM_DISPLAY_EVENT_DESCRIPT" description="COM_JEM_DISPLAY_EVENT_DESCRIPT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="showdetailstitle" type="radio"
 			label="COM_JEM_DISPLAY_EVENT_TITLE" description="COM_JEM_DISPLAY_EVENT_TITLE_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
@@ -636,14 +636,14 @@
 		
 		<field name="showlocdescription" type="radio"
 			label="COM_JEM_DISPLAY_VENUE_DESCRIPT" description="COM_JEM_DISPLAY_VENUE_DESCRIPT_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>
 		
 		<field name="showdetailsadress" type="radio"
 			label="COM_JEM_DISPLAY_ADDRESS" description="COM_JEM_DISPLAY_ADDRESS_DESC"
-			class="inputbox" default="0" required="false" >	
+			class="btn-group" default="0" required="false" >	
 			<option value="0">JHIDE</option>
 			<option value="1">JSHOW</option>
 		</field>

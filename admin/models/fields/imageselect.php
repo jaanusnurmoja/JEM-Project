@@ -55,15 +55,19 @@ class JFormFieldImageselect extends JFormFieldList
 		$link2 = 'index.php?option=com_jem&amp;view=imagehandler&amp;task=selectvenueimg&amp;tmpl=component';
 
 		//
-		$html[] = "<div class=\"fltlft\">";
+		//$html[] = "<div class=\"fltlft\">";
+		$html[] = '<span class="input-append">';
 		$html[] = "<input style=\"background: #ffffff;\" type=\"text\" id=\"a_imagename\" value=\"$this->value\" disabled=\"disabled\" onchange=\"javascript:if (document.forms[0].a_imagename.value!='') {document.imagelib.src='../images/jem/venues/' + document.forms[0].a_imagename.value} else {document.imagelib.src='../images/blank.png'}\"; />";
-		$html[] = "</div>";
+		//$html[] = "</div>";
 
-		$html[] = "<div class=\"button2-left\"><div class=\"blank\"><a class=\"modal\" title=\"".JText::_('COM_JEM_UPLOAD')."\" href=\"$link\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_UPLOAD')."</a></div></div>\n";
-		$html[] = "<div class=\"button2-left\"><div class=\"blank\"><a class=\"modal\" title=\"".JText::_('COM_JEM_SELECTIMAGE')."\" href=\"$link2\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_SELECTIMAGE')."</a></div></div>\n";
-		$html[] = "\n&nbsp;<input class=\"inputbox\" type=\"button\" onclick=\"elSelectImage('', '".JText::_('COM_JEM_SELECTIMAGE')."');\" value=\"".JText::_('COM_JEM_RESET')."\" />";
 
-		$html[] = "\n<input type=\"hidden\" id=\"a_image\" name=\"$this->name\" value=\"$this->value\" />";
+		$html[] = "<a class=\"modal btn\" title=\"".JText::_('COM_JEM_UPLOAD')."\" href=\"$link\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_UPLOAD')."</a>";
+		$html[] = "<a class=\"modal btn\" title=\"".JText::_('COM_JEM_SELECTIMAGE')."\" href=\"$link2\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_SELECTIMAGE')."</a>";
+		$html[] = "<button class=\"btn\" type=\"button\" onclick=\"elSelectImage('', '".JText::_('COM_JEM_SELECTIMAGE')."');\" value=\"".JText::_('COM_JEM_RESET')."\" /> <i class=\"icon-remove\"></i></button> ";
+
+		$html[] = "<input type=\"hidden\" id=\"a_image\" name=\"$this->name\" value=\"$this->value\" />";
+		$html[] = '</span>';
+
 
 		$html [] = "<br /><img src=\"../media/system/images/blank.png\" name=\"imagelib\" id=\"imagelib\" width=\"80\" height=\"80\" border=\"2\" alt=\"Preview\" />";
 		$html [] = "<script type=\"text/javascript\">";

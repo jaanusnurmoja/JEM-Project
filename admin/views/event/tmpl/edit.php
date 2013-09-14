@@ -10,7 +10,7 @@
 defined('_JEXEC') or die('Restricted access');
 
 
-JHtml::_('behavior.tooltip');
+//JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHTML::_('behavior.keepalive');
 
@@ -30,7 +30,7 @@ $params = $params->toArray();
 	});
 
 	function setbgcats()
-	{	
+	{
 		var z=document.getElementById("cid");
 
 		z.morph({
@@ -63,7 +63,7 @@ $params = $params->toArray();
 			}
 			});
 	}
-	
+
 	function testcid()
 	{
 		var x=document.getElementById("cid").selectedIndex;
@@ -102,11 +102,11 @@ $params = $params->toArray();
 <?php
 // @todo fix this!
 // it's not implemented as this code won't work in there (no title field)
-// echo JLayoutHelper::render('joomla.edit.item_title', $this); 
+echo JLayoutHelper::render('joomla.edit.item_title', $this);
 ?>
 
 
-<!-- Begin Banner -->
+<!-- Begin Event -->
 <div class="span8 form-horizontal">
 
 
@@ -114,12 +114,9 @@ $params = $params->toArray();
 	<fieldset>
 		<?php echo JHtml::_('bootstrap.startTabSet', 'eventTab', array('active' => 'event-details')); ?>
 		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-details', JText::_('COM_JEM_EVENT_INFO_TAB', true)); ?>
-		
-		
+
+
 		<fieldset class="adminform">
-			<legend>
-				<?php echo empty($this->item->id) ? JText::_('COM_JEM_NEW_EVENT') : JText::sprintf('COM_JEM_EVENT_DETAILS', $this->item->id); ?>
-			</legend>
 
 				<div class="control-group">
 					<div class="control-label">
@@ -129,10 +126,10 @@ $params = $params->toArray();
 				 <?php echo $this->form->getInput('title'); ?>
 				</div>
 				</div>
-				
+
 				<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('alias'); ?> 
+				<?php echo $this->form->getLabel('alias'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('alias'); ?>
@@ -141,7 +138,7 @@ $params = $params->toArray();
 
 				<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('dates'); ?> 
+				<?php echo $this->form->getLabel('dates'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('dates'); ?>
@@ -157,10 +154,10 @@ $params = $params->toArray();
 				</div>
 				</div>
 
-				
+
 				<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('times'); ?> 
+				<?php echo $this->form->getLabel('times'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('times'); ?>
@@ -176,31 +173,31 @@ $params = $params->toArray();
 				</div>
 				</div>
 
-				
+
 				<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('cats'); ?> 
+				<?php echo $this->form->getLabel('cats'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('cats'); ?>
 			</div>
 				</div>
 		</fieldset>
-		
-		
+
+
 
 		<fieldset class="adminform">
 			<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('locid'); ?> 
+				<?php echo $this->form->getLabel('locid'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('locid'); ?>
 				</div>
 				</div>
-				
-				
-				
+
+
+
 				<div class="control-group">
 					<div class="control-label">
 				<?php echo $this->form->getLabel('contactid'); ?>
@@ -209,11 +206,11 @@ $params = $params->toArray();
 				 <?php echo $this->form->getInput('contactid'); ?>
 		</div>
 				</div>
-		
-		
+
+
 				<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('published'); ?> 
+				<?php echo $this->form->getLabel('published'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('published'); ?>
@@ -222,9 +219,9 @@ $params = $params->toArray();
 		</fieldset>
 
 
-		
-		
-		
+
+
+
 			<fieldset class="adminform">
 			<div>
 				<?php echo $this->form->getLabel('datdescription'); ?>
@@ -233,42 +230,42 @@ $params = $params->toArray();
 			</div>
 
 		</fieldset>
-		
-		
+
+
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
 
-			
+
 			<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-attachments', JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB', true)); ?>
 			<?php echo $this->loadTemplate('attachments'); ?>
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
-			
-			
-			
-			
+
+
+
+
 			<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-publishing', JText::_('COM_JEM_FIELDSET_PUBLISHING', true)); ?>
-			
+
 			<fieldset class="panelform">
-			
+
 
 		<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('id'); ?> 
+				<?php echo $this->form->getLabel('id'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('id'); ?>
 				</div>
 				</div>
-				
+
 		<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('created_by'); ?> 
+				<?php echo $this->form->getLabel('created_by'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('created_by'); ?>
 				</div>
 				</div>
-				
-				
+
+
 		<div class="control-group">
 					<div class="control-label">
 				<label><?php echo JText::_ ( 'COM_JEM_HITS' );	?></label>
@@ -281,16 +278,16 @@ $params = $params->toArray();
 
 		<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('created'); ?> 
+				<?php echo $this->form->getLabel('created'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('created'); ?>
 				</div>
 				</div>
-				
+
 		<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('modified'); ?> 
+				<?php echo $this->form->getLabel('modified'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('modified'); ?>
@@ -299,18 +296,18 @@ $params = $params->toArray();
 
 		<div class="control-group">
 					<div class="control-label">
-				<?php echo $this->form->getLabel('version'); ?> 
+				<?php echo $this->form->getLabel('version'); ?>
 				</div>
 					<div class="controls">
 				<?php echo $this->form->getInput('version'); ?>
 				</div>
 				</div>
 
-			
+
 		</fieldset>
-			
+
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
-			
+
 
 		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-custom', JText::_('COM_JEM_CUSTOMFIELDS', true)); ?>
 		<fieldset class="panelform">
@@ -318,50 +315,50 @@ $params = $params->toArray();
 				<?php foreach($this->form->getFieldset('custom') as $field): ?>
 				<div class="control-group">
 					<div class="control-label">
-				<?php echo $field->label; ?> 
+				<?php echo $field->label; ?>
 				</div>
 					<div class="controls">
 				<?php echo $field->input; ?>
 				</div>
 				</div>
 				<?php endforeach; ?>
-			
-				
+
+
 		</fieldset>
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
-			
-			
-			
-			
-			
-			
+
+
+
+
+
+
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 	</fieldset>
-		
-		
+
+
 		</div>
 	<!-- End Eventview -->
 	<!-- Begin Sidebar -->
-		
+
 		<div class="span4">
-		
+
 
 		<!-- START OF SLIDERS -->
-		<?php 
-		//echo JHtml::_('sliders.start', 'venue-sliders-'.$this->item->id, array('useCookie'=>1)); 
+		<?php
+		//echo JHtml::_('sliders.start', 'venue-sliders-'.$this->item->id, array('useCookie'=>1));
 		echo JHtml::_('bootstrap.startAccordion', 'eventSlide', array('active' => 'event-registra'));
 		?>
 
 
-		
-		
-		
 
-		
-		
-		
-		<?php 
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_REGISTRATION'), 'registra'); 
+
+
+
+
+
+
+		<?php
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_REGISTRATION'), 'registra');
 		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_REGISTRATION'), 'event-registra' );
 		?>
 		<fieldset class="panelform">
@@ -390,10 +387,10 @@ $params = $params->toArray();
 		<?php echo JHtml::_('bootstrap.endSlide'); ?>
 
 
-		
+
 		<!-- START OF PANEL IMAGE -->
-		<?php 
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_IMAGE'), 'image-event'); 
+		<?php
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_IMAGE'), 'image-event');
 		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_IMAGE'), 'event-image' );
 		?>
 
@@ -405,13 +402,13 @@ $params = $params->toArray();
 			</ul>
 		</fieldset>
 		<?php echo JHtml::_('bootstrap.endSlide'); ?>
-		
-		
-		
 
 
-		<?php 
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_RECURRING_EVENTS'), 'recurrence'); 
+
+
+
+		<?php
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_RECURRING_EVENTS'), 'recurrence');
 		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_RECURRING_EVENTS'), 'event-recurrence' );
 		?>
 		<fieldset class="panelform">
@@ -468,11 +465,11 @@ $params = $params->toArray();
 		<?php echo JHtml::_('bootstrap.endSlide'); ?>
 
 
-		
-		
+
+
 		<!-- START OF PANEL META -->
-		<?php 
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_METADATA_INFORMATION'), 'meta-event'); 
+		<?php
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_METADATA_INFORMATION'), 'meta-event');
 		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_METADATA_INFORMATION'), 'event-meta' );
 		?>
 

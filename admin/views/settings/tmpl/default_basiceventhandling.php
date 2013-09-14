@@ -19,23 +19,23 @@ defined('_JEXEC') or die;
 	<div class="control-label">
 		<?php echo $this->form->getLabel('oldevent'); ?>
 		</div>
-	<div class="controls">	
+	<div class="controls">
 		 <?php echo $this->form->getInput('oldevent'); ?>
-			<span class="error hasTip" title="<?php echo JText::_( 'COM_JEM_WARNING' ); ?>::<?php echo JText::_( 'COM_JEM_OLD_EVENTS_WARN' ); ?>">
+			<span class="hasTooltip" title="<?php echo JText::_( 'COM_JEM_WARNING' ); ?>::<?php echo JText::_( 'COM_JEM_OLD_EVENTS_WARN' ); ?>">
 								<?php echo $this->WarningIcon(); ?>
 			</span>
 		</div>
-				</div>		
-		
-	
+				</div>
+
+
 			<div id="evhandler1" class="control-group">
 	<div class="control-label">
-		<?php echo $this->form->getLabel('minus'); ?> 
+		<?php echo $this->form->getLabel('minus'); ?>
 				</div>
-	<div class="controls">	
+	<div class="controls">
 		<?php echo $this->form->getInput('minus'); ?>
 		</div>
-				</div>	
+				</div>
 </fieldset>
 
 
