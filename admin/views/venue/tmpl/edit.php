@@ -167,17 +167,17 @@ function test()
           }
         });
 
-    	  jQuery("#geocomplete").bind("geocode:dragged", function(event, latLng){
-    		  jQuery("input[id=jform_latitude]").val(latLng.lat());
-    		  jQuery("input[id=jform_longitude]").val(latLng.lng());
-    		  jQuery("#geocomplete").geocomplete("find", latLng.toString());
+    	  $("#geocomplete").bind("geocode:dragged", function(event, latLng){
+    		  $("input[id=jform_latitude]").val(latLng.lat());
+    		  $("input[id=jform_longitude]").val(latLng.lng());
+    		  $("#geocomplete").geocomplete("find", latLng.toString());
     		 /* option to show the reset-link */
     		 /* jQuery("#reset").show();*/
         });
 
 
 
-    	  jQuery("#geocomplete").bind("geocode:result", function(event, result){
+    	  $("#geocomplete").bind("geocode:result", function(event, result){
     	  		var country = document.getElementById("country").value;
     	  		document.getElementById("jform_country").value = country;
         });
@@ -191,8 +191,8 @@ function test()
         });
      	*/
 
-    	  jQuery("#find").click(function(){
-    		  jQuery("#geocomplete").trigger("geocode");
+    	  $("#find").click(function(){
+    		  $("#geocomplete").trigger("geocode");
         }).click();
       });
     </script>
