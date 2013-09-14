@@ -534,10 +534,15 @@ div#jem table.eventtable tr:hover td
  * @section JEM Table Filter Form
  */
 div#jem #jem_filter {
-margin: 1em 0 0.5em 0; padding: 0.5em;
+margin: 1em 0 0.5em 0;
+padding: 0.5em;
 border: solid 1px grey;
 background: orange;
 }
+
+
+
+
 
 div#jem .jem_fleft {
 float: left;
@@ -808,7 +813,9 @@ display:inline;
 padding:2px 5px;
 text-align:left;
 border:solid 0px #eee;
-margin:0 2px}
+/* margin:0 2px */
+
+}
 
 
 div.jem_editevent div.jem_buttons a.jem_venue_reset {
