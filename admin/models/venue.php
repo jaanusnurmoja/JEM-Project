@@ -142,7 +142,7 @@ class JEMModelVenue extends JModelAdmin
 	 * Prepare and sanitise the table data prior to saving.
 	 *
 	 */
-	protected function prepareTable(&$table)
+	protected function prepareTable($table)
 	{
 		$date = JFactory::getDate();
 		$user = JFactory::getUser();

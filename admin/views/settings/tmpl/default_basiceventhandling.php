@@ -11,20 +11,32 @@ defined('_JEXEC') or die;
 ?>
 
 
-<div class="width-100">
+
 <fieldset class="adminform">
 	<legend><?php echo JText::_( 'COM_JEM_EVENT_HANDLING' ); ?></legend>
 
-	<ul class="adminformlist">
-		<li><?php echo $this->form->getLabel('oldevent'); ?> <?php echo $this->form->getInput('oldevent'); ?>
+	<div class="control-group">
+	<div class="control-label">
+		<?php echo $this->form->getLabel('oldevent'); ?>
+		</div>
+	<div class="controls">	
+		 <?php echo $this->form->getInput('oldevent'); ?>
 			<span class="error hasTip" title="<?php echo JText::_( 'COM_JEM_WARNING' ); ?>::<?php echo JText::_( 'COM_JEM_OLD_EVENTS_WARN' ); ?>">
 								<?php echo $this->WarningIcon(); ?>
 			</span>
-		</li>
-		<li id="evhandler1"><?php echo $this->form->getLabel('minus'); ?> <?php echo $this->form->getInput('minus'); ?>
-		</li>
-		</ul>
+		</div>
+				</div>		
+		
+	
+			<div id="evhandler1" class="control-group">
+	<div class="control-label">
+		<?php echo $this->form->getLabel('minus'); ?> 
+				</div>
+	<div class="controls">	
+		<?php echo $this->form->getInput('minus'); ?>
+		</div>
+				</div>	
 </fieldset>
-</div>
+
 
 

@@ -10,18 +10,41 @@
 defined('_JEXEC') or die;
 ?>
 
-<div class="width-100">
+
 <fieldset class="adminform">
 	<legend><?php echo JText::_( 'COM_JEM_IMAGE_HANDLING' ); ?></legend>
 
-	<ul class="adminformlist">
-		<li><?php echo $this->form->getLabel('sizelimit'); ?> <?php echo $this->form->getInput('sizelimit'); ?></li>
-		<li><?php echo $this->form->getLabel('imagehight'); ?> <?php echo $this->form->getInput('imagehight'); ?></li>
-		<li><?php echo $this->form->getLabel('imagewidth'); ?> <?php echo $this->form->getInput('imagewidth'); ?>
+		<div class="control-group">
+	<div class="control-label">
+		<?php echo $this->form->getLabel('sizelimit'); ?>
+		</div>
+	<div class="controls">
+		 <?php echo $this->form->getInput('sizelimit'); ?>
+		 </div>
+				</div>
+				
+		
+			<div class="control-group">
+	<div class="control-label"> 
+		<?php echo $this->form->getLabel('imagehight'); ?> 
+		</div>
+	<div class="controls">
+		<?php echo $this->form->getInput('imagehight'); ?>
+		</div>
+				</div>
+		
+		
+			<div class="control-group">
+	<div class="control-label">
+		<?php echo $this->form->getLabel('imagewidth'); ?> 
+		</div>
+	<div class="controls">
+		<?php echo $this->form->getInput('imagewidth'); ?>
 			<span class="error hasTip" title="<?php echo JText::_('COM_JEM_WARNING');?>::<?php echo JText::_('COM_JEM_WARNING_MAX_IMAGEWIDTH'); ?>">
 				<?php echo $this->WarningIcon(); ?>
 			</span>
-		</li>
+		</div>
+				</div>
 		<?php
 		//is the gd library installed on the server running JEM?
 		if ($gdv = JEMImage::gdVersion())
@@ -30,17 +53,32 @@ defined('_JEXEC') or die;
 				if ($gdv >= 2) {
 ?>
 
-<li>
-<?php echo $this->form->getLabel('gddisabled'); ?>
-<?php echo $this->form->getInput('gddisabled'); ?>
 
+
+
+	<div class="control-group">
+	<div class="control-label">
+<?php echo $this->form->getLabel('gddisabled'); ?>
+</div>
+	<div class="controls">
+<?php echo $this->form->getInput('gddisabled'); ?>
+</div>
+				</div>
 <?php
 						}
 		}
 		?>
-		<li id="lb1" style="display:none"><?php echo $this->form->getLabel('lightbox'); ?> <?php echo $this->form->getInput('lightbox'); ?></li>
-		</ul>
+		
+
+			<div id="lb1" style="display:none" class="control-group">
+	<div class="control-label">
+		<?php echo $this->form->getLabel('lightbox'); ?> 
+		</div>
+	<div class="controls">
+		<?php echo $this->form->getInput('lightbox'); ?>
+		</div>
+				</div>
 </fieldset>
-</div>
+
 
 

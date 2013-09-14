@@ -11,22 +11,41 @@ defined('_JEXEC') or die;
 ?>
 
 
-<div class="width-100">
+
 <fieldset class="adminform">
 	<legend><?php echo JText::_( 'COM_JEM_REGISTRATION' ); ?></legend>
-	<ul class="adminformlist">
-			<li>
-				<?php echo $this->form->getLabel('regname'); ?> <?php echo $this->form->getInput('regname'); ?>
-			</li>
+	
+	
+				<div class="control-group">
+	<div class="control-label">
+				<?php echo $this->form->getLabel('regname'); ?> 
+				</div>
+	<div class="controls">	
+				<?php echo $this->form->getInput('regname'); ?>
+			</div>
+				</div>	
+				
 
-			<li>
-				<?php echo $this->form->getLabel('comunsolution'); ?> <?php echo $this->form->getInput('comunsolution'); ?>
-			</li>
-
-				<li id="comm1" style="display:none"><?php echo $this->form->getLabel('comunoption'); ?> <?php echo $this->form->getInput('comunoption'); ?>
-				</li>
-	</ul>
+				<div class="control-group">
+	<div class="control-label">
+				<?php echo $this->form->getLabel('comunsolution'); ?> 
+				</div>
+	<div class="controls">	
+				<?php echo $this->form->getInput('comunsolution'); ?>
+			</div>
+				</div>	
+			
+			
+					<div id="comm1" style="display:none" class="control-group">
+	<div class="control-label">
+				<?php echo $this->form->getLabel('comunoption'); ?> 
+				</div>
+	<div class="controls">	
+				<?php echo $this->form->getInput('comunoption'); ?>
+				</div>
+				</div>	
+	
 </fieldset>
-</div>
+
 
 

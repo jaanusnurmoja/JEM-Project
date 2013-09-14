@@ -10,26 +10,27 @@
 defined('_JEXEC') or die;
 ?>
 
-
-
 <fieldset class="adminform">
-	<legend><?php echo JText::_( 'COM_JEM_GLOBAL_PARAMETERS' ); ?></legend>
+	<legend><?php echo JText::_( 'COM_JEM_GENERAL_LAYOUT_SETTINGS' ); ?></legend>
+	
 			<?php
-			foreach ($this->form->getFieldset('globalparam') as $field):
+			foreach ($this->form->getFieldset('layoutgenerallayoutsetting') as $field):
 			?>
 					<div class="control-group">
 	<div class="control-label">
 					<?php echo $field->label; ?>
 					</div>
-					<div class="controls"> 
+	<div class="controls">
 					<?php echo $field->input; ?>
-					</div>
-				</div>
 					
+					</div>
+				</div>	
 			<?php
 			endforeach;
 			?>
+	
 </fieldset>
+
 
 
 

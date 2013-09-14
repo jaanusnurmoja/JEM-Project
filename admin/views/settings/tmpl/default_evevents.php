@@ -9,20 +9,24 @@
 
 defined('_JEXEC') or die;
 ?>
-		<div class="width-100">
-<fieldset class="adminform">
+<fieldset>
 	<legend><?php echo JText::_( 'COM_JEM_EVENTS' ); ?></legend>
-	<ul class="adminformlist">
 			<?php
 			foreach ($this->form->getFieldset('evevents') as $field):
 			?>
-					<li><?php echo $field->label; ?>
-					<?php echo $field->input; ?></li>
+			<div class="control-group">
+					<div class="control-label">
+					<?php echo $field->label; ?>
+					
+					</div>
+						<div class="controls">
+					<?php echo $field->input; ?>
+					</div>
+			</div>	
 			<?php
 			endforeach;
 			?>
-	</ul>
+	
 </fieldset>
-</div>
 
 

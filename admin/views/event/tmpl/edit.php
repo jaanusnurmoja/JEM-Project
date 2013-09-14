@@ -18,6 +18,7 @@ JHTML::_('behavior.keepalive');
 $params = $this->state->get('params');
 $params = $params->toArray();
 
+
 ?>
 
 <script type="text/javascript">
@@ -96,124 +97,273 @@ $params = $params->toArray();
 
 <form
 	action="<?php echo JRoute::_('index.php?option=com_jem&layout=edit&id='.(int) $this->item->id); ?>"
-	class="form-validate" method="post" name="adminForm" id="event-form" enctype="multipart/form-data">
+	class="form-validate form-horizontal" method="post" name="adminForm" id="event-form" enctype="multipart/form-data">
+
+<?php
+// @todo fix this!
+// it's not implemented as this code won't work in there (no title field)
+// echo JLayoutHelper::render('joomla.edit.item_title', $this); 
+?>
 
 
-	<!-- START OF LEFT DIV -->
-	<div class="width-55 fltlft">
+<!-- Begin Banner -->
+<div class="span8 form-horizontal">
 
-<?php echo JHtml::_('tabs.start', 'det-pane'); ?>
-		<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_INFO_TAB'), 'info' ); ?>
 
-		<!-- START OF LEFT FIELDSET -->
+
+	<fieldset>
+		<?php echo JHtml::_('bootstrap.startTabSet', 'eventTab', array('active' => 'event-details')); ?>
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-details', JText::_('COM_JEM_EVENT_INFO_TAB', true)); ?>
+		
+		
 		<fieldset class="adminform">
 			<legend>
 				<?php echo empty($this->item->id) ? JText::_('COM_JEM_NEW_EVENT') : JText::sprintf('COM_JEM_EVENT_DETAILS', $this->item->id); ?>
 			</legend>
 
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('title');?> <?php echo $this->form->getInput('title'); ?>
-				</li>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('title');?>
+				</div>
+					<div class="controls">
+				 <?php echo $this->form->getInput('title'); ?>
+				</div>
+				</div>
+				
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('alias'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('alias'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('alias'); ?> <?php echo $this->form->getInput('alias'); ?>
-				</li>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('dates'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('dates'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('dates'); ?> <?php echo $this->form->getInput('dates'); ?>
-				</li>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('enddates'); ?>
+				</div>
+					<div class="controls">
+				 <?php echo $this->form->getInput('enddates'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('enddates'); ?> <?php echo $this->form->getInput('enddates'); ?>
-				</li>
+				
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('times'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('times'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('times'); ?> <?php echo $this->form->getInput('times'); ?>
-				</li>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('endtimes'); ?>
+				</div>
+					<div class="controls">
+				 <?php echo $this->form->getInput('endtimes'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('endtimes'); ?> <?php echo $this->form->getInput('endtimes'); ?>
-				</li>
-
-				<li><?php echo $this->form->getLabel('cats'); ?> <?php echo $this->form->getInput('cats'); ?>
-				</li>
-			</ul>
+				
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('cats'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('cats'); ?>
+			</div>
+				</div>
 		</fieldset>
+		
+		
 
 		<fieldset class="adminform">
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('locid'); ?> <?php echo $this->form->getInput('locid'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('contactid'); ?> <?php echo $this->form->getInput('contactid'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('published'); ?> <?php echo $this->form->getInput('published'); ?>
-				</li>
-			</ul>
+			<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('locid'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('locid'); ?>
+				</div>
+				</div>
+				
+				
+				
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('contactid'); ?>
+				</div>
+					<div class="controls">
+				 <?php echo $this->form->getInput('contactid'); ?>
+		</div>
+				</div>
+		
+		
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('published'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('published'); ?>
+				</div>
+				</div>
 		</fieldset>
 
 
+		
+		
+		
 			<fieldset class="adminform">
-
 			<div>
 				<?php echo $this->form->getLabel('datdescription'); ?>
 				<div class="clr"></div>
 				<?php echo $this->form->getInput('datdescription'); ?>
 			</div>
 
-			<!-- END OF FIELDSET -->
 		</fieldset>
+		
+		
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
 
-<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB'), 'attachments' ); ?>
-				<?php echo $this->loadTemplate('attachments'); ?>
-				<?php echo JHtml::_('tabs.end'); ?>
-		<!-- END OF LEFT DIV -->
-	</div>
+			
+			<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-attachments', JText::_('COM_JEM_EVENT_ATTACHMENTS_TAB', true)); ?>
+			<?php echo $this->loadTemplate('attachments'); ?>
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+			
+			
+			
+			
+			<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-publishing', JText::_('COM_JEM_FIELDSET_PUBLISHING', true)); ?>
+			
+			<fieldset class="panelform">
+			
 
-
-	<!--  START RIGHT DIV -->
-	<div class="width-40 fltrt">
-
-		<!-- START OF SLIDERS -->
-		<?php echo JHtml::_('sliders.start', 'venue-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
-
-
-		<!-- START OF PANEL PUBLISHING -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_FIELDSET_PUBLISHING'), 'publishing-details'); ?>
-
-
-		<!-- RETRIEVING OF FIELDSET PUBLISHING -->
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-
-				<li><?php echo $this->form->getLabel('id'); ?> <?php echo $this->form->getInput('id'); ?>
-				</li>
-
-				<li><?php echo $this->form->getLabel('created_by'); ?> <?php echo $this->form->getInput('created_by'); ?>
-				</li>
-
-				<li><label><?php echo JText::_ ( 'COM_JEM_HITS' );	?></label>
+		<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('id'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('id'); ?>
+				</div>
+				</div>
+				
+		<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('created_by'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('created_by'); ?>
+				</div>
+				</div>
+				
+				
+		<div class="control-group">
+					<div class="control-label">
+				<label><?php echo JText::_ ( 'COM_JEM_HITS' );	?></label>
+				</div>
+					<div class="controls">
 				<input class="inputbox" name="hits" value="<?php echo $this->item->hits; ?>" size="10" maxlength="10" id="a_hits" />
 				<?php echo $this->resethits; ?>
-				</li>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('created'); ?> <?php echo $this->form->getInput('created'); ?>
-				</li>
+		<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('created'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('created'); ?>
+				</div>
+				</div>
+				
+		<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('modified'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('modified'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('modified'); ?> <?php echo $this->form->getInput('modified'); ?>
-				</li>
+		<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('version'); ?> 
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('version'); ?>
+				</div>
+				</div>
 
-				<li><?php echo $this->form->getLabel('version'); ?> <?php echo $this->form->getInput('version'); ?>
-				</li>
-
-			</ul>
+			
 		</fieldset>
+			
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+			
 
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_CUSTOMFIELDS'), 'custom'); ?>
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-custom', JText::_('COM_JEM_CUSTOMFIELDS', true)); ?>
 		<fieldset class="panelform">
-			<ul class="adminformlist">
-				<?php foreach($this->form->getFieldset('custom') as $field): ?>
-				<li><?php echo $field->label; ?> <?php echo $field->input; ?>
-				</li>
-				<?php endforeach; ?>
-			</ul>
-		</fieldset>
 
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_REGISTRATION'), 'registra'); ?>
+				<?php foreach($this->form->getFieldset('custom') as $field): ?>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $field->label; ?> 
+				</div>
+					<div class="controls">
+				<?php echo $field->input; ?>
+				</div>
+				</div>
+				<?php endforeach; ?>
+			
+				
+		</fieldset>
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+			
+			
+			
+			
+			
+			
+		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
+	</fieldset>
+		
+		
+		</div>
+	<!-- End Eventview -->
+	<!-- Begin Sidebar -->
+		
+		<div class="span4">
+		
+
+		<!-- START OF SLIDERS -->
+		<?php 
+		//echo JHtml::_('sliders.start', 'venue-sliders-'.$this->item->id, array('useCookie'=>1)); 
+		echo JHtml::_('bootstrap.startAccordion', 'eventSlide', array('active' => 'event-registra'));
+		?>
+
+
+		
+		
+		
+
+		
+		
+		
+		<?php 
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_REGISTRATION'), 'registra'); 
+		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_REGISTRATION'), 'event-registra' );
+		?>
 		<fieldset class="panelform">
 			<ul class="adminformlist">
 				<li><?php echo $this->form->getLabel('registra'); ?> <?php echo $this->form->getInput('registra'); ?>
@@ -237,11 +387,15 @@ $params = $params->toArray();
 				</li>
 			</ul>
 		</fieldset>
+		<?php echo JHtml::_('bootstrap.endSlide'); ?>
 
 
-
+		
 		<!-- START OF PANEL IMAGE -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_IMAGE'), 'image-event'); ?>
+		<?php 
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_IMAGE'), 'image-event'); 
+		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_IMAGE'), 'event-image' );
+		?>
 
 
 		<fieldset class="panelform">
@@ -250,9 +404,16 @@ $params = $params->toArray();
 				</li>
 			</ul>
 		</fieldset>
+		<?php echo JHtml::_('bootstrap.endSlide'); ?>
+		
+		
+		
 
 
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_RECURRING_EVENTS'), 'recurrence'); ?>
+		<?php 
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_RECURRING_EVENTS'), 'recurrence'); 
+		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_RECURRING_EVENTS'), 'event-recurrence' );
+		?>
 		<fieldset class="panelform">
 			<ul class="adminformlist">
 				<li><?php echo $this->form->getLabel('recurrence_type'); ?> <?php echo $this->form->getInput('recurrence_type'); ?>
@@ -304,11 +465,16 @@ $params = $params->toArray();
 			-->
 			</script>
 		</fieldset>
+		<?php echo JHtml::_('bootstrap.endSlide'); ?>
 
 
-
+		
+		
 		<!-- START OF PANEL META -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_METADATA_INFORMATION'), 'meta-event'); ?>
+		<?php 
+		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_METADATA_INFORMATION'), 'meta-event'); 
+		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_METADATA_INFORMATION'), 'event-meta' );
+		?>
 
 
 		<!-- RETRIEVING OF FIELDSET META -->
@@ -363,8 +529,8 @@ $params = $params->toArray();
 		-->
 		</script>
 
-
-	<?php echo JHtml::_('sliders.end'); ?>
+	<?php echo JHtml::_('bootstrap.endSlide'); ?>
+	<?php echo JHtml::_('bootstrap.endAccordion'); ?>
 
 <input type="hidden" name="task" value="" />
 <input type="hidden" name="author_ip" value="<?php echo $this->item->author_ip; ?>" />

@@ -62,20 +62,15 @@
           }
           $venue = htmlspecialchars($venue, ENT_QUOTES, 'UTF-8');
 
-          // The current book input field
-          $html[] = '<div class="fltlft">';
-          $html[] = '  <input type="text" id="'.$this->id.'_name" value="'.$venue.'" disabled="disabled" size="35" />';
-          $html[] = '</div>';
+          // The current venue input field
+          $html[] = '<span class="input-append">';
+          $html[] = '  <input type="text" class="input-medium" id="'.$this->id.'_name" value="'.$venue.'" disabled="disabled" size="35" />';
+          $html[] = '    <a class="modal btn hasTooltip" title="'.JHtml::tooltipText('COM_JEM_SELECT').'" href="'.$link.'&amp;'.JSession::getFormToken().'=1" rel="{handler: \'iframe\', size: {x:800, y:450}}">'.
+          		JText::_('JSELECT').'</a>';
+          $html[] = '</span>';
 
-          // The book select button
-          $html[] = '<div class="button2-left">';
-          $html[] = '  <div class="blank">';
-          $html[] = '    <a class="modal" title="'.JText::_('COM_JEM_SELECT').'" href="'.$link.'&amp;'.JSession::getFormToken().'=1" rel="{handler: \'iframe\', size: {x:800, y:450}}">'.
-                         JText::_('COM_JEM_SELECT').'</a>';
-          $html[] = '  </div>';
-          $html[] = '</div>';
 
-         // The active book id field
+         // The active venue id field
           if (0 == (int)$this->value) {
                   $value = '';
           } else {

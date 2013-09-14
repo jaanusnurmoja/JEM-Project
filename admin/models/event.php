@@ -182,7 +182,7 @@ class JEMModelEvent extends JModelAdmin
 	 * With $table you can call a table name
 	 *
 	 */
-	protected function prepareTable(&$table)
+	protected function prepareTable($table)
 	{
 		$date = JFactory::getDate();
 

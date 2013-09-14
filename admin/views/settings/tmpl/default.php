@@ -11,8 +11,9 @@ defined('_JEXEC') or die;
 
 // Load tooltips behavior
 JHtml::_('behavior.formvalidation');
-JHtml::_('behavior.switcher');
-JHtml::_('behavior.tooltip');
+//JHtml::_('behavior.switcher');
+//JHtml::_('behavior.tooltip');
+//JHtml::_('formbehavior.chosen', 'select');
 ?>
 
 <script>
@@ -92,7 +93,8 @@ window.addEvent('domready', function(){
 
 
 	$("jform_showmapserv").addEvent('change', testmap);
-
+	$("jform_showmapserv").addEvent('click', testmap);
+	
 
 
 	var mapserv = $("jform_showmapserv");
@@ -362,53 +364,50 @@ function commoff()
 </script>
 
 <form action="index.php" method="post" id="settings-form" name="adminForm" class="form-validate">
+<div class="span10 form-horizontal">
+		<?php echo JHtml::_('bootstrap.startTabSet', 'settingsTab', array('active' => 'settings-basic')); ?>
 
-
-
-			<?php
-			echo JHtml::_('tabs.start', 'settings-pane', array('useCookie'=>1));
-			echo JHtml::_('tabs.panel', JText::_( 'COM_JEM_BASIC_SETTINGS' ), 'settings-basic');
-			?>
-
+		<?php echo JHtml::_('bootstrap.addTab', 'settingsTab', 'settings-basic', JText::_('COM_JEM_BASIC_SETTINGS', true)); ?>
 					<?php echo $this->loadTemplate('basicdisplay'); ?>
-					<?php echo $this->loadTemplate('basiceventhandling'); ?>
+					<?php echo $this->loadTemplate('basiceventhandling'); ?>		
 					<?php echo $this->loadTemplate('basicimagehandling'); ?>
 					<?php echo $this->loadTemplate('basicmetahandling'); ?>
-
-			<?php
-			echo JHtml::_('tabs.panel', JText::_( 'COM_JEM_EVENT_PAGE' ), 'layout2');
-			?>
-
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+			
+			
+		<?php echo JHtml::_('bootstrap.addTab', 'settingsTab', 'settings-eventpage', JText::_('COM_JEM_EVENT_PAGE', true)); ?>
 					<?php echo $this->loadTemplate('evvenues'); ?>
-					<?php echo $this->loadTemplate('evevents'); ?>
+					<?php echo $this->loadTemplate('evevents'); ?>	
 					<?php echo $this->loadTemplate('evregistration'); ?>
-
-
-
-			<?php
-			echo JHtml::_('tabs.panel', JText::_( 'COM_JEM_LAYOUT' ), 'layout');
-			?>
-
-				<?php echo $this->loadTemplate('layout'); ?>
-
-			<?php
-			echo JHtml::_('tabs.panel', JText::_( 'COM_JEM_GLOBAL_PARAMETERS' ), 'parameters');
-			?>
-
+			<?php echo JHtml::_('bootstrap.endTab'); ?>
+					
+					
+		<?php echo JHtml::_('bootstrap.addTab', 'settingsTab', 'settings-layout', JText::_('COM_JEM_LAYOUT', true)); ?>	
+					<?php echo $this->loadTemplate('laygen'); ?>
+					<?php echo $this->loadTemplate('laycit'); ?>
+					<?php echo $this->loadTemplate('layattendee'); ?>
+					<?php echo $this->loadTemplate('laytitle'); ?>	
+					<?php echo $this->loadTemplate('layout'); ?>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+					
+					
+					
+		<?php echo JHtml::_('bootstrap.addTab', 'settingsTab', 'settings-parameters', JText::_('COM_JEM_GLOBAL_PARAMETERS', true)); ?>
+              <?php 
+               echo $this->loadTemplate('parameters'); ?>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+              
+              
+              
+        <?php echo JHtml::_('bootstrap.addTab', 'settingsTab', 'settings-usercontrol', JText::_('COM_JEM_USER_CONTROL', true)); ?>
                <?php
-               echo $this->loadTemplate('parameters');
-                ?>
+                echo $this->loadTemplate('usercontrol');
+                ?>      
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+                
+                
 
-                <?php
-			echo JHtml::_('tabs.panel', JText::_( 'COM_JEM_USER_CONTROL' ), 'usercontrol');
-			?>
-
-               <?php
-               echo $this->loadTemplate('usercontrol');
-                ?>
-
-
-		<?php echo JHtml::_('tabs.end'); ?>
+		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
 
 
 		<div class="clr"></div>
@@ -419,5 +418,9 @@ function commoff()
 		<input type="hidden" name="option" value="com_jem">
 		<input type="hidden" name="controller" value="settings">
 		<?php echo JHtml::_('form.token'); ?>
+		</div>
+		<!-- End Content -->
+		
+		</div>
 		</form>
 
