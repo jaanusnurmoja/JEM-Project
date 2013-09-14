@@ -35,9 +35,20 @@ background:#DDE084;
 div#jem .hr
 {
 	border:0;
-  border-top: 1px solid #E19832;
-  height: 0;
-  background: #E19832;
+	border-top: 1px solid #E19832;
+	height: 0;
+	background: #E19832;
+}
+
+div#jem img 
+{
+	
+}
+
+div#jem .imgedit
+{
+	
+	
 }
 
 
@@ -249,7 +260,19 @@ div#jem h2 {
 
 
 div#jem h2 img {
-border: none;
+	border: none;
+	vertical-align: inherit;
+	margin-left: 5px;
+}
+
+
+div#jem h4 {
+	font-size: normal !important;
+    font-weight:normal !important;
+    padding: 0.3em 0.3em;
+    margin: normal;
+    background: none repeat scroll 0% 0% rgb(212, 214, 178);
+    border: 1px solid grey;
 }
 
 
