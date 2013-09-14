@@ -33,7 +33,7 @@ class JEMViewCategory extends JViewLegacy {
 		JHTML::_('behavior.formvalidation');
 
 		//add css to document
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		//$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 		$document->addScript(JURI::root().'media/com_jem/js/attachments.js');
 		// for color picker
 		$document->addStyleSheet(JURI::root().'media/com_jem/css/picker.css');
@@ -73,13 +73,16 @@ class JEMViewCategory extends JViewLegacy {
 		$link = 'index.php?option=com_jem&amp;view=imagehandler&amp;layout=uploadimage&amp;task=categoriesimg&amp;tmpl=component';
 		$link2 = 'index.php?option=com_jem&amp;view=imagehandler&amp;task=selectcategoriesimg&amp;tmpl=component';
 		$document->addScriptDeclaration($js);
-		$imageselect = "\n<input style=\"background: #ffffff;\" type=\"text\" id=\"a_imagename\" value=\"$row->image\" disabled=\"disabled\" onchange=\"javascript:if (document.forms[0].a_imagename.value!='') {document.imagelib.src='../images/jem/categories/' + document.forms[0].a_imagename.value} else {document.imagelib.src='../images/blank.png'}\"; /><br />";
 
-		$imageselect .= "<div class=\"button2-left\"><div class=\"blank\"><a class=\"modal\" title=\"".JText::_('COM_JEM_UPLOAD')."\" href=\"$link\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_UPLOAD')."</a></div></div>\n";
-		$imageselect .= "<div class=\"button2-left\"><div class=\"blank\"><a class=\"modal\" title=\"".JText::_('COM_JEM_SELECTIMAGE')."\" href=\"$link2\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_SELECTIMAGE')."</a></div></div>\n";
+		$imageselect = "\n<span class=\"input-append\">";
+		$imageselect .= "\n<input class=\"input-medium\" style=\"background: #ffffff;\" type=\"text\" id=\"a_imagename\" value=\"$row->image\" disabled=\"disabled\" onchange=\"javascript:if (document.forms[0].a_imagename.value!='') {document.imagelib.src='../images/jem/categories/' + document.forms[0].a_imagename.value} else {document.imagelib.src='../images/blank.png'}\"; />";
 
-		$imageselect .= "\n&nbsp;<input class=\"inputbox\" type=\"button\" onclick=\"elSelectImage('', '".JText::_('COM_JEM_SELECTIMAGE')."');\" value=\"".JText::_('COM_JEM_RESET')."\" />";
+		$imageselect .= "<a class=\"modal btn\" title=\"".JText::_('COM_JEM_UPLOAD')."\" href=\"$link\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_UPLOAD')."</a>\n";
+		$imageselect .= "<a class=\"modal btn\" title=\"".JText::_('COM_JEM_SELECTIMAGE')."\" href=\"$link2\" rel=\"{handler: 'iframe', size: {x: 650, y: 375}}\">".JText::_('COM_JEM_SELECTIMAGE')."</a>\n";
+
+		$imageselect .= "\n<button class=\"btn\" type=\"button\" onclick=\"elSelectImage('', '".JText::_('COM_JEM_SELECTIMAGE')."');\" value=\"".JText::_('COM_JEM_RESET')."\" /><i class=\"icon-remove\"></i></button>";
 		$imageselect .= "\n<input type=\"hidden\" id=\"a_image\" name=\"image\" value=\"$row->image\" />";
+		$imageselect .= '</span>';
 
 		$this->imageselect 	= $imageselect;
 
