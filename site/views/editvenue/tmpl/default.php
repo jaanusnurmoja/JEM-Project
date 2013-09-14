@@ -338,7 +338,7 @@ defined('_JEXEC') or die;
 			<legend>Geodata</legend>
 
 			<input id="geocomplete" type="text" placeholder="Type in an address" value="" />
-			<input id="find" type="button" value="find" />
+			<input id="find" type="button" class="btn" value="find" />
 			<br><br>
 			<div class="map_canvas"></div>
 
@@ -392,7 +392,7 @@ defined('_JEXEC') or die;
 				echo $this->editor->display('locdescription', $this->row->locdescription, '655', '400', '70', '15', array('pagebreak', 'readmore') );
 			else :
 			?>
-			<textarea style="width:100%;" rows="10" name="locdescription" class="inputbox" wrap="virtual" onkeyup="berechne(this.form)"></textarea><br />
+			<textarea style="width:100%;" rows="10" name="locdescription" class="inputbox" wrap="soft" onkeyup="berechne(this.form)"></textarea><br />
 			<?php echo JText::_('COM_JEM_NO_HTML'); ?><br />
 			<input disabled="disabled" value="<?php echo $this->jemsettings->datdesclimit; ?>" size="4" name="zeige" /><?php echo JText::_('COM_JEM_AVAILABLE')." "; ?><br />
 			<a href="javascript:rechne(document.adminForm);"><?php echo JText::_('COM_JEM_REFRESH'); ?></a>
@@ -429,9 +429,8 @@ defined('_JEXEC') or die;
 				<textarea class="inputbox" cols="40" rows="5" name="meta_keywords" id="meta_keywords" style="width:250px;"><?php echo $meta_keywords; ?></textarea>
 			</div>
 
-			<br class="clear" />
 
-			<input type="button" class="button jem_fright" value="<?php echo JText::_( 'COM_JEM_ADD_VENUE_CITY' ); ?>" onclick="f=document.getElementById('adminForm');f.meta_keywords.value=f.venue.value+', '+f.city.value+f.meta_keywords.value;" />
+			<input type="button" class="btn jem_fright" value="<?php echo JText::_( 'COM_JEM_ADD_VENUE_CITY' ); ?>" onclick="f=document.getElementById('adminForm');f.meta_keywords.value=f.venue.value+', '+f.city.value+f.meta_keywords.value;" />
 		</fieldset>
 
 		<?php echo $this->loadTemplate('attachments_edit'); ?>
