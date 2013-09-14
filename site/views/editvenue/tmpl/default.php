@@ -209,8 +209,8 @@ defined('_JEXEC') or die;
 </script>
 
 <script>
-	jQuery(function(){
-		jQuery("#geocomplete").geocomplete({
+	$(function(){
+		$("#geocomplete").geocomplete({
 			map: ".map_canvas",
 			details: "form ",
 			detailsAttribute: "geo-data",
@@ -220,15 +220,15 @@ defined('_JEXEC') or die;
 			}
 		});
 
-		jQuery("#geocomplete").bind("geocode:dragged", function(event, latLng){
-			jQuery("input[id=latitude]").val(latLng.lat());
-			jQuery("input[id=longitude]").val(latLng.lng());
-			jQuery("#geocomplete").geocomplete("find", latLng.toString());
+		$("#geocomplete").bind("geocode:dragged", function(event, latLng){
+			$("input[id=latitude]").val(latLng.lat());
+			$("input[id=longitude]").val(latLng.lng());
+			$("#geocomplete").geocomplete("find", latLng.toString());
 			/* option to show the reset-link */
 			/* jQuery("#reset").show();*/
 		});
 
-		jQuery("#geocomplete").bind("geocode:result", function(event, result){
+		$("#geocomplete").bind("geocode:result", function(event, result){
 			//var country = document.getElementById("country").value;
 			//document.getElementById("country").value = country;
 		});
@@ -242,8 +242,8 @@ defined('_JEXEC') or die;
 		});
 		*/
 
-		jQuery("#find").click(function(){
-			jQuery("#geocomplete").trigger("geocode");
+		$("#find").click(function(){
+			$("#geocomplete").trigger("geocode");
 		}).click();
 	});
 </script>
