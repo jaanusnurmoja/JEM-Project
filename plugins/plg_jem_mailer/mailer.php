@@ -23,7 +23,7 @@ include_once(JPATH_SITE.'/components/com_jem/helpers/route.php');
 
 class plgJEMMailer extends JPlugin {
 
-	private $_SiteName = '';
+	private $_Sitename = '';
 	private $_MailFrom = '';
 	private $_FromName = '';
 	private $_receivers = array();
@@ -41,11 +41,14 @@ class plgJEMMailer extends JPlugin {
 		$this->loadLanguage();
 
 		$app = JFactory::getApplication();
+		$config = JFactory::getConfig();
+
 		$db = JFactory::getDBO();
 
-		$this->_SiteName 	= $app->getCfg('sitename');
-		$this->_MailFrom	= $app->getCfg('mailfrom');
-		$this->_FromName 	= $app->getCfg('fromname');
+		$this->_Sitename 	= $config->get('sitename');
+		$this->_MailFrom	= $config->get('mailfrom');
+		$this->_FromName 	= $config->get('fromname');
+
 
 		if( $this->params->get('fetch_admin_mails', '0') ) {
 			//get list of admins who receive system mails
