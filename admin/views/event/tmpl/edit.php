@@ -102,7 +102,7 @@ $params = $params->toArray();
 <?php
 // @todo fix this!
 // it's not implemented as this code won't work in there (no title field)
-echo JLayoutHelper::render('joomla.edit.item_title', $this);
+// echo JLayoutHelper::render('joomla.edit.item_title', $this);
 ?>
 
 
