@@ -147,9 +147,9 @@ $params = $params->toArray();
 				<tr>
 					<td width="260px"><?php echo $this->lists['available_users']; ?></td>
 					<td width="110px">
-						<input style="width: 50px" type="button" name="right" value="&gt;" onClick="moveOptions(document.adminForm['available_users'], document.adminForm['maintainers[]'])" />
+						<input class="btn" style="width: 50px;" type="button" name="right" value="&gt;" onClick="moveOptions(document.adminForm['available_users'], document.adminForm['maintainers[]'])" />
 						<br /><br />
-						<input style="width: 50px" type="button" name="left" value="&lt;" onClick="moveOptions(document.adminForm['maintainers[]'], document.adminForm['available_users'])" />
+						<input class="btn" style="width: 50px" type="button" name="left" value="&lt;" onClick="moveOptions(document.adminForm['maintainers[]'], document.adminForm['available_users'])" />
 					</td>
 					<td width="260px"><?php echo $this->lists['maintainers']; ?></td>
 				</tr>

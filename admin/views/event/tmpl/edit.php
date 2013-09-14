@@ -204,7 +204,7 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 				</div>
 					<div class="controls">
 				 <?php echo $this->form->getInput('contactid'); ?>
-		</div>
+				</div>
 				</div>
 
 
@@ -309,10 +309,13 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
+
+		<!--   EVENT-CUSTOMFIELD TAB -->
 		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-custom', JText::_('COM_JEM_CUSTOMFIELDS', true)); ?>
-		<fieldset class="panelform">
+
 
 				<?php foreach($this->form->getFieldset('custom') as $field): ?>
+
 				<div class="control-group">
 					<div class="control-label">
 				<?php echo $field->label; ?>
@@ -323,105 +326,129 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 				</div>
 				<?php endforeach; ?>
 
-
-		</fieldset>
 			<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
+		<!--   EVENT-REGISTER TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-register', JText::_('COM_JEM_REGISTRATION', true)); ?>
 
 
 
-		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
-	</fieldset>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('registra'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('registra'); ?>
+				</div>
+				</div>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('unregistra'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('unregistra'); ?>
+				</div>
+				</div>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('maxplaces'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('maxplaces'); ?>
+				</div>
+				</div>
 
 
-		</div>
-	<!-- End Eventview -->
-	<!-- Begin Sidebar -->
+				<div class="control-group">
+					<div class="control-label">
+				<label><?php echo JText::_ ( 'COM_JEM_BOOKED_PLACES' ) . ':';?></label>
+				</div>
+					<div class="controls">
+				<input id="event-booked" class="readonly" type="text"  value="<?php echo $this->item->booked; ?>" />
+				</div>
+				</div>
 
-		<div class="span4">
-
-
-		<!-- START OF SLIDERS -->
-		<?php
-		//echo JHtml::_('sliders.start', 'venue-sliders-'.$this->item->id, array('useCookie'=>1));
-		echo JHtml::_('bootstrap.startAccordion', 'eventSlide', array('active' => 'event-registra'));
-		?>
-
-
-
-
-
-
-
-
-
-		<?php
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_REGISTRATION'), 'registra');
-		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_REGISTRATION'), 'event-registra' );
-		?>
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('registra'); ?> <?php echo $this->form->getInput('registra'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('unregistra'); ?> <?php echo $this->form->getInput('unregistra'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('maxplaces'); ?> <?php echo $this->form->getInput('maxplaces'); ?>
-				</li>
-
-				<li><label><?php echo JText::_ ( 'COM_JEM_BOOKED_PLACES' ) . ':';?></label><input id="event-booked" class="readonly" type="text"  value="<?php echo $this->item->booked; ?>" />
-				</li>
 
 				<?php if ($this->item->maxplaces): ?>
-				<li><label><?php echo JText::_ ( 'COM_JEM_AVAILABLE_PLACES' ) . ':';?></label><input id="event-available" class="readonly" type="text"  value="<?php echo ($this->item->maxplaces-$this->item->booked); ?>" />
-				</li>
+
+				<div class="control-group">
+					<div class="control-label">
+				<label><?php echo JText::_ ( 'COM_JEM_AVAILABLE_PLACES' ) . ':';?></label>
+				</div>
+					<div class="controls">
+				<input id="event-available" class="readonly" type="text"  value="<?php echo ($this->item->maxplaces-$this->item->booked); ?>" />
+				</div>
+				</div>
 				<?php
 				endif;
 				?>
 
-				<li><?php echo $this->form->getLabel('waitinglist'); ?> <?php echo $this->form->getInput('waitinglist'); ?>
-				</li>
-			</ul>
-		</fieldset>
-		<?php echo JHtml::_('bootstrap.endSlide'); ?>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('waitinglist'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('waitinglist'); ?>
+				</div>
+				</div>
+
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
-		<!-- START OF PANEL IMAGE -->
-		<?php
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_IMAGE'), 'image-event');
-		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_IMAGE'), 'event-image' );
-		?>
+		<!-- EVENT-IMAGE TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-image', JText::_('COM_JEM_IMAGE', true)); ?>
 
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('datimage'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('datimage'); ?>
+				</div>
+				</div>
 
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('datimage'); ?> <?php echo $this->form->getInput('datimage'); ?>
-				</li>
-			</ul>
-		</fieldset>
-		<?php echo JHtml::_('bootstrap.endSlide'); ?>
-
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
 
-		<?php
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_RECURRING_EVENTS'), 'recurrence');
-		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_RECURRING_EVENTS'), 'event-recurrence' );
-		?>
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('recurrence_type'); ?> <?php echo $this->form->getInput('recurrence_type'); ?>
-				</li>
+		<!-- EVENT-RECURRENCE TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-recurrence', JText::_('COM_JEM_RECURRING_EVENTS', true)); ?>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('recurrence_type'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('recurrence_type'); ?>
+				</div>
+				</div>
+
+
+
 				<li id="recurrence_output">
 				<label></label>
 				</li>
+
+
 				<li id="counter_row" style="display: none;">
-					<?php echo $this->form->getLabel('recurrence_limit_date'); ?> <?php echo $this->form->getInput('recurrence_limit_date'); ?>
+					<div class="control-group">
+					<div class="control-label">
+					<?php echo $this->form->getLabel('recurrence_limit_date'); ?>
+					</div>
+					<div class="controls">
+					<?php echo $this->form->getInput('recurrence_limit_date'); ?>
+					</div>
+					</div>
 				</li>
-			</ul>
+
+
 
 				<input type="hidden" name="recurrence_number" id="recurrence_number" value="<?php echo $this->item->recurrence_number;?>" />
 				<input type="hidden" name="recurrence_byday" id="recurrence_byday" value="<?php echo $this->item->recurrence_byday;?>" />
@@ -461,38 +488,37 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 				start_recurrencescript();
 			-->
 			</script>
-		</fieldset>
-		<?php echo JHtml::_('bootstrap.endSlide'); ?>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
 
 
-		<!-- START OF PANEL META -->
-		<?php
-		// echo JHtml::_('sliders.panel', JText::_('COM_JEM_METADATA_INFORMATION'), 'meta-event');
-		echo JHtml::_('bootstrap.addSlide', 'eventSlide', JText::_('COM_JEM_METADATA_INFORMATION'), 'event-meta' );
-		?>
+		<!-- EVENT-META TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-meta', JText::_('COM_JEM_METADATA_INFORMATION', true)); ?>
 
 
-		<!-- RETRIEVING OF FIELDSET META -->
+
 		<fieldset class="panelform">
-					<input class="inputbox" type="button" onclick="insert_keyword('[title]')" value="<?php echo JText::_ ( 'COM_JEM_EVENT_TITLE' );	?>" />
-					<input class="inputbox" type="button" onclick="insert_keyword('[a_name]')" value="<?php	echo JText::_ ( 'COM_JEM_VENUE' );?>" />
-					<input class="inputbox" type="button" onclick="insert_keyword('[categories]')" value="<?php	echo JText::_ ( 'COM_JEM_CATEGORIES' );?>" />
-					<input class="inputbox" type="button" onclick="insert_keyword('[dates]')" value="<?php echo JText::_ ( 'COM_JEM_DATE' );?>" />
+					<input class="btn" type="button" onclick="insert_keyword('[title]')" value="<?php echo JText::_ ( 'COM_JEM_EVENT_TITLE' );	?>" />
+					<input class="btn" type="button" onclick="insert_keyword('[a_name]')" value="<?php	echo JText::_ ( 'COM_JEM_VENUE' );?>" />
+					<input class="btn" type="button" onclick="insert_keyword('[categories]')" value="<?php	echo JText::_ ( 'COM_JEM_CATEGORIES' );?>" />
+					<input class="btn" type="button" onclick="insert_keyword('[dates]')" value="<?php echo JText::_ ( 'COM_JEM_DATE' );?>" />
 
 					<p>
-						<input class="inputbox" type="button" onclick="insert_keyword('[times]')" value="<?php echo JText::_ ( 'COM_JEM_EVENT_TIME' );?>" />
-						<input class="inputbox" type="button" onclick="insert_keyword('[enddates]')" value="<?php echo JText::_ ( 'COM_JEM_ENDDATE' );?>" />
-						<input class="inputbox" type="button" onclick="insert_keyword('[endtimes]')" value="<?php echo JText::_ ( 'COM_JEM_END_TIME' );?>" />
+						<input class="btn" type="button" onclick="insert_keyword('[times]')" value="<?php echo JText::_ ( 'COM_JEM_EVENT_TIME' );?>" />
+						<input class="btn" type="button" onclick="insert_keyword('[enddates]')" value="<?php echo JText::_ ( 'COM_JEM_ENDDATE' );?>" />
+						<input class="btn" type="button" onclick="insert_keyword('[endtimes]')" value="<?php echo JText::_ ( 'COM_JEM_END_TIME' );?>" />
 					</p>
 					<br />
 
 			<br />
+			<div class="control-group">
+					<div class="control-label">
 						<label for="meta_keywords">
 						<?php echo JText::_ ( 'COM_JEM_META_KEYWORDS' ) . ':';?>
 					</label>
-					<br />
+					</div>
+					<div class="controls">
 						<?php
 						if (! empty ( $this->item->meta_keywords )) {
 							$meta_keywords = $this->item->meta_keywords;
@@ -501,13 +527,17 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 						}
 						?>
 					<textarea class="inputbox" name="meta_keywords" id="meta_keywords" rows="5" cols="40" maxlength="150" onfocus="get_inputbox('meta_keywords')" onblur="change_metatags()"><?php echo $meta_keywords; ?></textarea>
+					</div>
+					</div>
 
 
-
+					<div class="control-group">
+					<div class="control-label">
 			<label for="meta_description">
 						<?php echo JText::_ ( 'COM_JEM_META_DESCRIPTION' ) . ':';?>
 					</label>
-					<br />
+					</div>
+					<div class="controls">
 					<?php
 					if (! empty ( $this->item->meta_description )) {
 						$meta_description = $this->item->meta_description;
@@ -516,6 +546,8 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 					}
 					?>
 					<textarea class="inputbox" name="meta_description" id="meta_description" rows="5" cols="40" maxlength="200"	onfocus="get_inputbox('meta_description')" onblur="change_metatags()"><?php echo $meta_description;?></textarea>
+					</div>
+					</div>
 		</fieldset>
 
 		<script type="text/javascript">
@@ -526,18 +558,22 @@ echo JLayoutHelper::render('joomla.edit.item_title', $this);
 		-->
 		</script>
 
-	<?php echo JHtml::_('bootstrap.endSlide'); ?>
-	<?php echo JHtml::_('bootstrap.endAccordion'); ?>
+
+
+
+	<?php echo JHtml::_('bootstrap.endTab'); ?>
+	<?php echo JHtml::_('bootstrap.endTabSet'); ?>
+	</fieldset>
 
 <input type="hidden" name="task" value="" />
 <input type="hidden" name="author_ip" value="<?php echo $this->item->author_ip; ?>" />
-				</li>
 
-				<!--  END RIGHT DIV -->
+
+
 				<?php echo JHTML::_( 'form.token' ); ?>
-				</div>
+
 
 		<div class="clr"></div>
-
+</div>
 </form>
 

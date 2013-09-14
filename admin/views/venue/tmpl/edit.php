@@ -465,7 +465,7 @@ function test()
 
 
 
-		<div class="clr"></div>
+		<div class="clearfix"></div>
        <input id="country" name="country" geo-data="country_short" type="hidden" value="">
 
 </form>
