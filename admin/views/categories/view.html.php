@@ -38,6 +38,15 @@ class JEMViewCategories extends JViewLegacy {
 		//add css and submenu to document
 		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 
+
+		$style = '
+		thead {
+			border-top: 1px solid grey;
+		}
+		';
+
+		$document->addStyleDeclaration($style);
+
 		//Get data from the model
 		$rows = $this->get('Data');
 		$pagination = $this->get('Pagination');

@@ -50,7 +50,7 @@ class JEMViewGroup extends JViewLegacy {
 		$url 		= JURI::root();
 
 		// CSS Stylesheet
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		// $document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
 		$document->addScript(JURI::root().'media/com_jem/js/attachments.js');
 
 		$document->addScript($url.'media/com_jem/js/recurrencebackend.js');

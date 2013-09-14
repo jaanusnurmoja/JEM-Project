@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 
 
-JHtml::_('behavior.tooltip');
+//JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHTML::_('behavior.keepalive');
 
@@ -93,28 +93,49 @@ $params = $params->toArray();
 	class="form-validate" method="post" name="adminForm" id="adminForm" enctype="multipart/form-data">
 
 
-	<!-- START OF LEFT DIV -->
-	<div class="width-55 fltlft">
+	<!-- Begin Group -->
+	<div class="span8 form-horizontal">
 
-<?php echo JHtml::_('tabs.start', 'det-pane'); ?>
-		<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_GROUP_INFO_TAB'), 'group-info' ); ?>
+	<fieldset>
+	<?php echo JHtml::_('bootstrap.startTabSet', 'groupTab', array('active' => 'group-details')); ?>
 
-		<!-- START OF LEFT FIELDSET -->
+	<!--  GROUP-DETAILS TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'groupTab', 'group-details', JText::_('COM_JEM_GROUP_INFO_TAB', true)); ?>
+
+
+
 		<fieldset class="adminform">
-			<legend>
-				<?php echo empty($this->item->id) ? JText::_('COM_JEM_NEW_GROUP') : JText::sprintf('COM_JEM_GROUP_DETAILS', $this->item->id); ?>
-			</legend>
 
-			<ul class="adminformlist">
-				<li><?php echo $this->form->getLabel('name');?> <?php echo $this->form->getInput('name'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('id');?> <?php echo $this->form->getInput('id'); ?>
-				</li>
-				<li><?php echo $this->form->getLabel('maintainers2');?> <?php echo $this->form->getInput('maintainers2'); ?>
-				</li>
+			<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('name');?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('name'); ?>
+				</div>
+				</div>
 
-			</ul>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('id');?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('id'); ?>
+				</div>
+				</div>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('maintainers2');?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('maintainers2'); ?>
+				</div>
+				</div>
 		</fieldset>
+
+
+
 
 		<fieldset class="adminform">
 			<table class="adminform">
@@ -141,6 +162,7 @@ $params = $params->toArray();
 			<fieldset class="adminform">
 
 			<div>
+			<br /><br />
 				<?php echo $this->form->getLabel('description'); ?>
 				<div class="clr"></div>
 				<?php echo $this->form->getInput('description'); ?>
@@ -148,49 +170,53 @@ $params = $params->toArray();
 
 
 		</fieldset>
-
-		<!-- END OF FIELDSET -->
-
-		<!-- END OF LEFT DIV -->
-	</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
 
 
-	<!--  START RIGHT DIV -->
-	<div class="width-40 fltrt">
 
-		<!-- START OF SLIDERS -->
-		<?php echo JHtml::_('sliders.start', 'group-sliders-'.$this->item->id, array('useCookie'=>1)); ?>
+		<!-- GROUP-PERMISSION TAB -->
+		<?php echo JHtml::_('bootstrap.addTab', 'groupTab', 'group-permissions', JText::_('COM_JEM_GROUP_PERMISSIONS', true)); ?>
 
 
-		<!-- START OF PANEL PUBLISHING -->
-		<?php echo JHtml::_('sliders.panel', JText::_('COM_JEM_GROUP_PERMISSIONS'), 'group-permission'); ?>
 
-
-		<!-- RETRIEVING OF FIELDSET PUBLISHING -->
-		<fieldset class="panelform">
-			<ul class="adminformlist">
-
-				<li><?php echo $this->form->getLabel('addvenue'); ?> <?php echo $this->form->getInput('addvenue'); ?>
-				</li>
-
-				<li><?php echo $this->form->getLabel('publishvenue'); ?> <?php echo $this->form->getInput('publishvenue'); ?>
-				</li>
-
-				<li><?php echo $this->form->getLabel('editvenue'); ?> <?php echo $this->form->getInput('editvenue'); ?>
-				</li>
-
-
-			</ul>
-		</fieldset>
-
-
-	<?php echo JHtml::_('sliders.end'); ?>
-
-<input type="hidden" name="task" value="" />
-
-				<!--  END RIGHT DIV -->
-				<?php echo JHTML::_( 'form.token' ); ?>
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('addvenue'); ?>
 				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('addvenue'); ?>
+				</div>
+				</div>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('publishvenue'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('publishvenue'); ?>
+				</div>
+				</div>
+
+				<div class="control-group">
+					<div class="control-label">
+				<?php echo $this->form->getLabel('editvenue'); ?>
+				</div>
+					<div class="controls">
+				<?php echo $this->form->getInput('editvenue'); ?>
+				</div>
+				</div>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+<?php echo JHtml::_('bootstrap.endTabSet'); ?>
+</fieldset>
+
+</div>
+
+
+				<input type="hidden" name="task" value="" />
+
+
+				<?php echo JHTML::_( 'form.token' ); ?>
+
 
 		<div class="clr"></div>
 
