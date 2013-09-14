@@ -316,7 +316,10 @@ class plgFinderJEM extends FinderIndexerAdapter {
 		FinderIndexerHelper::getContentExtras($item);
 
 		// Index the item.
-		FinderIndexer::index($item);
+		//FinderIndexer::index($item);
+
+		// Index the item.
+		$this->indexer->index($item);
 	}
 
 	/**
