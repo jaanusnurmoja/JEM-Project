@@ -26,9 +26,11 @@ input#geocomplete {
 	}
 input#find
 {
+	/* 
 	height:18px;
 	cursor:pointer;
 	border:1px solid black;
+	*/
 }
 
 .map_canvas { 

@@ -114,7 +114,7 @@ div#jc h4 {
 }
 
 div#jem fieldset {
-    border: 1px dotted grey !important;
+   /* border: 1px dotted grey !important; */
 }
 
 
@@ -542,6 +542,7 @@ padding: 1em;
     background: orange;
     border-radius:5px;
     border:1px solid black;
+    line-height:inherit;
     }
 
     div.jem_editevent form label,
