@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
  * View class for the JEM Updatecheck screen
  *
  * @package JEM
- * 
+ *
  */
 class JEMViewUpdatecheck extends JViewLegacy {
 
@@ -23,7 +23,7 @@ class JEMViewUpdatecheck extends JViewLegacy {
 		$app 	   =  JFactory::getApplication();
 
 		JHtml::_('behavior.framework');
-		
+
 		//initialise variables
 		$document	= JFactory::getDocument();
 
@@ -31,8 +31,8 @@ class JEMViewUpdatecheck extends JViewLegacy {
 		$template	= $app->getTemplate();
 
 		//add css
-		$document->addStyleSheet('templates/'.$template.'/css/general.css');
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet('templates/'.$template.'/css/template.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		//Get data from the model
 		$updatedata      = $this->get( 'Updatedata');
@@ -40,28 +40,28 @@ class JEMViewUpdatecheck extends JViewLegacy {
 		//assign data to template
 		$this->template		= $template;
 		$this->updatedata	= $updatedata;
-		
+
 		// add toolbar
 		$this->addToolbar();
 
 		parent::display($tpl);
 	}
-	
-	
+
+
 	/**
 	 * Add Toolbar
 	 */
 	protected function addToolbar()
 	{
-	
-		
+
+
 		//create the toolbar
 		JToolBarHelper::title( JText::_( 'COM_JEM_UPDATE_CHECK' ), 'settings' );
 		JToolBarHelper::help( 'update', true );
 
 		JToolBarHelper::back();
-		
+
 		//JToolBarHelper::help( 'updatecheck', true );
 	}
-	
+
 }

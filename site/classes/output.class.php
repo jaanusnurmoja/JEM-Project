@@ -46,10 +46,10 @@ class JEMOutput {
 		$app = JFactory::getApplication();
 
 		if ($dellink == 1) {
-			JHTML::_('behavior.tooltip');
+			JHtml::_('behavior.tooltip');
 
 			if ($settings->icons) {
-				$image = JHTML::image("media/com_jem/images/submitevent.png",JText::_('COM_JEM_DELIVER_NEW_EVENT'));
+				$image = JHtml::image("media/com_jem/images/submitevent.png",JText::_('COM_JEM_DELIVER_NEW_EVENT'));
 			} else {
 				$image = JText::_('COM_JEM_DELIVER_NEW_EVENT');
 			}
@@ -84,10 +84,10 @@ class JEMOutput {
 		$app = JFactory::getApplication();
 
 		if ($addvenuelink == 1) {
-			JHTML::_('behavior.tooltip');
+			JHtml::_('behavior.tooltip');
 
 			if ($settings->icons) {
-				$image = JHTML::image("media/com_jem/images/addvenue.png",JText::_('COM_JEM_DELIVER_NEW_VENUE'));
+				$image = JHtml::image("media/com_jem/images/addvenue.png",JText::_('COM_JEM_DELIVER_NEW_VENUE'));
 			} else {
 				$image = JText::_('COM_JEM_DELIVER_NEW_VENUE');
 			}
@@ -124,13 +124,13 @@ class JEMOutput {
 		if ($settings->show_archive_icon) {
 			if ($settings->oldevent == 2) {
 
-				JHTML::_('behavior.tooltip');
+				JHtml::_('behavior.tooltip');
 
 				$view = JRequest::getWord('view');
 
 				if ($task == 'archive') {
 					if ($settings->icons) {
-						$image = JHTML::image("media/com_jem/images/el.png",JText::_('COM_JEM_SHOW_EVENTS'));
+						$image = JHtml::image("media/com_jem/images/el.png",JText::_('COM_JEM_SHOW_EVENTS'));
 					} else {
 						$image = JText::_('COM_JEM_SHOW_EVENTS');
 					}
@@ -144,7 +144,7 @@ class JEMOutput {
 					}
 				} else {
 					if ($settings->icons) {
-						$image = JHTML::image("media/com_jem/images/archive_front.png",JText::_('COM_JEM_SHOW_ARCHIVE'));
+						$image = JHtml::image("media/com_jem/images/archive_front.png",JText::_('COM_JEM_SHOW_ARCHIVE'));
 					} else {
 						$image = JText::_('COM_JEM_SHOW_ARCHIVE');
 					}
@@ -186,13 +186,13 @@ class JEMOutput {
 		$settings = JEMHelper::config();
 
 		if ($allowedtoedit) {
-			JHTML::_('behavior.tooltip');
+			JHtml::_('behavior.tooltip');
 
 			switch ($view)
 			{
 				case 'editevent':
 					if ($settings->icons) {
-						$image = JHTML::image("media/com_jem/images/calendar_edit.png",JText::_('COM_JEM_EDIT_EVENT'));
+						$image = JHtml::image("media/com_jem/images/calendar_edit.png",JText::_('COM_JEM_EDIT_EVENT'));
 					} else {
 						$image = JText::_('COM_JEM_EDIT_EVENT');
 					}
@@ -202,7 +202,7 @@ class JEMOutput {
 
 				case 'editvenue':
 					if ($settings->icons) {
-						$image = JHTML::image("media/com_jem/images/calendar_edit.png",JText::_('COM_JEM_EDIT_EVENT'));
+						$image = JHtml::image("media/com_jem/images/calendar_edit.png",JText::_('COM_JEM_EDIT_EVENT'));
 					} else {
 						$image = JText::_('COM_JEM_EDIT_VENUE');
 					}
@@ -232,12 +232,12 @@ class JEMOutput {
 		$app = JFactory::getApplication();
 		$settings = JEMHelper::config();
 		if ($settings->show_print_icon) {
-			JHTML::_('behavior.tooltip');
+			JHtml::_('behavior.tooltip');
 
 			$status = 'status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no';
 
 			if ($settings->icons) {
-				$image = JHTML::_('image','system/printButton.png', JText::_('JGLOBAL_PRINT'), NULL, true);
+				$image = JHtml::_('image','system/printButton.png', JText::_('JGLOBAL_PRINT'), NULL, true);
 			} else {
 				$image = JText::_('COM_JEM_PRINT');
 			}
@@ -247,7 +247,7 @@ class JEMOutput {
 				$overlib = JText::_('COM_JEM_PRINT_DESC');
 				$text = JText::_('COM_JEM_PRINT');
 				$title = 'title='.JText::_('JGLOBAL_PRINT');
-				$pimage = JHTML::_('image','system/printButton.png', JText::_('JGLOBAL_PRINT'), $title, true);
+				$pimage = JHtml::_('image','system/printButton.png', JText::_('JGLOBAL_PRINT'), $title, true);
 				$output = '<a href="#" onclick="window.print();return false;">'.$pimage.'</a>';
 			} else {
 				//button in view
@@ -277,10 +277,10 @@ class JEMOutput {
 		$settings = JEMHelper::config();
 
 		if ($settings->show_email_icon) {
-			JHTML::_('behavior.tooltip');
+			JHtml::_('behavior.tooltip');
 			require_once JPATH_SITE . '/components/com_mailto/helpers/mailto.php';
 
-			$uri = JURI::getInstance();
+			$uri = JUri::getInstance();
 			$base = $uri->toString(array('scheme', 'host', 'port'));
 			$template = JFactory::getApplication()->getTemplate();
 			$link = $base.JRoute::_('index.php?view='.$view.'&id='.$slug, false);
@@ -289,7 +289,7 @@ class JEMOutput {
 			$status = 'width=400,height=300,menubar=yes,resizable=yes';
 
 			if ($settings->icons) {
-				$image = JHTML::_('image','system/emailButton.png', JText::_('JGLOBAL_EMAIL'), NULL, true);
+				$image = JHtml::_('image','system/emailButton.png', JText::_('JGLOBAL_EMAIL'), NULL, true);
 			} else {
 				$image = JText::_('COM_JEM_EMAIL');
 			}
@@ -318,10 +318,10 @@ class JEMOutput {
 		$app = JFactory::getApplication();
 		$settings = JEMHelper::config();
 		if ($settings->events_ical == 1) {
-			JHTML::_('behavior.tooltip');
+			JHtml::_('behavior.tooltip');
 
 			if ($settings->icons) {
-				$image = JHTML::image("media/com_jem/images/iCal2.0.png",JText::_('COM_JEM_EXPORT_ICS'));
+				$image = JHtml::image("media/com_jem/images/iCal2.0.png",JText::_('COM_JEM_EXPORT_ICS'));
 			} else {
 				$image = JText::_('COM_JEM_EXPORT_ICS');
 			}
@@ -353,9 +353,9 @@ class JEMOutput {
 	{
 		$app = JFactory::getApplication();
 
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.tooltip');
 
-		$image = JHTML::image("media/com_jem/images/publish.png",JText::_('COM_JEM_PUBLISH'));
+		$image = JHtml::image("media/com_jem/images/publish.png",JText::_('COM_JEM_PUBLISH'));
 
 		if ($app->input->get('print','','int')) {
 			//button in popup
@@ -382,11 +382,11 @@ class JEMOutput {
 	{
 		$app = JFactory::getApplication();
 
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.tooltip');
 
 		// checks template image directory for image, if none found default are loaded
 
-		$image = JHTML::image("media/com_jem/images/trash.png",JText::_('COM_JEM_TRASH'));
+		$image = JHtml::image("media/com_jem/images/trash.png",JText::_('COM_JEM_TRASH'));
 
 		if ($app->input->get('print','','int')) {
 			//button in popup
@@ -413,11 +413,11 @@ class JEMOutput {
 	{
 		$app = JFactory::getApplication();
 
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.tooltip');
 
 		// checks template image directory for image, if none found default are loaded
 
-		$image = JHTML::image("media/com_jem/images/unpublish.png",JText::_('COM_JEM_UNPUBLISH'));
+		$image = JHtml::image("media/com_jem/images/unpublish.png",JText::_('COM_JEM_UNPUBLISH'));
 
 		if ($app->input->get('print','','int')) {
 			//button in popup
@@ -456,11 +456,11 @@ class JEMOutput {
 			$emailaddress = '';
 		}
 
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.tooltip');
 
 		// checks template image directory for image, if none found default are loaded
 
-		$image = JHTML::image("media/com_jem/images/export_excel.png",JText::_('COM_JEM_EXPORT'));
+		$image = JHtml::image("media/com_jem/images/export_excel.png",JText::_('COM_JEM_EXPORT'));
 
 		if ($app->input->get('print','','int')) {
 			//button in popup
@@ -490,11 +490,11 @@ class JEMOutput {
 		$id = JRequest::getInt('id');
 		$fid = JRequest::getInt('Itemid');
 
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.tooltip');
 
 		// checks template image directory for image, if none found default are loaded
 
-		$image = JHTML::image("media/com_jem/images/icon-16-back.png",JText::_('COM_JEM_BACK'));
+		$image = JHtml::image("media/com_jem/images/icon-16-back.png",JText::_('COM_JEM_BACK'));
 
 		if ($app->input->get('print','','int')) {
 			//button in popup
@@ -521,7 +521,7 @@ class JEMOutput {
 		$jemsettings = JEMHelper::config();
 
 		//Link to map
-		$mapimage = JHTML::image("media/com_jem/images/map_icon.png",JText::_('COM_JEM_MAP'));
+		$mapimage = JHtml::image("media/com_jem/images/map_icon.png",JText::_('COM_JEM_MAP'));
 
 		//set var
 		$output = null;
@@ -612,19 +612,19 @@ class JEMOutput {
 		if (JFile::exists(JPATH_SITE.'/images/jem/'.$folder.'/small/'.$imagefile)) {
 			if ($settings->lightbox == 0) {
 				$url = '#';
-				$attributes = 'class="notmodal" onclick="window.open(\''.JURI::base().'/'.$image['original'].'\',\'Popup\',\'width='.$image['width'].',height='.$image['height'].',location=no,menubar=no,scrollbars=no,status=no,toolbar=no,resizable=no\')"';
+				$attributes = 'class="notmodal" onclick="window.open(\''.JUri::base().'/'.$image['original'].'\',\'Popup\',\'width='.$image['width'].',height='.$image['height'].',location=no,menubar=no,scrollbars=no,status=no,toolbar=no,resizable=no\')"';
 			} else {
-				JHTML::_('behavior.modal', 'a.flyermodal');
-				$url = JURI::base().'/'.$image['original'];
+				JHtml::_('behavior.modal', 'a.flyermodal');
+				$url = JUri::base().'/'.$image['original'];
 				$attributes = 'class="flyermodal" title="'.$info.'"';
 			}
 
-			$icon = '<img src="'.JURI::base().'/'.$image['thumb'].'" width="'.$image['thumbwidth'].'" height="'.$image['thumbheight'].'" alt="'.$info.'" title="'.JText::_('COM_JEM_CLICK_TO_ENLARGE').'" />';
+			$icon = '<img src="'.JUri::base().'/'.$image['thumb'].'" width="'.$image['thumbwidth'].'" height="'.$image['thumbheight'].'" alt="'.$info.'" title="'.JText::_('COM_JEM_CLICK_TO_ENLARGE').'" />';
 			$output = '<div class="flyerimage"><a href="'.$url.'" '.$attributes.'>'.$icon.'</a></div>';
 
 			// Otherwise take the values for the original image specified in the settings
 		} else {
-			$output = '<img class="flyermodal" src="'.JURI::base().'/'.$image['original'].'" width="'.$image['width'].'" height="'.$image['height'].'" alt="'.$info.'" />';
+			$output = '<img class="flyermodal" src="'.JUri::base().'/'.$image['original'].'" width="'.$image['width'].'" height="'.$image['height'].'" alt="'.$info.'" />';
 		}
 
 		return $output;
@@ -642,7 +642,7 @@ class JEMOutput {
 		jimport('joomla.filesystem.file');
 
 		if (JFile::exists(JPATH_BASE.'/media/com_jem/images/flags/'.$country.'.gif')) {
-			$countryimg = '<img src="'.JURI::base(true).'/media/com_jem/images/flags/'.$country.'.gif" alt="'.JText::_('COM_JEM_COUNTRY').': '.$country.'" width="16" height="11" />';
+			$countryimg = '<img src="'.JUri::base(true).'/media/com_jem/images/flags/'.$country.'.gif" alt="'.JText::_('COM_JEM_COUNTRY').': '.$country.'" width="16" height="11" />';
 
 			return $countryimg;
 		}

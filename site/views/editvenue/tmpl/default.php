@@ -368,7 +368,7 @@ defined('_JEXEC') or die;
 			if ($this->row->locimage) :
 				echo JEMOutput::flyer( $this->row, $this->limage, 'venue' );
 			else :
-				echo JHTML::_('image', 'media/com_jem/images/noimage.png', JText::_('COM_JEM_NO_IMAGE'));
+				echo JHtml::_('image', 'media/com_jem/images/noimage.png', JText::_('COM_JEM_NO_IMAGE'));
 			endif;
 			?>
 
@@ -453,7 +453,7 @@ defined('_JEXEC') or die;
 		<input type="hidden" name="curimage" value="<?php echo $this->row->locimage; ?>" />
 		<input type="hidden" name="version" value="<?php echo $this->row->version;?>" />
 		<input type="hidden" name="mode" value="<?php echo $this->mode; ?>" />
-		<?php echo JHTML::_( 'form.token' ); ?>
+		<?php echo JHtml::_( 'form.token' ); ?>
 		<input type="hidden" name="task" value="" />
 		<input type="hidden" name="view" value="editvenue">
 		</p>
@@ -466,5 +466,5 @@ defined('_JEXEC') or die;
 
 <?php
 //keep session alive while editing
-JHTML::_('behavior.keepalive');
+JHtml::_('behavior.keepalive');
 ?>

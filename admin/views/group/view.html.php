@@ -37,9 +37,9 @@ class JEMViewGroup extends JViewLegacy {
 			return false;
 		}
 
-		JHTML::_('behavior.modal', 'a.modal');
-		JHTML::_('behavior.tooltip');
-		JHTML::_('behavior.formvalidation');
+		JHtml::_('behavior.modal', 'a.modal');
+		JHtml::_('behavior.tooltip');
+		JHtml::_('behavior.formvalidation');
 
 		//initialise variables
 		$jemsettings = JEMHelper::config();
@@ -47,11 +47,11 @@ class JEMViewGroup extends JViewLegacy {
 		$this->settings	= JEMAdmin::config();
 		$task		= JRequest::getVar('task');
 		$this->task = $task;
-		$url 		= JURI::root();
+		$url 		= JUri::root();
 
 		// CSS Stylesheet
-		// $document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
-		$document->addScript(JURI::root().'media/com_jem/js/attachments.js');
+		// $document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
+		$document->addScript(JUri::root().'media/com_jem/js/attachments.js');
 
 		$document->addScript($url.'media/com_jem/js/recurrencebackend.js');
 		$document->addScript($url.'media/com_jem/js/unlimited.js');
@@ -65,8 +65,8 @@ class JEMViewGroup extends JViewLegacy {
 
 		//create selectlists
 		$lists = array();
-		$lists['maintainers']		= JHTML::_('select.genericlist', $maintainers, 'maintainers[]', 'class="inputbox" size="20" onDblClick="moveOptions(document.adminForm[\'maintainers[]\'], document.adminForm[\'available_users\'])" multiple="multiple" style="padding: 6px; width: 250px;"', 'value', 'text');
-		$lists['available_users']	= JHTML::_('select.genericlist', $available_users, 'available_users', 'class="inputbox" size="20" onDblClick="moveOptions(document.adminForm[\'available_users\'], document.adminForm[\'maintainers[]\'])" multiple="multiple" style="padding: 6px; width: 250px;"', 'value', 'text');
+		$lists['maintainers']		= JHtml::_('select.genericlist', $maintainers, 'maintainers[]', 'class="inputbox" size="20" onDblClick="moveOptions(document.adminForm[\'maintainers[]\'], document.adminForm[\'available_users\'])" multiple="multiple" style="padding: 6px; width: 250px;"', 'value', 'text');
+		$lists['available_users']	= JHtml::_('select.genericlist', $available_users, 'available_users', 'class="inputbox" size="20" onDblClick="moveOptions(document.adminForm[\'available_users\'], document.adminForm[\'maintainers[]\'])" multiple="multiple" style="padding: 6px; width: 250px;"', 'value', 'text');
 
 		// $access2 = JEMHelper::getAccesslevelOptions();
 		//$this->access		= $access2;

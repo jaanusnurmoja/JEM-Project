@@ -29,7 +29,7 @@ defined('_JEXEC') or die;
 
 	<div class="floattext">
 		<h2 class="jem cat<?php echo $row->id; ?>">
-			<?php echo JHTML::_('link', JRoute::_($row->linktarget), $this->escape($row->catname)); ?>
+			<?php echo JHtml::_('link', JRoute::_($row->linktarget), $this->escape($row->catname)); ?>
 		</h2>
 
 		<?php if ($this->jemsettings->discatheader) {  ?>
@@ -41,7 +41,7 @@ defined('_JEXEC') or die;
 	$imgattribs['width'] = $jemsettings->imagewidth;
 	$imgattribs['height'] = $jemsettings->imagehight;
 
-	echo  JHTML::image('media/com_jem/images/noimage.png', $row->catname);
+	echo  JHtml::image('media/com_jem/images/noimage.png', $row->catname);
 	}else{
 
 	$cimage = JEMImage::flyercreator($row->image, 'category');
@@ -50,12 +50,12 @@ defined('_JEXEC') or die;
 	}
 	?>
     <?php
-			// echo JHTML::_('link', JRoute::_($row->linktarget), $row->image);
+			// echo JHtml::_('link', JRoute::_($row->linktarget), $row->image);
 			?>
 			<p>
 				<?php
 				//		echo JText::_( 'COM_JEM_EVENTS' ).': ';
-				//	echo JHTML::_('link', JRoute::_($row->linktarget), $row->assignedevents ? $row->assignedevents : '0');
+				//	echo JHtml::_('link', JRoute::_($row->linktarget), $row->assignedevents ? $row->assignedevents : '0');
 				?>
 			</p>
 
@@ -66,7 +66,7 @@ defined('_JEXEC') or die;
 			<?php echo $row->catdescription ; ?>
 			<p>
 				<?php
-				echo JHTML::_('link', JRoute::_($row->linktarget), $row->linktext);
+				echo JHtml::_('link', JRoute::_($row->linktarget), $row->linktext);
 				?>
 				(
 				<?php echo $row->assignedevents ? $row->assignedevents : '0';?>

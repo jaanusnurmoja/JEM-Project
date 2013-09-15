@@ -30,7 +30,7 @@ defined('_JEXEC') or die;
 foreach($this->categories as $category) :
 ?>
 	<h2 class="jem cat<?php echo $category->id; ?>">
-		<?php echo JHTML::_('link', JRoute::_($category->linktarget), $this->escape($category->catname)); ?>
+		<?php echo JHtml::_('link', JRoute::_($category->linktarget), $this->escape($category->catname)); ?>
 	</h2>
 
 <div class="cat<?php echo $category->id; ?> floattext">
@@ -46,7 +46,7 @@ foreach($this->categories as $category) :
     $imgattribs['width'] = $jemsettings->imagewidth;
     $imgattribs['height'] = $jemsettings->imagehight;
 
-	echo  JHTML::image('media/com_jem/images/noimage.png', $category->catname, $imgattribs);
+	echo  JHtml::image('media/com_jem/images/noimage.png', $category->catname, $imgattribs);
 	}else{
 
 	$cimage = JEMImage::flyercreator($category->image, 'category');
@@ -61,7 +61,7 @@ foreach($this->categories as $category) :
 	<div class="catdescription"><?php echo $category->catdescription; ?>
 		<p>
 			<?php
-				echo JHTML::_('link', JRoute::_($category->linktarget), $category->linktext);
+				echo JHtml::_('link', JRoute::_($category->linktarget), $category->linktext);
 			?>
 			(<?php echo $category->assignedevents ? $category->assignedevents : '0';?>)
 		</p>

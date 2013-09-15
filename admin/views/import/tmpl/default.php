@@ -52,7 +52,7 @@ defined('_JEXEC') or die;
 				</td>
 				<td>
 					<?php
-					$html = JHTML::_('select.booleanlist', 'replace_events', 'class="inputbox"', 0);
+					$html = JHtml::_('select.booleanlist', 'replace_events', 'class="inputbox"', 0);
 					echo $html;
 					?>
 				</td>
@@ -98,7 +98,7 @@ defined('_JEXEC') or die;
 				</td>
 				<td>
 					<?php
-					$html = JHTML::_('select.booleanlist', 'replace_venues', 'class="inputbox"', 0);
+					$html = JHtml::_('select.booleanlist', 'replace_venues', 'class="inputbox"', 0);
 					echo $html;
 					?>
 				</td>
@@ -144,7 +144,7 @@ defined('_JEXEC') or die;
 				</td>
 				<td>
 					<?php
-					$html = JHTML::_('select.booleanlist', 'replace_categories', 'class="inputbox"', 0);
+					$html = JHtml::_('select.booleanlist', 'replace_categories', 'class="inputbox"', 0);
 					echo $html;
 					?>
 				</td>
@@ -190,7 +190,7 @@ defined('_JEXEC') or die;
 				</td>
 				<td>
 					<?php
-					$html = JHTML::_('select.booleanlist', 'replace_catevents', 'class="inputbox"', 0);
+					$html = JHtml::_('select.booleanlist', 'replace_catevents', 'class="inputbox"', 0);
 					echo $html;
 					?>
 				</td>

@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 
 //JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
-JHTML::_('behavior.keepalive');
+JHtml::_('behavior.keepalive');
 
 // Create shortcut to parameters.
 $params = $this->state->get('params');
@@ -215,7 +215,7 @@ $params = $params->toArray();
 				<input type="hidden" name="task" value="" />
 
 
-				<?php echo JHTML::_( 'form.token' ); ?>
+				<?php echo JHtml::_( 'form.token' ); ?>
 
 
 		<div class="clr"></div>

@@ -35,7 +35,7 @@ class JEMViewUserElement extends JViewLegacy {
 
 		//prepare the document
 		$document->setTitle(JText::_('COM_JEM_SELECTATTENDEE'));
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		//Get data from the model
 		$users			= $this->get('Data');

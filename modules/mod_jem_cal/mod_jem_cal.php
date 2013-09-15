@@ -22,7 +22,7 @@ require_once(JPATH_SITE.'/components/com_jem/helpers/helper.php');
 
 
 // include mootools tooltip
-JHTML::_('behavior.tooltip');
+JHtml::_('behavior.tooltip');
 
 // Parameters
 $app = JFactory::getApplication();
@@ -66,7 +66,7 @@ if ($Remember == 1) // Remember which month / year is selected. Don't jump back 
 }
 
 //Requested URL
-$uri    = JURI::getInstance();
+$uri    = JUri::getInstance();
 $myurl = $uri->toString(array('query'));
 
 //08/09/09 - Added Fix for sh404sef

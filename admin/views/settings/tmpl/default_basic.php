@@ -25,9 +25,9 @@ defined('_JEXEC') or die;
 						<td valign="top">
 							<?php
 								$showdets = array();
-								$showdets[] = JHTML::_('select.option', '0', JText::_( 'COM_JEM_EVENT_OFF' ) );
-								$showdets[] = JHTML::_('select.option', '1', JText::_( 'COM_JEM_LINK_ON_TITLE' ) );
-								$showdet = JHTML::_('select.genericlist', $showdets, 'showdetails', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->showdetails );
+								$showdets[] = JHtml::_('select.option', '0', JText::_( 'COM_JEM_EVENT_OFF' ) );
+								$showdets[] = JHtml::_('select.option', '1', JText::_( 'COM_JEM_LINK_ON_TITLE' ) );
+								$showdet = JHtml::_('select.genericlist', $showdets, 'showdetails', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->showdetails );
 								echo $showdet;
 							?>
 						</td>
@@ -83,7 +83,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-								echo JHTML::_('select.booleanlist', 'storeip', 'class="inputbox"', $this->jemsettings->storeip );
+								echo JHtml::_('select.booleanlist', 'storeip', 'class="inputbox"', $this->jemsettings->storeip );
 							?>
 						</td>
 					</tr>
@@ -229,7 +229,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-							$html = JHTML::_('select.booleanlist', 'lightbox', 'class="inputbox"', $this->jemsettings->lightbox );
+							$html = JHtml::_('select.booleanlist', 'lightbox', 'class="inputbox"', $this->jemsettings->lightbox );
 							echo $html;
 							?>
 						</td>

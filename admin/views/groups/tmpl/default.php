@@ -71,7 +71,7 @@ JHtml::_('formbehavior.chosen', 'select');
 			<tr>
 			<th width="5" class="center"><?php echo JText::_( 'COM_JEM_NUM' ); ?></th>
 			<th width="5" class="center"><input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" /></th>
-			<th width="30%" class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_GROUP_NAME', 'name', $listDirn, $listOrder ); ?></th>
+			<th width="30%" class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_GROUP_NAME', 'name', $listDirn, $listOrder ); ?></th>
 			<th><?php echo JText::_( 'COM_JEM_DESCRIPTION' ); ?></th>
 			</tr>
 		</thead>

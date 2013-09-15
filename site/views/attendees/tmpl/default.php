@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 
-JHTML::_('behavior.tooltip');
+JHtml::_('behavior.tooltip');
 $colspan = ($this->event->waitinglist ? 10 : 9);
 
 $detaillink = JRoute::_(JEMHelperRoute::getEventRoute($this->event->id.':'.$this->event->alias));
@@ -99,16 +99,16 @@ $detaillink = JRoute::_(JEMHelperRoute::getEventRoute($this->event->id.':'.$this
 			<tr>
 				<th width="1%" class="center"><?php echo JText::_( 'COM_JEM_NUM' ); ?></th>
 				<th width="1%" class="center"><input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" /></th>
-				<th class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_USERNAME', 'u.username', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_USERNAME', 'u.username', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 
 				<?php if ($this->enableemailaddress == 1) {?>
 				<th class="title"><?php echo JText::_( 'COM_JEM_EMAIL' ); ?></th>
 				<?php } ?>
 
 
-				<th class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_REGDATE', 'r.uregdate', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_REGDATE', 'r.uregdate', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 				<?php if ($this->event->waitinglist): ?>
-				<th class="center"><?php echo JHTML::_('grid.sort', 'COM_JEM_HEADER_WAITINGLIST_STATUS', 'r.waiting', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="center"><?php echo JHtml::_('grid.sort', 'COM_JEM_HEADER_WAITINGLIST_STATUS', 'r.waiting', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 				<?php endif;?>
 				<th class="center"><?php echo JText::_( 'COM_JEM_REMOVE_USER' ); ?></th>
 			</tr>
@@ -132,26 +132,26 @@ $detaillink = JRoute::_(JEMHelperRoute::getEventRoute($this->event->id.':'.$this
 				<td><a href="mailto:<?php echo $row->email; ?>"><?php echo $row->email; ?></a></td>
 				<?php } ?>
 
-				<td><?php echo JHTML::Date( $row->uregdate, JText::_( 'DATE_FORMAT_LC2' ) ); ?></td>
+				<td><?php echo JHtml::Date( $row->uregdate, JText::_( 'DATE_FORMAT_LC2' ) ); ?></td>
 				<?php if ($this->event->waitinglist): ?>
 				<td class="hasTip center" title="<?php echo ($row->waiting ? JText::_('COM_JEM_ON_WAITINGLIST') : JText::_('COM_JEM_ATTENDEES_ATTENDING')).'::'; ?>">
 					<?php if ($row->waiting):?>
-						<?php echo JHTML::link( JRoute::_('index.php?option=com_jem&view=attendees&amp;task=attendeetoggle&id='.$row->id),
-						                        JHTML::image('media/com_jem/images/publish_y.png', JText::_('COM_JEM_ON_WAITINGLIST'))); ?>
+						<?php echo JHtml::link( JRoute::_('index.php?option=com_jem&view=attendees&amp;task=attendeetoggle&id='.$row->id),
+						                        JHtml::image('media/com_jem/images/publish_y.png', JText::_('COM_JEM_ON_WAITINGLIST'))); ?>
 					<?php else: ?>
-						<?php echo JHTML::link( JRoute::_('index.php?option=com_jem&view=attendees&amp;task=attendeetoggle&id='.$row->id),
-						                        JHTML::image('media/com_jem/images/tick.png', JText::_('COM_JEM_ATTENDEES_ATTENDING'))); ?>
+						<?php echo JHtml::link( JRoute::_('index.php?option=com_jem&view=attendees&amp;task=attendeetoggle&id='.$row->id),
+						                        JHtml::image('media/com_jem/images/tick.png', JText::_('COM_JEM_ATTENDEES_ATTENDING'))); ?>
 					<?php endif;?>
 				</td>
 				<?php endif;?>
 				<td class="center"><a href="javascript: void(0);" onclick="return listItemTask('cb<?php echo $i;?>','attendeeremove')"><?php echo
-						                        JHTML::image('media/com_jem/images/publish_x.png', JText::_('COM_JEM_ATTENDEES_DELETE')); ?></a></td>
+						                        JHtml::image('media/com_jem/images/publish_x.png', JText::_('COM_JEM_ATTENDEES_DELETE')); ?></a></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
 
 	</table>
-		<?php echo JHTML::_( 'form.token' ); ?>
+		<?php echo JHtml::_( 'form.token' ); ?>
 		<input type="hidden" name="option" value="com_jem" />
 		<input type="hidden" name="boxchecked" value="0" />
 		<input type="hidden" name="task" value="" />

@@ -32,7 +32,7 @@ class JEMViewImport extends JViewLegacy {
 		$cateventsfields = $this->get('CateventsFields');
 
 		//add css and submenu to document
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		//assign vars to the template
 		$this->eventfields 		= $eventfields;

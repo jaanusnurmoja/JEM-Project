@@ -67,7 +67,7 @@ class JEMController extends JControllerLegacy
 
 			$this->setRedirect(JRoute::_(JEMHelperRoute::getRoute($id), false));
 		} else {
-			$link = JRequest::getString('referer', JURI::base(), 'post');
+			$link = JRequest::getString('referer', JUri::base(), 'post');
 			$this->setRedirect($link);
 		}
 	}
@@ -112,7 +112,7 @@ class JEMController extends JControllerLegacy
 	function unpublishtask()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 
 		$app = JFactory::getApplication();
@@ -149,7 +149,7 @@ class JEMController extends JControllerLegacy
 	{
 
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$app = JFactory::getApplication();
 		$menuitem = $app->getMenu()->getActive()->id;
@@ -187,7 +187,7 @@ class JEMController extends JControllerLegacy
 	{
 
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$app = JFactory::getApplication();
 		$menuitem = $app->getMenu()->getActive()->id;
@@ -224,7 +224,7 @@ class JEMController extends JControllerLegacy
 	function trash()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$app = JFactory::getApplication();
 		$menuitem = $app->getMenu()->getActive()->id;
@@ -282,7 +282,7 @@ class JEMController extends JControllerLegacy
 
 			$link = JRoute::_(JEMHelperRoute::getVenueRoute($id), false);
 		} else {
-			$link = JRequest::getString('referer', JURI::base(), 'post');
+			$link = JRequest::getString('referer', JUri::base(), 'post');
 		}
 
 		if ($mode == 'ajax')
@@ -306,7 +306,7 @@ class JEMController extends JControllerLegacy
 	function savevenue()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		//get image
 		$file 		= JRequest::getVar('userfile', '', 'files', 'array');
@@ -379,7 +379,7 @@ class JEMController extends JControllerLegacy
 	function saveevent()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		//get image
 		$file 		= JRequest::getVar('userfile', '', 'files', 'array');
@@ -437,7 +437,7 @@ class JEMController extends JControllerLegacy
 	function userregister()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$id 	= JRequest::getInt('rdid', 0, 'post');
 
@@ -474,7 +474,7 @@ class JEMController extends JControllerLegacy
 	function delreguser()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$id 	= JRequest::getInt('rdid', 0, 'post');
 
@@ -585,7 +585,7 @@ class JEMController extends JControllerLegacy
 			{
 			$col[] = str_replace("\"", "\"\"", $data->email);
 			}
-			$col[] = str_replace("\"", "\"\"", JHTML::Date($data->uregdate, JText::_('DATE_FORMAT_LC2')));
+			$col[] = str_replace("\"", "\"\"", JHtml::Date($data->uregdate, JText::_('DATE_FORMAT_LC2')));
 
 			for($j = 0; $j < count($col); $j++)
 			{

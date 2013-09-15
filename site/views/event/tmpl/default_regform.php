@@ -38,7 +38,7 @@ if ($this->row->maxplaces && count($this->registers) >= $this->row->maxplaces &&
 </p>
 <p>
 	<input type="hidden" name="rdid" value="<?php echo $this->row->did; ?>" />
-	<?php echo JHTML::_( 'form.token' ); ?>
+	<?php echo JHtml::_( 'form.token' ); ?>
 	<input type="hidden" name="task" value="userregister" />
 </p>
 </form>

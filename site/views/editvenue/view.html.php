@@ -51,17 +51,17 @@ class JEMViewEditvenue extends JViewLegacy
 		JFilterOutput::objectHTMLSafe( $row, ENT_QUOTES, 'locdescription' );
 
 		JHtml::_('behavior.framework');
-		JHTML::_('behavior.formvalidation');
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.formvalidation');
+		JHtml::_('behavior.tooltip');
 
 		//add css file
 		$doc->addStyleSheet($this->baseurl.'/media/com_jem/css/jem.css');
-		$doc->addStyleSheet(JURI::root().'media/com_jem/css/geostyle.css');
+		$doc->addStyleSheet(JUri::root().'media/com_jem/css/geostyle.css');
 		$doc->addCustomTag('<!--[if IE]><style type="text/css">.floattext{zoom:1;}, * html #jem dd { height: 1%; }</style><![endif]-->');
 
 		$doc->addScript('media/com_jem/js/attachmentsVenue.js' );
 		//$doc->addScript('http://api.mygeoposition.com/api/geopicker/api.js');
-		//$doc->addScript(JURI::root().'media/com_jem/js/geodata.js' );
+		//$doc->addScript(JUri::root().'media/com_jem/js/geodata.js' );
 		$doc->addScript('http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places');
 
 
@@ -70,7 +70,7 @@ class JEMViewEditvenue extends JViewLegacy
 
 		// JQuery scripts
 		$doc->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
-		$doc->addScript(JURI::root().'media/com_jem/js/jquery.geocomplete.js');
+		$doc->addScript(JUri::root().'media/com_jem/js/jquery.geocomplete.js');
 
 		// Get the menu object of the active menu item
 		$menu		= $app->getMenu();
@@ -99,14 +99,14 @@ class JEMViewEditvenue extends JViewLegacy
 		$limage = JEMImage::flyercreator($row->locimage, 'venue');
 
 		//Set the info image
-		$infoimage = JHTML::_('image', 'media/com_jem/images/icon-16-hint.png', JText::_( 'COM_JEM_NOTES' ) );
+		$infoimage = JHtml::_('image', 'media/com_jem/images/icon-16-hint.png', JText::_( 'COM_JEM_NOTES' ) );
 
 		// country list
 		$countries = array();
-		$countries[] = JHTML::_('select.option', '', JText::_('COM_JEM_SELECT_COUNTRY'));
+		$countries[] = JHtml::_('select.option', '', JText::_('COM_JEM_SELECT_COUNTRY'));
 		$countries = array_merge($countries, JEMHelper::getCountryOptions());
 		$selectedCountry = ($row->id) ? $row->country : $jemsettings->defaultCountry;
-		$lists['countries'] = JHTML::_('select.genericlist', $countries, 'country', 'class="inputbox"', 'value', 'text', $selectedCountry);
+		$lists['countries'] = JHtml::_('select.genericlist', $countries, 'country', 'class="inputbox"', 'value', 'text', $selectedCountry);
 		unset($countries);
 
 		$this->row				= $row;

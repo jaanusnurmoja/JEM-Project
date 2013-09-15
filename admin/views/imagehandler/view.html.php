@@ -59,7 +59,7 @@ class JEMViewImagehandler extends JViewLegacy {
 		JResponse::allowCache(false);
 
 		//add css
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		//get images
 		$images = $this->get('images');
@@ -107,7 +107,7 @@ class JEMViewImagehandler extends JViewLegacy {
 		$task 			= JRequest::getVar('task');
 
 		//add css
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		jimport('joomla.client.helper');
 		$ftp = JClientHelper::setCredentialsFromRequest('ftp');

@@ -25,7 +25,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-								echo JHTML::_('select.booleanlist', 'showtimedetails', 'class="inputbox"', $this->jemsettings->showtimedetails );
+								echo JHtml::_('select.booleanlist', 'showtimedetails', 'class="inputbox"', $this->jemsettings->showtimedetails );
 							?>
 						</td>
 					</tr>
@@ -37,7 +37,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-								echo JHTML::_('select.booleanlist', 'showevdescription', 'class="inputbox"', $this->jemsettings->showevdescription );
+								echo JHtml::_('select.booleanlist', 'showevdescription', 'class="inputbox"', $this->jemsettings->showevdescription );
 							?>
 						</td>
 					</tr>
@@ -49,7 +49,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-								echo JHTML::_('select.booleanlist', 'showdetailstitle', 'class="inputbox"', $this->jemsettings->showdetailstitle );
+								echo JHtml::_('select.booleanlist', 'showdetailstitle', 'class="inputbox"', $this->jemsettings->showdetailstitle );
 							?>
 						</td>
 					</tr>
@@ -69,7 +69,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-								echo JHTML::_('select.booleanlist', 'showlocdescription', 'class="inputbox"', $this->jemsettings->showlocdescription );
+								echo JHtml::_('select.booleanlist', 'showlocdescription', 'class="inputbox"', $this->jemsettings->showlocdescription );
 							?>
 						</td>
 					</tr>
@@ -81,7 +81,7 @@ defined('_JEXEC') or die;
 						</td>
 						<td valign="top">
 							<?php
-								echo JHTML::_('select.booleanlist', 'showdetailsadress', 'class="inputbox"', $this->jemsettings->showdetailsadress );
+								echo JHtml::_('select.booleanlist', 'showdetailsadress', 'class="inputbox"', $this->jemsettings->showdetailsadress );
 							?>
 						</td>
 					</tr>
@@ -94,10 +94,10 @@ defined('_JEXEC') or die;
 						<td valign="top">
 							<?php
 							$showlink = array();
-							$showlink[] = JHTML::_('select.option', '0', JText::_( 'COM_JEM_NO_LINK' ) );
-							$showlink[] = JHTML::_('select.option', '1', JText::_( 'COM_JEM_LINK_TO_URL' ) );
-							$showlink[] = JHTML::_('select.option', '2', JText::_( 'COM_JEM_LINK_TO_VENUEVIEW' ) );
-							$show = JHTML::_('select.genericlist', $showlink, 'showdetlinkvenue', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->showdetlinkvenue );
+							$showlink[] = JHtml::_('select.option', '0', JText::_( 'COM_JEM_NO_LINK' ) );
+							$showlink[] = JHtml::_('select.option', '1', JText::_( 'COM_JEM_LINK_TO_URL' ) );
+							$showlink[] = JHtml::_('select.option', '2', JText::_( 'COM_JEM_LINK_TO_VENUEVIEW' ) );
+							$show = JHtml::_('select.genericlist', $showlink, 'showdetlinkvenue', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->showdetlinkvenue );
 							echo $show;
 							?>
 						</td>
@@ -164,9 +164,9 @@ defined('_JEXEC') or die;
 						<td valign="top">
 							<?php
 							$regname = array();
-							$regname[] = JHTML::_('select.option', '0', JText::_( 'COM_JEM_USERNAME' ) );
-							$regname[] = JHTML::_('select.option', '1', JText::_( 'COM_JEM_NAME' ) );
-							$nametype = JHTML::_('select.genericlist', $regname, 'regname', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->regname );
+							$regname[] = JHtml::_('select.option', '0', JText::_( 'COM_JEM_USERNAME' ) );
+							$regname[] = JHtml::_('select.option', '1', JText::_( 'COM_JEM_NAME' ) );
+							$nametype = JHtml::_('select.genericlist', $regname, 'regname', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->regname );
 							echo $nametype;
 							?>
 						</td>
@@ -199,9 +199,9 @@ defined('_JEXEC') or die;
 						<td valign="top">
 							<?php
 							$comoption = array();
-							$comoption[] = JHTML::_('select.option', '0', JText::_( 'COM_JEM_LINK_PROFILE' ) );
-							$comoption[] = JHTML::_('select.option', '1', JText::_( 'COM_JEM_LINK_AVATAR' ) );
-							$comoptions = JHTML::_('select.genericlist', $comoption, 'comunoption', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->comunoption );
+							$comoption[] = JHtml::_('select.option', '0', JText::_( 'COM_JEM_LINK_PROFILE' ) );
+							$comoption[] = JHtml::_('select.option', '1', JText::_( 'COM_JEM_LINK_AVATAR' ) );
+							$comoptions = JHtml::_('select.genericlist', $comoption, 'comunoption', 'size="1" class="inputbox"', 'value', 'text', $this->jemsettings->comunoption );
 							echo $comoptions;
 							?>
 						</td>

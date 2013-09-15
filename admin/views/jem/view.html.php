@@ -33,7 +33,7 @@ class JEMViewJEM extends JViewLegacy {
 		$category	 =  $this->get( 'Categoriesdata' );
 
 		//add css and submenu to document
-		$document->addStyleSheet(JURI::root(true).'/media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root(true).'/media/com_jem/css/backend.css');
 
 	
 		//assign vars to the template
@@ -92,7 +92,7 @@ class JEMViewJEM extends JViewLegacy {
 			<div class="icon">
 				<?php
 				if ($modal == 1) {
-					JHTML::_('behavior.modal');
+					JHtml::_('behavior.modal');
 				?>
 					<a href="<?php echo $link.'&amp;tmpl=component'; ?>" style="cursor:pointer" class="modal" rel="{handler: 'iframe', size: {x: 650, y: 400}}">
 				<?php
@@ -102,7 +102,7 @@ class JEMViewJEM extends JViewLegacy {
 				<?php
 				}
 
-					echo JHTML::_('image', 'media/com_jem/images/'.$image, $text );
+					echo JHtml::_('image', 'media/com_jem/images/'.$image, $text );
 				?>
 					<span><?php echo $text; ?></span>
 				</a>

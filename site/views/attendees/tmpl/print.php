@@ -16,7 +16,7 @@ defined('_JEXEC') or die; ?>
 		</font></td>
 		<td><div class="button2-left">
 				<div class="blank">
-					<a href="#" onclick="window.print();return false;"><?php echo JHTML::_('image','system/printButton.png', JText::_('JGLOBAL_PRINT'), JText::_('JGLOBAL_PRINT'), true); ?>
+					<a href="#" onclick="window.print();return false;"><?php echo JHtml::_('image','system/printButton.png', JText::_('JGLOBAL_PRINT'), JText::_('JGLOBAL_PRINT'), true); ?>
 					</a>
 				</div>
 			</div></td>
@@ -56,7 +56,7 @@ defined('_JEXEC') or die; ?>
 				?>
 		<tr class="<?php echo "row$k"; ?>">
 			<td><?php echo $row->username; ?></td>
-			<td><?php echo JHTML::Date( $row->uregdate, JText::_( 'DATE_FORMAT_LC2' ) ); ?>
+			<td><?php echo JHtml::Date( $row->uregdate, JText::_( 'DATE_FORMAT_LC2' ) ); ?>
 			
 			<?php if ($this->enableemailaddress == 1) {?>
 			<td><?php echo $row->email; ?></td>

@@ -536,7 +536,7 @@ class JEMHelperCountries
 		$options = array();
 		foreach ($countries as $country) {
 			$name = explode(',', $country['name']);
-			$options[] = JHTML::_('select.option', $country['iso2'], JText::_($name[0]), $value_tag, $text_tag);
+			$options[] = JHtml::_('select.option', $country['iso2'], JText::_($name[0]), $value_tag, $text_tag);
 		}
 		return $options;
 	}
@@ -1078,7 +1078,7 @@ class JEMHelperCountries
 			$iso_code = self::convertIso3to2($iso_code);
 		}
 		if ($iso_code) {
-			$path = JURI::root().'media/com_jem/images/flags/'.strtolower($iso_code).'.gif';
+			$path = JUri::root().'media/com_jem/images/flags/'.strtolower($iso_code).'.gif';
 			return $path;
 		}
 		else

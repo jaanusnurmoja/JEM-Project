@@ -38,9 +38,9 @@ class JEMViewVenue extends JViewLegacy {
 		}
 
 		JHtml::_('behavior.framework');
-		JHTML::_('behavior.modal', 'a.modal');
-		//JHTML::_('behavior.tooltip');
-		//JHTML::_('behavior.formvalidation');
+		JHtml::_('behavior.modal', 'a.modal');
+		//JHtml::_('behavior.tooltip');
+		//JHtml::_('behavior.formvalidation');
 
 		//initialise variables
 		$document	= JFactory::getDocument();
@@ -49,10 +49,10 @@ class JEMViewVenue extends JViewLegacy {
 		$this->task 		= $task;
 
 		// CSS Stylesheet
-		//$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/geostyle.css');
-		$document->addScript(JURI::root().'media/com_jem/js/attachmentsVenue.js');
-		//$document->addScript(JURI::root().'media/com_jem/js/geodata.js');
+		//$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/geostyle.css');
+		$document->addScript(JUri::root().'media/com_jem/js/attachmentsVenue.js');
+		//$document->addScript(JUri::root().'media/com_jem/js/geodata.js');
 		$document->addScript('http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places');
 
 		// Noconflict
@@ -60,7 +60,7 @@ class JEMViewVenue extends JViewLegacy {
 
 		// JQuery scripts
 		$document->addScript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js');
-		$document->addScript(JURI::root().'media/com_jem/js/jquery.geocomplete.js');
+		$document->addScript(JUri::root().'media/com_jem/js/jquery.geocomplete.js');
 
 		$access2 = JEMHelper::getAccesslevelOptions();
 		$this->access		= $access2;

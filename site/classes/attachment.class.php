@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
  *
  * @package JEM
  */
-class JEMAttachment extends JObject {
+class JEMAttachment {
 	/**
 	 * upload files for the specified object
 	 *

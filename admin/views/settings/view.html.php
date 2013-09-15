@@ -30,7 +30,7 @@ class JEMViewSettings extends JViewLegacy {
 
 		$jemsettings = $this->get('Data');
 		$document 	= JFactory::getDocument();
-		//$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		//$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		$style = '
 		    div.current fieldset.radio input {
@@ -43,7 +43,7 @@ class JEMViewSettings extends JViewLegacy {
 		 * - Toolbar icons will be moved due to the background-position (icons)
 		 */
 
-		// $document->addStyleSheet(JURI::root().'media/com_jem/bootstrap/css/bootstrap.css'); */
+		// $document->addStyleSheet(JUri::root().'media/com_jem/bootstrap/css/bootstrap.css'); */
 
 		// Check for model errors.
 		if ($errors = $this->get('Errors')) {
@@ -61,11 +61,11 @@ class JEMViewSettings extends JViewLegacy {
 			JError::raiseError(500, implode("\n", $errors));
 			return false;
 		}
-		JHTML::_('behavior.modal', 'a.modal');
-		//JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.modal', 'a.modal');
+		//JHtml::_('behavior.tooltip');
 		JHtml::_('bootstrap.tooltip');
-		JHTML::_('behavior.formvalidation');
-		JHTML::_('behavior.framework');
+		JHtml::_('behavior.formvalidation');
+		JHtml::_('behavior.framework');
 
 		$app = JFactory::getApplication();
 
@@ -76,7 +76,7 @@ class JEMViewSettings extends JViewLegacy {
 		}
 
 		//add css, js and submenu to document
-		//$document->addScript(JURI::root().'media/com_jem/js/settings.js');
+		//$document->addScript(JUri::root().'media/com_jem/js/settings.js');
 
 		$this->assignRef('form',	$form);
 		$this->assignRef('data',	$data);
@@ -111,7 +111,7 @@ class JEMViewSettings extends JViewLegacy {
 
 	function WarningIcon()
 	{
-		$url = JURI::root();
+		$url = JUri::root();
 		$tip = '<img src="'.$url.'media/system/images/tooltip.png" border="0"  alt="" />';
 
 		return $tip;

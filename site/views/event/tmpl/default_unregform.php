@@ -40,7 +40,7 @@ else:
 
 		<p></p>
 			<input type="hidden" name="rdid" value="<?php echo $this->row->did; ?>" />
-			<?php echo JHTML::_( 'form.token' ); ?>
+			<?php echo JHtml::_( 'form.token' ); ?>
 			<input type="hidden" name="task" value="delreguser" />
 	</form>
 	<?php

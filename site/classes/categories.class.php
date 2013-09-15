@@ -219,12 +219,12 @@ class JEMCategories
 		$catlist = array();
 
 		if ($top) {
-			$catlist[] = JHTML::_('select.option', '0', JText::_('COM_JEM_TOPLEVEL'));
+			$catlist[] = JHtml::_('select.option', '0', JText::_('COM_JEM_TOPLEVEL'));
 		}
 
 		$catlist = array_merge($catlist, JEMCategories::getcatselectoptions($list));
 
-		return JHTML::_('select.genericlist', $catlist, $name, $class, 'value', 'text', $selected);
+		return JHtml::_('select.genericlist', $catlist, $name, $class, 'value', 'text', $selected);
 	}
 
 	/**
@@ -244,7 +244,7 @@ class JEMCategories
 		// if (is_array($list))
 		// {
 		foreach ($list as $item) {
-			$catlist[] = JHTML::_('select.option', $item->id, $item->treename);
+			$catlist[] = JHtml::_('select.option', $item->id, $item->treename);
 		}
 		// }
 

@@ -41,7 +41,7 @@ defined('_JEXEC') or die;
 		JHtml::_('behavior.framework');
 
 		//add css and submenu to document
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		$style = '
 		thead {
@@ -52,7 +52,7 @@ defined('_JEXEC') or die;
 		$document->addStyleDeclaration($style);
 
 		//add style to description of the tooltip (hastip)
-		//JHTML::_('behavior.tooltip');
+		//JHtml::_('behavior.tooltip');
 
 		//assign data to template
 		//$this->lists		= $lists;

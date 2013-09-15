@@ -59,12 +59,12 @@ foreach ($this->registers as $register) :
 		if ($this->jemsettings->comunoption == 1) :
 			//User has avatar
 			if(!empty($register->avatar)) :
-				$useravatar = JHTML::_('image.site', 'tn'.$register->avatar, 'images/comprofiler/', NULL, NULL, $register->name);
+				$useravatar = JHtml::_('image.site', 'tn'.$register->avatar, 'images/comprofiler/', NULL, NULL, $register->name);
 				echo "<li><a href='".JRoute::_('index.php?option=com_comprofiler&task=userProfile&user='.$register->uid )."'>".$useravatar."<span class='username'>".$register->name."</span></a></li>";
 
 			//User has no avatar
 			else :
-				$nouseravatar = JHTML::_('image.site', 'tnnophoto.jpg', 'components/com_comprofiler/images/english/', NULL, NULL, $register->name);
+				$nouseravatar = JHtml::_('image.site', 'tnnophoto.jpg', 'components/com_comprofiler/images/english/', NULL, NULL, $register->name);
 				echo "<li><a href='".JRoute::_( 'index.php?option=com_comprofiler&task=userProfile&user='.$register->uid )."'>".$nouseravatar."<span class='username'>".$register->name."</span></a></li>";
 			endif;
 		endif;
