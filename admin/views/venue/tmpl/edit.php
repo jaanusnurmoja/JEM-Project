@@ -201,7 +201,6 @@ function test()
 	action="<?php echo JRoute::_('index.php?option=com_jem&layout=edit&id='.(int) $this->item->id); ?>"
 	class="form-validate" method="post" name="adminForm" id="venue-form" enctype="multipart/form-data">
 
-
 	<!-- Begin Venue -->
 	<div class="span8 form-horizontal">
 

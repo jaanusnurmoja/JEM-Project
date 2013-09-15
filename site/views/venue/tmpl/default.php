@@ -117,6 +117,7 @@ defined('_JEXEC') or die;
 	<!--pagination-->
 	<div class="pagination">
 		<?php echo $this->pagination->getPagesLinks(); ?>
+		<p></p>
 	</div>
 
 	<?php echo JEMOutput::icalbutton($this->venue->id, 'venue'); ?>
