@@ -34,7 +34,7 @@ class JEMViewCleanup extends JViewLegacy {
 		}
 
 		//add css and submenu to document
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		// add toolbar
 		$this->addToolbar();

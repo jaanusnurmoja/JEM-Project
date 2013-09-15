@@ -161,7 +161,7 @@ class jem_venues extends JTable
 			return false;
 		}
 
-		/** check for existing name */
+		/* check for existing name */
 		/*
 		$query = 'SELECT id FROM #__jem_venues WHERE venue = '.$this->_db->Quote($this->venue);
 		$this->_db->setQuery($query);
@@ -217,7 +217,7 @@ class jem_venues extends JTable
 				continue;
 			}
 			$fields[] = $this->_db->quoteName($k);
-			$values[] = $this->_db->isQuoted($k) ? $this->_db->quote($v) : (int) $v;
+			$values[] = $this->_db->quoteName($k) ? $this->_db->quote($v) : (int) $v;
 		}
 		$this->_db->setQuery(sprintf($fmtsql, implode(",", $fields), implode(",", $values)));
 		if (!$this->_db->query()) {

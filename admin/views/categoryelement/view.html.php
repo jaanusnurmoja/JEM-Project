@@ -26,8 +26,8 @@ class JEMViewCategoryelement extends JViewLegacy {
 		$db			= JFactory::getDBO();
 		$app 		= JFactory::getApplication();
 
-		JHTML::_('behavior.tooltip');
-		JHTML::_('behavior.modal');
+		JHtml::_('behavior.tooltip');
+		JHtml::_('behavior.modal');
 
 		//get vars
 		$filter_order		= $app->getUserStateFromRequest('com_jem.categoryelement.filter_order', 'filter_order', 'c.ordering', 'cmd');
@@ -38,14 +38,14 @@ class JEMViewCategoryelement extends JViewLegacy {
 
 		//prepare document
 		$document->setTitle(JText::_('COM_JEM_SELECT_CATEGORY'));;
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		// Get data from the model
 		$rows = $this->get('Data');
 		$pagination = $this->get('Pagination');
 
 		//publish unpublished filter
-		$lists['state'] = JHTML::_('grid.state', $filter_state);
+		$lists['state'] = JHtml::_('grid.state', $filter_state);
 
 		// table ordering
 		$lists['order_Dir'] = $filter_order_Dir;

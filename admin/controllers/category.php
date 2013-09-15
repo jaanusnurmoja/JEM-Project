@@ -46,7 +46,7 @@ class JEMControllerCategory extends JEMController
 	function save()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$task = JRequest::getVar('task');
 
@@ -235,7 +235,7 @@ class JEMControllerCategory extends JEMController
 	function cancel()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$session 	= JFactory::getSession();
 		$session->clear('categoryform', 'com_jem');
@@ -257,7 +257,7 @@ class JEMControllerCategory extends JEMController
 	function access()
 	{
 		// Check for request forgeries
-		JRequest::checkToken() or jexit('Invalid Token');
+		JSession::checkToken() or jexit('Invalid Token');
 
 		$cid		= JRequest::getVar('cid', array(0), 'post', 'array');
 		$id			= (int)$cid[0];

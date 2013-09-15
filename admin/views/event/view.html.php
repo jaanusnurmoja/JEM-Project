@@ -36,9 +36,9 @@ class JEMViewEvent extends JViewLegacy {
 			JError::raiseError(500, implode("\n", $errors));
 			return false;
 		}
-		JHTML::_('behavior.modal', 'a.modal');
-		JHTML::_('behavior.tooltip');
-		JHTML::_('behavior.formvalidation');
+		JHtml::_('behavior.modal', 'a.modal');
+		JHtml::_('behavior.tooltip');
+		JHtml::_('behavior.formvalidation');
 
 		//initialise variables
 		$jemsettings = JEMHelper::config();
@@ -46,7 +46,7 @@ class JEMViewEvent extends JViewLegacy {
 		$this->settings	= JEMAdmin::config();
 		$task		= JRequest::getVar('task');
 		$this->task 		= $task;
-		$url 		= JURI::root();
+		$url 		= JUri::root();
 
 		$categories = JEMCategories::getCategoriesTree(1);
 		$selectedcats = $this->get('Catsselected');
@@ -55,8 +55,8 @@ class JEMViewEvent extends JViewLegacy {
 		$Lists['category'] = JEMCategories::buildcatselect($categories, 'cid[]', $selectedcats, 0, 'multiple="multiple" size="8"');
 
 		// CSS Stylesheet
-		// $document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
-		$document->addScript(JURI::root().'media/com_jem/js/attachments.js');
+		// $document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
+		$document->addScript(JUri::root().'media/com_jem/js/attachments.js');
 
 		$document->addScript($url.'media/com_jem/js/recurrencebackend.js');
 		$document->addScript($url.'media/com_jem/js/unlimited.js');

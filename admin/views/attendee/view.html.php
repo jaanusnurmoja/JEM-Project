@@ -27,13 +27,13 @@ class JEMViewAttendee extends JViewLegacy {
 // 		$app 		= JFactory::getApplication();
 
 		// Load the form validation behavior
-		JHTML::_('behavior.formvalidation');
+		JHtml::_('behavior.formvalidation');
 
 		//get vars
 		$event_id = JRequest::getInt('id');
 
 		//add css to document
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 		//Get data from the model
 // 		$model		= $this->getModel();
@@ -49,7 +49,7 @@ class JEMViewAttendee extends JViewLegacy {
 
 		//build selectlists
 		$lists = array();
-		$lists['users'] = JHTML::_('list.users', 'uid', $row->uid, false, NULL, 'name', 0);
+		$lists['users'] = JHtml::_('list.users', 'uid', $row->uid, false, NULL, 'name', 0);
 
 		//assign data to template
 		$this->lists 	= $lists;

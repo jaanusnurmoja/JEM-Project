@@ -26,7 +26,7 @@ class JEMViewCategories extends JViewLegacy {
 		$db  		= JFactory::getDBO();
 		$document	= JFactory::getDocument();
 
-		JHTML::_('behavior.tooltip');
+		JHtml::_('behavior.tooltip');
 
 		//get vars
 		$filter_order		= $app->getUserStateFromRequest('com_jem.categories.filter_order',		'filter_order', 	'c.catname', 'cmd');
@@ -36,7 +36,7 @@ class JEMViewCategories extends JViewLegacy {
 		$search 			= $db->escape(trim(JString::strtolower($search)));
 
 		//add css and submenu to document
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
 
 
 		$style = '

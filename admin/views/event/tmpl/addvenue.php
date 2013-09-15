@@ -41,7 +41,7 @@ defined('_JEXEC') or die;
 
 <?php
 //Set the info image
-$infoimage = JHTML::image(JURI::root().'media/com_jem/images/icon-16-hint.png', JText::_( 'COM_JEM_NOTES' ) );
+$infoimage = JHtml::image(JUri::root().'media/com_jem/images/icon-16-hint.png', JText::_( 'COM_JEM_NOTES' ) );
 ?>
 
 <form action="<?php echo $this->request_url; ?>" method="post" name="adminForm" id="adminForm">
@@ -117,7 +117,7 @@ $infoimage = JHTML::image(JURI::root().'media/com_jem/images/icon-16-hint.png', 
 			</td>
 			<td>
 				<?php
-          			echo JHTML::_('select.booleanlist', 'map', 'class="inputbox"', 0 );
+          			echo JHtml::_('select.booleanlist', 'map', 'class="inputbox"', 0 );
           		?>
           		&nbsp;
           		<span class="editlinktip hasTip" title="<?php echo JText::_( 'COM_JEM_NOTES' ); ?>::<?php echo JText::_('COM_JEM_ADDRESS_NOTICE'); ?>">
@@ -168,7 +168,7 @@ $infoimage = JHTML::image(JURI::root().'media/com_jem/images/icon-16-hint.png', 
 		</td>
 		<td>
 			<?php
-			$html = JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $this->published );
+			$html = JHtml::_('select.booleanlist', 'published', 'class="inputbox"', $this->published );
 			echo $html;
 			?>
 		</td>
@@ -238,7 +238,7 @@ if ( $this->jemsettings->showmapserv == 0 ) { ?>
 <?php
 }
 ?>
-<?php echo JHTML::_( 'form.token' ); ?>
+<?php echo JHtml::_( 'form.token' ); ?>
 <input type="hidden" name="option" value="com_jem" />
 <input type="hidden" name="id" value="" />
 <input type="hidden" name="task" value="" />

@@ -8,7 +8,7 @@
  */
 
 defined('_JEXEC') or die;
-JHTML::_('behavior.formvalidation');
+JHtml::_('behavior.formvalidation');
 
 $options = array(
 		'onActive' => 'function(title, description){
@@ -82,7 +82,7 @@ $options = array(
 							<div class="controls">
 
 						<?php
-						$html = JHTML::_('select.booleanlist', 'published', 'class="inputbox"', $this->row->published );
+						$html = JHtml::_('select.booleanlist', 'published', 'class="inputbox"', $this->row->published );
 						echo $html;
 						?>
 						</div>
@@ -189,14 +189,14 @@ $options = array(
 					<label for="color"> <?php echo JText::_( 'COM_JEM_CHOOSE_COLOR' ).':'; ?></label>
 						</div>
 							<div class="controls">
-
-					<input class="inputbox" type="text" style="background: <?php echo ( $this->row->color == '' )?"transparent":$this->row->color; ?>;"
+			<span class="input-append">
+					<input class="input-medium" type="text" style="background: <?php echo ( $this->row->color == '' )?"transparent":$this->row->color; ?>;"
                    name="color" id="color" size="10" maxlength="20" value="<?php echo $this->row->color; ?>" />
 
-					<input type="button" class="button"
+					<input type="button" class="btn"
 							value="<?php echo JText::_( 'COM_JEM_PICK' ); ?>"
 							onclick="openPicker('color', -200, 20);" />
-
+			</span>
 						</div>
 						</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
@@ -244,20 +244,20 @@ $options = array(
 						</div>
 		<?php echo JHtml::_('bootstrap.endTab'); ?>
 		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
+</fieldset>
 
 
 
-
-	<?php echo JHTML::_( 'form.token' ); ?>
+	<?php echo JHtml::_( 'form.token' ); ?>
 	<input type="hidden" name="id" value="<?php echo $this->row->id; ?>" />
 	<input type="hidden" name="task" value="" />
-</form>
 
-<p class="copyright">
-	<?php echo JEMAdmin::footer( ); ?>
-</p>
+	</div>
+	</form>
+
+
 
 <?php
 //keep session alive while editing
-JHTML::_('behavior.keepalive');
+JHtml::_('behavior.keepalive');
 ?>

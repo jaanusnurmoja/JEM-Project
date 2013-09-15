@@ -28,7 +28,7 @@ defined('_JEXEC') or die;
 	<thead>
 		<tr>
 			<th width="7" class="center"><?php echo JText::_( 'COM_JEM_NUM' ); ?></th>
-			<th align="left" class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_CATEGORY', 'catname', $this->lists['order_Dir'], $this->lists['order'], 'categoryelement' ); ?></th>
+			<th align="left" class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_CATEGORY', 'catname', $this->lists['order_Dir'], $this->lists['order'], 'categoryelement' ); ?></th>
 			<th width="1%" nowrap="nowrap"><?php echo JText::_( 'COM_JEM_ACCESS' ); ?></th>
 			<th width="1%" nowrap="nowrap"><?php echo JText::_( 'COM_JEM_PUBLISHED' ); ?></th>
 		</tr>

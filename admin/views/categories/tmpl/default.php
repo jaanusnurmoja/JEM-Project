@@ -69,16 +69,16 @@ JHtml::_('formbehavior.chosen', 'select');
 		<tr>
 			<th class="center" width="1%"><?php echo JText::_( 'COM_JEM_NUM' ); ?></th>
 			<th class="center" width="1%"><input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" /></th>
-			<th class="title"><?php echo JHTML::_('grid.sort', 'JCATEGORY', 'c.catname', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-			<th width="20%"><?php echo JHTML::_('grid.sort', 'COM_JEM_ALIAS', 'c.alias', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+			<th class="title"><?php echo JHtml::_('grid.sort', 'JCATEGORY', 'c.catname', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+			<th width="20%"><?php echo JHtml::_('grid.sort', 'COM_JEM_ALIAS', 'c.alias', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
       <th width="10px" class="center" nowrap="nowrap"><?php echo JText::_( 'COM_JEM_COLOR' ); ?></th>
-			<th width="15%"><?php echo JHTML::_('grid.sort', 'COM_JEM_GROUP', 'gr.name', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+			<th width="15%"><?php echo JHtml::_('grid.sort', 'COM_JEM_GROUP', 'gr.name', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 			<th width="1%" class="center" nowrap="nowrap"><?php echo JText::_( 'COM_JEM_EVENTS' ); ?></th>
 			<th width="1%" class="center" nowrap="nowrap"><?php echo JText::_( 'JSTATUS' ); ?></th>
-			<th width="7%"><?php echo JHTML::_('grid.sort', 'COM_JEM_ACCESS', 'c.access', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-			<th width="5%"><?php echo JHTML::_('grid.sort', 'COM_JEM_REORDER', 'c.ordering', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-			<th width="1%"><?php echo JHTML::_('grid.order', $this->rows, 'filesave.png', 'saveordercat' ); ?></th>
-			<th width="1%" class="center" nowrap="nowrap"><?php echo JHTML::_('grid.sort', 'COM_JEM_ID', 'c.id', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+			<th width="7%"><?php echo JHtml::_('grid.sort', 'COM_JEM_ACCESS', 'c.access', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+			<th width="5%"><?php echo JHtml::_('grid.sort', 'COM_JEM_REORDER', 'c.ordering', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+			<th width="1%"><?php echo JHtml::_('grid.order', $this->rows, 'filesave.png', 'saveordercat' ); ?></th>
+			<th width="1%" class="center" nowrap="nowrap"><?php echo JHtml::_('grid.sort', 'COM_JEM_ID', 'c.id', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 		</tr>
 	</thead>
 
@@ -97,7 +97,7 @@ JHtml::_('formbehavior.chosen', 'select');
 			foreach ($this->rows as $i => $row) :
 			$link 		= 'index.php?option=com_jem&amp;task=categories.edit&amp;cid[]='. $row->id;
 			$grouplink 	= 'index.php?option=com_jem&amp;task=groups.edit&amp;cid[]='. $row->groupid;
-			$published 	= JHTML::_('jgrid.published', $row->published, $i, 'categories.' );
+			$published 	= JHtml::_('jgrid.published', $row->published, $i, 'categories.' );
 			$access = $row->groupname;
    		?>
 		<tr class="row<?php echo $i % 2; ?>">
@@ -180,5 +180,5 @@ JHtml::_('formbehavior.chosen', 'select');
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="filter_order" value="<?php echo $this->lists['order']; ?>" />
 	<input type="hidden" name="filter_order_Dir" value="<?php echo $this->lists['order_Dir']; ?>" />
-	<?php echo JHTML::_( 'form.token' ); ?>
+	<?php echo JHtml::_( 'form.token' ); ?>
 </form>

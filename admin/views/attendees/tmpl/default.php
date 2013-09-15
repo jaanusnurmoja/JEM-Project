@@ -8,7 +8,7 @@
  */
 
 defined('_JEXEC') or die;
-JHTML::_('behavior.tooltip');
+JHtml::_('behavior.tooltip');
 
 $colspan = ($this->event->waitinglist ? 10 : 9);
 ?>
@@ -53,14 +53,14 @@ $colspan = ($this->event->waitinglist ? 10 : 9);
 			<tr>
 				<th width="1%" class="center"><?php echo JText::_( 'COM_JEM_NUM' ); ?></th>
 				<th width="1%" class="center"><input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" /></th>
-				<th class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_NAME', 'u.name', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-				<th class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_USERNAME', 'u.username', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_NAME', 'u.name', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_USERNAME', 'u.username', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 				<th class="title"><?php echo JText::_( 'COM_JEM_EMAIL' ); ?></th>
 				<th class="title"><?php echo JText::_( 'COM_JEM_IP_ADDRESS' ); ?></th>
-				<th class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_REGDATE', 'r.uregdate', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
-				<th class="title center"><?php echo JHTML::_('grid.sort', 'COM_JEM_USER_ID', 'r.uid', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_REGDATE', 'r.uregdate', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title center"><?php echo JHtml::_('grid.sort', 'COM_JEM_USER_ID', 'r.uid', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 				<?php if ($this->event->waitinglist): ?>
-				<th class="title"><?php echo JHTML::_('grid.sort', 'COM_JEM_HEADER_WAITINGLIST_STATUS', 'r.waiting', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
+				<th class="title"><?php echo JHtml::_('grid.sort', 'COM_JEM_HEADER_WAITINGLIST_STATUS', 'r.waiting', $this->lists['order_Dir'], $this->lists['order'] ); ?></th>
 				<?php endif;?>
 				<th class="title center"><?php echo JText::_( 'COM_JEM_REMOVE_USER' ); ?></th>
 			</tr>
@@ -85,16 +85,16 @@ $colspan = ($this->event->waitinglist ? 10 : 9);
 				</td>
 				<td><a href="mailto:<?php echo $row->email; ?>"><?php echo $row->email; ?></a></td>
 				<td><?php echo $row->uip == 'DISABLED' ? JText::_( 'COM_JEM_DISABLED' ) : $row->uip; ?></td>
-				<td><?php echo JHTML::Date( $row->uregdate, JText::_( 'DATE_FORMAT_LC2' ) ); ?></td>
+				<td><?php echo JHtml::Date( $row->uregdate, JText::_( 'DATE_FORMAT_LC2' ) ); ?></td>
 				<td class="center"><?php echo $row->uid; ?></td>
 				<?php if ($this->event->waitinglist): ?>
 				<td class="hasTip" title="<?php echo ($row->waiting ? JText::_('COM_JEM_ON_WAITINGLIST') : JText::_('COM_JEM_ATTENDING')).'::'; ?>">
 					<?php if ($row->waiting):?>
-						<?php echo JHTML::link( JRoute::_('index.php?option=com_jem&task=attendees.toggle&id='.$row->id),
-						                        JHTML::image('media/com_jem/images/publish_y.png', JText::_('COM_JEM_ON_WAITINGLIST'))); ?>
+						<?php echo JHtml::link( JRoute::_('index.php?option=com_jem&task=attendees.toggle&id='.$row->id),
+						                        JHtml::image('media/com_jem/images/publish_y.png', JText::_('COM_JEM_ON_WAITINGLIST'))); ?>
 					<?php else: ?>
-						<?php echo JHTML::link( JRoute::_('index.php?option=com_jem&task=attendees.toggle&id='.$row->id),
-						                        JHTML::image('media/com_jem/images/tick.png', JText::_('COM_JEM_ATTENDING'))); ?>
+						<?php echo JHtml::link( JRoute::_('index.php?option=com_jem&task=attendees.toggle&id='.$row->id),
+						                        JHtml::image('media/com_jem/images/tick.png', JText::_('COM_JEM_ATTENDING'))); ?>
 					<?php endif;?>
 				</td>
 				<?php endif;?>
@@ -109,7 +109,7 @@ $colspan = ($this->event->waitinglist ? 10 : 9);
 		<?php echo JEMAdmin::footer( ); ?>
 
 		<?php
-		echo JHTML::_( 'form.token' );
+		echo JHtml::_( 'form.token' );
 		?>
 		<input type="hidden" name="boxchecked" value="0" />
 		<input type="hidden" name="task" value="" />

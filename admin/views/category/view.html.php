@@ -30,14 +30,14 @@ class JEMViewCategory extends JViewLegacy {
 		$app 		= JFactory::getApplication();
 
 		// Load the form validation behavior
-		JHTML::_('behavior.formvalidation');
+		JHtml::_('behavior.formvalidation');
 
 		//add css to document
-		//$document->addStyleSheet(JURI::root().'media/com_jem/css/backend.css');
-		$document->addScript(JURI::root().'media/com_jem/js/attachments.js');
+		//$document->addStyleSheet(JUri::root().'media/com_jem/css/backend.css');
+		$document->addScript(JUri::root().'media/com_jem/js/attachments.js');
 		// for color picker
-		$document->addStyleSheet(JURI::root().'media/com_jem/css/picker.css');
-		$document->addScript(JURI::root().'media/com_jem/js/picker.js');
+		$document->addStyleSheet(JUri::root().'media/com_jem/css/picker.css');
+		$document->addScript(JUri::root().'media/com_jem/js/picker.js');
 
 		//Get data from the model
 		$model		= $this->getModel();
@@ -58,7 +58,7 @@ class JEMViewCategory extends JViewLegacy {
 
 		//build selectlists
 		$Lists = array();
-		$Lists['access'] 	= JHTML::_('access.assetgrouplist', 'access', $row->access);
+		$Lists['access'] 	= JHtml::_('access.assetgrouplist', 'access', $row->access);
 		$Lists['parent_id'] = JEMCategories::buildcatselect($categories, 'parent_id', $row->parent_id, 1);
 
 		//build image select js and load the view
@@ -88,10 +88,10 @@ class JEMViewCategory extends JViewLegacy {
 
 		//build grouplist
 		$grouplist		= array();
-		$grouplist[] 	= JHTML::_('select.option', '0', JText::_('COM_JEM_NO_GROUP'));
+		$grouplist[] 	= JHtml::_('select.option', '0', JText::_('COM_JEM_NO_GROUP'));
 		$grouplist 		= array_merge($grouplist, $groups);
 
-		$Lists['groups']	= JHTML::_('select.genericlist', $grouplist, 'groupid', 'size="1" class="inputbox"', 'value', 'text', $row->groupid);
+		$Lists['groups']	= JHtml::_('select.genericlist', $grouplist, 'groupid', 'size="1" class="inputbox"', 'value', 'text', $row->groupid);
 
 		//assign data to template
 		$this->Lists 		= $Lists;
