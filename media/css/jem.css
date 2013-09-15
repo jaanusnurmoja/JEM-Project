@@ -48,8 +48,13 @@ div#jem img
 div#jem .imgedit
 {
 	
-	
 }
+
+div#jem select
+{
+	width: 100px;
+}
+
 
 
 div#jem .tabs
