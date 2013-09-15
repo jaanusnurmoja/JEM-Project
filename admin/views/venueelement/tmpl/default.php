@@ -9,6 +9,11 @@
 
 defined('_JEXEC') or die;
 
+JHtml::_('bootstrap.tooltip');
+JHtml::_('behavior.multiselect');
+JHtml::_('dropdown.init');
+JHtml::_('formbehavior.chosen', 'select');
+
 $function = JRequest::getCmd('function', 'jSelectVenue');
 
 
@@ -18,20 +23,31 @@ $function = JRequest::getCmd('function', 'jSelectVenue');
 
 <form action="index.php?option=com_jem&amp;view=venueelement&amp;tmpl=component" method="post" name="adminForm" id="adminForm">
 
-<table class="adminform">
-	<tr>
-		<td width="100%">
+	<div id="filter-bar" class="btn-toolbar">
+		<div class="filter-search btn-group pull-left">
 			<?php echo JText::_( 'COM_JEM_SEARCH' ).' '.$this->lists['filter']; ?>
 			<input type="text" name="filter_search" id="filter_search" value="<?php echo $this->lists['search']; ?>" class="text_area" onChange="document.adminForm.submit();" />
-			<button type="submit"><?php echo JText::_( 'COM_JEM_GO' ); ?></button>
-			<button type="button" onclick="document.id('filter_search').value='';this.form.submit();"><?php echo JText::_( 'COM_JEM_RESET' ); ?></button>
-			<button type="button" onclick="if (window.parent) window.parent.<?php echo $this->escape($function);?>('', '<?php echo JText::_('COM_JEM_SELECTVENUE') ?>');"><?php echo JText::_('COM_JEM_NOVENUE')?></button>
-		</td>
-		<td nowrap="nowrap">
-			 <?php echo $this->lists['state']; ?>
-		</td>
-	</tr>
-</table>
+		</div>
+	</div>
+
+	<div class="btn-group pull-left">
+			<button type="submit" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>"><i class="icon-search"></i></button>
+			<button type="button" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.id('filter_search').value='';this.form.submit();"><i class="icon-remove"></i></button>
+			<button type="button" class="btn" onclick="if (window.parent) window.parent.<?php echo $this->escape($function);?>('', '<?php echo JText::_('COM_JEM_SELECTVENUE') ?>');"><?php echo JText::_('COM_JEM_NOVENUE')?></button>
+	</div>
+
+	<div class="btn-group pull-right hidden-phone">
+			<label for="limit" class="element-invisible"><?php echo JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC');?></label>
+			<?php echo $this->pagination->getLimitBox(); ?>
+	</div>
+
+
+	<div class="btn-group pull-right">
+			<?php echo $this->lists['state']; ?>
+	</div>
+
+
+<div class="clearfix"> </div>
 
 <table class="table table-striped" id="articleList">
 	<thead>
