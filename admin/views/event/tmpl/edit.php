@@ -271,7 +271,7 @@ $params = $params->toArray();
 				<label><?php echo JText::_ ( 'COM_JEM_HITS' );	?></label>
 				</div>
 					<div class="controls">
-				<input class="inputbox" name="hits" value="<?php echo $this->item->hits; ?>" size="10" maxlength="10" id="a_hits" />
+				<input class="inputbox" type="text" name="hits" value="<?php echo $this->item->hits; ?>" size="10" maxlength="10" id="a_hits" />
 				<?php echo $this->resethits; ?>
 				</div>
 				</div>

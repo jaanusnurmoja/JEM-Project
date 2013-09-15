@@ -661,6 +661,10 @@ class JEMOutput {
 	{
 		$settings = JEMHelper::config();
 
+		$check = JEMHelper::isValidDate($date);
+		if ($check == true)
+		{
+
 		jimport('joomla.utilities.date');
 		$jdate = new JDate($date);
 		if (!$format) {
@@ -669,6 +673,14 @@ class JEMOutput {
 		}
 
 		return $jdate->format($format);
+		}
+
+		else
+		{
+			return false;
+		}
+
+
 	}
 
 	/**
