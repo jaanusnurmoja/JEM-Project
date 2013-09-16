@@ -166,21 +166,16 @@ $options = array(
 					<?php echo JText::_( 'COM_JEM_VENUE' ).':'; ?>
 				</label>
 
+				<span class="input-append">
 				<input type="text" id="a_name" name="venue" value="<?php echo $this->row->venue; ?>" disabled="disabled" />
-
-				<div>
-					<a class="flyermodal button1" title="<?php echo JText::_('COM_JEM_SELECT'); ?>" href="<?php echo JRoute::_('index.php?view=editevent&layout=choosevenue&tmpl=component'); ?>" rel="{handler: 'iframe', size: {x: 650, y: 375}}">
+					<a class="modal btn hasTooltip" title="<?php echo JHtml::tooltipText('COM_JEM_SELECT'); ?>" href="<?php echo JRoute::_('index.php?view=editevent&layout=choosevenue&tmpl=component'); ?>" rel="{handler: 'iframe', size: {x: 650, y: 375}}">
 						<?php echo JText::_('COM_JEM_SELECT')?>
 					</a>
 
 					<input class="inputbox required" type="hidden" id="a_id" name="locid" value="<?php echo $this->row->locid; ?>" />
+				</span>
 
-					<?php if ( $this->delloclink == 1 && !$this->row->id ) : //show location submission link ?>
-						<a class="flyermodal button1" title="<?php echo JText::_('COM_JEM_DELIVER_NEW_VENUE'); ?>" href="<?php echo JRoute::_('index.php?view=editvenue&mode=ajax&tmpl=component'); ?>" rel="{handler: 'iframe', size: {x: 800, y: 500}}">
-							<?php echo JText::_('COM_JEM_DELIVER_NEW_VENUE')?>
-						</a>
-					<?php endif; ?>
-				</div>
+
 			</div>
 
 			<div class="jem_category floattext">
