@@ -595,7 +595,7 @@ padding: 1em;
     div.jem_editvenue form button:hover,
     div.jem_editvenue form select:hover,
     div.jem_editvenue form textarea:hover {
-    margin: 0 0 0.5em 0; padding: 0.2em;
+    /* margin: 0 0 0.5em 0; padding: 0.2em; */
     border: 1px solid grey;
     cursor: pointer;
     background:#DDE084;
@@ -610,7 +610,7 @@ padding: 1em;
     div.jem_editvenue form button:active,
     div.jem_editvenue form select:active,
     div.jem_editvenue form textarea:active {
-    margin: 0 0 0.5em 0; padding: 0.2em;
+    /* margin: 0 0 0.5em 0; padding: 0.2em; */
     border: 1px solid grey;
     cursor: pointer;
     background-color: #C6CCBE;
@@ -624,7 +624,7 @@ padding: 1em;
     div.jem_editvenue form button:visited,
     div.jem_editvenue form select:visited,
     div.jem_editvenue form textarea:visited {
-    margin: 0 0 0.5em 0; padding: 0.2em;
+    /* margin: 0 0 0.5em 0; padding: 0.2em; */
     border: 1px solid grey;
     cursor: pointer;
     background-color: #C6CCBE;
@@ -638,7 +638,7 @@ padding: 1em;
     div.jem_editvenue form button:active,
     div.jem_editvenue form select:active,
     div.jem_editvenue form textarea:active {
-    margin: 0 0 0.5em 0; padding: 0.2em;
+    /* margin: 0 0 0.5em 0; padding: 0.2em; */
     border: 1px solid grey;
     cursor: pointer;
     background-color: #C6CCBE;
@@ -649,13 +649,20 @@ padding: 1em;
     div.jem_editevent form input, /* event */
     div.jem_editevent form button,
     div.jem_editevent form select,
-    div.jem_editevent form textarea,
+    div.jem_editevent form textarea
+    {
+    /* margin: 0 0 0.5em 0; padding: 0.2em; */
+    border: 1px solid grey;
+    cursor: pointer;
+    background-color: #C6CCBE;
+    }
+    
     
     div.jem_editvenue form input, /* venue */
     div.jem_editvenue form button,
     div.jem_editvenue form select,
     div.jem_editvenue form textarea {
-    margin: 0 0 0.5em 0; padding: 0.2em;
+    /* margin: 0 0 0.5em 0; padding: 0.2em; */
     border: 1px solid grey;
     cursor: pointer;
     background-color: #C6CCBE;
@@ -1069,7 +1076,7 @@ div#jem div.current textarea,
 div#jem div.current select {
 	clear: none;
 	float: left;
-	margin: 3px 0 0 2px;
+	/* margin: 3px 0 0 2px; */
 }
 
 div#jem div.current select {
