@@ -144,7 +144,7 @@ div#jem fieldset {
  */
 div#jem {
     overflow: hidden;
-    background: none repeat scroll 0% 0% rgb(237, 237, 235);
+    /* background: none repeat scroll 0% 0% rgb(237, 237, 235); */
     border: 1px solid black;
     border-radius: 5px 5px 5px 5px;
     padding: 10px;
@@ -570,12 +570,17 @@ padding: 1em;
 
     div.jem_editevent form legend,
     div.jem_editvenue form legend {
-    padding: 0.3em;
-    font-weight: bold;
-    background: orange;
-    border-radius:5px;
+  
+    padding-left: 0.3em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    /* font-weight: bold; */
+    background: none repeat scroll 0% 0% rgb(212, 214, 178);
+    border-radius:2px;
     border:1px solid black;
     line-height:inherit;
+
+    
     }
 
     div.jem_editevent form label,
