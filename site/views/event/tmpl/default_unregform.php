@@ -35,7 +35,7 @@ else:
 		</p>
 		<p></p>
 		<div class="center">
-			<input class="button1" type="submit" id="jem_send_attend" name="jem_send_attend" value="<?php echo JText::_( 'COM_JEM_UNREGISTER' ); ?>" disabled="disabled" />
+			<input class="btn" type="submit" id="jem_send_attend" name="jem_send_attend" value="<?php echo JText::_( 'COM_JEM_UNREGISTER' ); ?>" disabled="disabled" />
 		</div>
 
 		<p></p>

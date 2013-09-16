@@ -34,7 +34,7 @@ if ($this->row->maxplaces && count($this->registers) >= $this->row->maxplaces &&
 		<input type="checkbox" name="reg_check" onclick="check(this, document.getElementById('jem_send_attend'))" />
 	</p>
 <p>
-	<input class="button1" type="submit" id="jem_send_attend" name="jem_send_attend" value="<?php echo JText::_( 'COM_JEM_REGISTER' ); ?>" disabled="disabled" />
+	<input class="btn" type="submit" id="jem_send_attend" name="jem_send_attend" value="<?php echo JText::_( 'COM_JEM_REGISTER' ); ?>" disabled="disabled" />
 </p>
 <p>
 	<input type="hidden" name="rdid" value="<?php echo $this->row->did; ?>" />
