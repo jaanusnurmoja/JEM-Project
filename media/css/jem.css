@@ -159,83 +159,6 @@ div#jem {
 	*/
 	
 	
-	/* Alinging the icons to the right */
-div#jem .buttons
-{ 
-	float:right; 
-}
-
-
-div#jem .buttons a
-{ 
-border:1px solid grey; 
-}	
-	
-	
-
-/* Edit-event view */
-div#jem .button1 {
-	-webkit-box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
-	-moz-box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
-	box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
-	background-color:#EBE8E9;
-	border:1px solid #29447E;
-	font-family:'Lucida Grande',Tahoma,Verdana,Arial,sans-serif;
-	font-size:12px;
-	font-weight:700;
-	padding:2px 6px;
-	margin: 2px;
-	cursor:pointer;
-	/*height:28px;*/
-	color:#000000;
-	position: relative;
-	text-decoration:none;
-	top: 8px;
-	left: 3px;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px
-}
-
-/* Edit-event view, hover */
-div#jem .button1:hover {
-	background-color:#D1C9CC;
-	color:#000000;
-	text-decoration:none;
-}
-
-
-/* Filter button  */
-
-div#jem .buttonfilter {
-	-webkit-box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
-	-moz-box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
-	box-shadow:rgba(0,0,0,0.0.1) 0 1px 0 0;
-	background-color:#EBE8E9;
-	border:1px solid #29447E;
-	font-family:'Lucida Grande',Tahoma,Verdana,Arial,sans-serif;
-	font-size:12px;
-	font-weight:700;
-	padding:2px 6px;
-	/* margin: 2px; */
-	cursor:pointer;
-	/* height:28px; */
-	color:#000000;
-	position: relative;
-	text-decoration:none;
-	top: inherit;
-	left: inherit;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px
-}
-
-/* Filter button:hover */
-div#jem .buttonfilter:hover {
-	background-color:#D1C9CC;
-	color:#000000;
-	text-decoration:none;
-}
 
 
 div#jem .clear
@@ -592,12 +515,10 @@ padding: 1em;
     }
 
     div.jem_editevent form input:hover, /* event */
-    div.jem_editevent form button:hover,
     div.jem_editevent form select:hover,
     div.jem_editevent form textarea:hover,
     
     div.jem_editvenue form input:hover, /* venue */
-    div.jem_editvenue form button:hover,
     div.jem_editvenue form select:hover,
     div.jem_editvenue form textarea:hover {
     /* margin: 0 0 0.5em 0; padding: 0.2em; */
@@ -606,13 +527,20 @@ padding: 1em;
     background:#DDE084;
     border:1px solid grey;
     }
+    
+    div.jem_editevent form button:hover
+    {
+    }
+    
+    div.jem_editvenue form button:hover
+    {
+    }
+    
     div.jem_editevent form input:active, /* event */
-    div.jem_editevent form button:active,
     div.jem_editevent form select:active,
     div.jem_editevent form textarea:active,
     
     div.jem_editvenue form input:active, /* venue */
-    div.jem_editvenue form button:active,
     div.jem_editvenue form select:active,
     div.jem_editvenue form textarea:active {
     /* margin: 0 0 0.5em 0; padding: 0.2em; */
@@ -620,13 +548,23 @@ padding: 1em;
     cursor: pointer;
     background-color: #C6CCBE;
     }
+    
+    
+    div.jem_editevent form button:active
+    {
+    
+    }
+    
+    div.jem_editvenue form button:active
+    {
+    }
+    
+    
     div.jem_editevent form input:visited, /* event */
-    div.jem_editevent form button:visited,
     div.jem_editevent form select:visited,
     div.jem_editevent form textarea:visited,
     
     div.jem_editvenue form input:visited, /* venue */
-    div.jem_editvenue form button:visited,
     div.jem_editvenue form select:visited,
     div.jem_editvenue form textarea:visited {
     /* margin: 0 0 0.5em 0; padding: 0.2em; */
@@ -634,13 +572,23 @@ padding: 1em;
     cursor: pointer;
     background-color: #C6CCBE;
     }
+    
+     div.jem_editevent form button:visited
+     {
+     
+     }
+     
+      div.jem_editvenue form button:visited
+      {
+      }
+    
+    
     div.jem_editevent form input:active, /* event */
-    div.jem_editevent form button:active,
+    
     div.jem_editevent form select:active,
     div.jem_editevent form textarea:active,
     
     div.jem_editvenue form input:active, /* venue */
-    div.jem_editvenue form button:active,
     div.jem_editvenue form select:active,
     div.jem_editvenue form textarea:active {
     /* margin: 0 0 0.5em 0; padding: 0.2em; */
@@ -649,10 +597,16 @@ padding: 1em;
     background-color: #C6CCBE;
     }
     
+    div.jem_editevent form button:active
+    {
+    }
+    
+     div.jem_editvenue form button:active
+     {
+     }
     
     
     div.jem_editevent form input, /* event */
-    div.jem_editevent form button,
     div.jem_editevent form select,
     div.jem_editevent form textarea
     {
@@ -662,9 +616,12 @@ padding: 1em;
     background-color: #C6CCBE;
     }
     
+    div.jem_editevent form button
+    {
+    }
+    
     
     div.jem_editvenue form input, /* venue */
-    div.jem_editvenue form button,
     div.jem_editvenue form select,
     div.jem_editvenue form textarea {
     /* margin: 0 0 0.5em 0; padding: 0.2em; */
@@ -672,6 +629,12 @@ padding: 1em;
     cursor: pointer;
     background-color: #C6CCBE;
     }
+    
+    div.jem_editvenue form button
+    {
+    
+    }
+    
 
     div.jem_editevent form input#a_name {
     float: left;
@@ -871,12 +834,23 @@ div.jem_editevent div.jem_buttons a.jem_venue_reset {
 
 /* Thx to http://www.bloggerswatch.com/internet/css-trick-submit-button-should-look-same-everywhere/ */
 
-.buttons a, .buttons button{
+
+
+.icons2
+{
+	float:right;
+	
+}
+
+
+.icons a, .icons button{
+	
     display:block !important;
-    float:left !important;
+    /* float:left !important; */
+    float:right; 
     margin:0 7px 0 0 !important;
     background-color:#f5f5f5 !important;
-    border:1px solid grey !important;
+    border:1px solid grey;
     border-top:1px solid grey !important;
     border-left:1px solid grey !important;
 
@@ -887,24 +861,32 @@ div.jem_editevent div.jem_buttons a.jem_venue_reset {
     font-weight:bold !important;
     color:#565656 !important;
     cursor:pointer !important;
-    padding:5px 10px 6px 7px !important; /* Links */
+    padding:5px 10px 6px 7px !important;
+    
+     /* Links */
 }
 .buttons button{
-    width:auto !important;
+    /* width:auto !important;
     overflow:visible !important;
-    padding:4px 10px 3px 7px !important; /* IE6 */
+    padding:4px 10px 3px 7px !important; 
+    */
+    /* IE6 */
 }
 .buttons button[type]{
-    padding:5px 10px 5px 7px !important; /* Firefox */
-    line-height:17px !important; /* Safari */
+	/*
+    padding:5px 10px 5px 7px !important; 
+    */
+    /* Firefox */
+    /* line-height:17px !important; */
+    /* Safari */
 }
 *:first-child+html button[type]{
     padding:4px 10px 3px 7px !important; /* IE7 */
 }
 .buttons button img, .buttons a img{
-    margin:0px !important;
-    padding:0 !important;
-    border:none !important;
+    /* margin:0px !important; */
+    /* padding:0 !important; */
+    /* border:none !important; */
     /*width:16px !important;*/
     /*height:16px !important;*/
 }
@@ -927,60 +909,78 @@ button:hover, .buttons a:hover{
 /* POSITIVE */
 
 button.positive, .buttons a.positive{
-    color:#529214 !important;
+	/*
+     color:#529214 !important;
      border:1px solid grey !important;
      cursor: pointer;
      line-height:22px;
+     */
 }
 .buttons a.positive:hover, button.positive:hover{
+	/*
     background-color:#E6EFC2 !important;
      border:1px solid grey !important;
     color:#529214 !important;
+    */
 }
 .buttons a.positive:active{
+	/*
     background-color:#529214 !important;
      border:1px solid grey !important;
     color:#fff !important;
+    */
 }
 
 /* NEGATIVE */
 
 .buttons a.negative, button.negative{
+	/*
     color:#d12f19 !important;
     border:1px solid grey !important;
     cursor:pointer;
     line-height:22px;
+    */
 }
 .buttons a.negative:hover, button.negative:hover{
+	/*
     background:#fbe3e4 !important;
     border:1px solid grey !important;
     color:#d12f19 !important;
+    */
 }
 .buttons a.negative:active{
+	/*
     background-color:#d12f19 !important;
     border:1px solid #d12f19 !important;
     color:#fff !important;
     border:1px solid grey !important;
+    */
 }
 
 /* REGULAR */
 
 button.regular, .buttons a.regular{
+	/*
     color:#336699 !important;
      border:1px solid grey !important;
      cursor:pointer;
      line-height:22px;
+     */
      
 }
 .buttons a.regular:hover, button.regular:hover{
+	/*
     background-color:#dff4ff !important;
     border:1px solid grey !important;
     color:#336699 !important;
+    */
 }
 .buttons a.regular:active{
+	/*
     background-color:#6299c5 !important;
      border:1px solid grey !important;
     color:#fff !important;
+    */
 }
 
 
