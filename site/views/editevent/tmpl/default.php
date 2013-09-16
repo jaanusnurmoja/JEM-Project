@@ -147,8 +147,10 @@ $options = array(
 
 		<p>&nbsp;</p>
 
-		<?php echo JHtml::_('tabs.start','event-pane',$options); ?>
-		<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_MAIN_TAB'), 'event' ); ?>
+		<?php echo JHtml::_('bootstrap.startTabSet', 'eventTab', array('active' => 'event-details')); ?>
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-details', JText::_('COM_JEM_EVENT_MAIN_TAB', true)); ?>
+
+
 
 		<fieldset class="jem_fldst_details">
 			<legend><?php echo JText::_('COM_JEM_NORMAL_INFO'); ?></legend>
@@ -260,7 +262,10 @@ $options = array(
 
 
 		<!-- TAB: SECOND -->
-		<?php echo JHtml::_('tabs.panel',JText::_('COM_JEM_EVENT_SECOND_TAB'), 'eventsecond' ); ?>
+		<?php echo JHtml::_('bootstrap.endTab'); ?>
+		<?php echo JHtml::_('bootstrap.addTab', 'eventTab', 'event-secondtab', JText::_('COM_JEM_EVENT_SECOND_TAB', true)); ?>
+
+
 
 		<!-- CUSTOM FIELDS -->
 		<fieldset>
@@ -505,8 +510,8 @@ $options = array(
 		</div>
 		-->
 
-		<?php echo JHtml::_('tabs.end'); ?>
-		<p class="clear">
+		<?php echo JHtml::_('bootstrap.endTabSet'); ?>
+		<div class="clearfix"></div>
 		<input type="hidden" name="id" value="<?php echo $this->row->id; ?>" />
 		<input type="hidden" name="referer" value="<?php echo @$_SERVER['HTTP_REFERER']; ?>" />
 		<input type="hidden" name="created" value="<?php echo $this->row->created; ?>" />
@@ -517,12 +522,11 @@ $options = array(
 		<input type="hidden" name="hits" value="<?php echo $this->row->hits; ?>" />
 		<?php echo JHtml::_( 'form.token' ); ?>
 		<input type="hidden" name="task" value="" />
-		</p>
 	</form>
 
-	<p class="copyright">
+	<div class="copyright">
 		<?php echo JEMOutput::footer( ); ?>
-	</p>
+	</div>
 </div>
 
 <?php
