@@ -46,10 +46,6 @@ class JEMAttachment {
 
 		foreach ($post_files['name'] as $k => $file) {
 
-			// @todo cleanup
-			//var_dump($post_files['name']);exit;
-			//$post_files['name'] = JFile::makeSafe($post_files['name']);
-
 			if (empty($file)) {
 				continue;
 			}
@@ -77,9 +73,7 @@ class JEMAttachment {
 
 
 			// TODO: Probably move this to a helper class
-
 			$sanitizedFilename = JEMImage::sanitize($path, $file);
-
 
 			// Make sure that the full file path is safe.
 			$filepath = JPath::clean( $path.'/'.$sanitizedFilename);
