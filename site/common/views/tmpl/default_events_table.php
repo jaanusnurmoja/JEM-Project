@@ -47,7 +47,7 @@ defined('_JEXEC') or die;
 		<?php endif; ?>
 	</div>
 <?php endif; ?>
-
+</div>
 
 <div class="clearfix"> </div>
 
