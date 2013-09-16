@@ -124,11 +124,11 @@ $options = array(
 
 <div id="jem" class="jem_editevent">
 	<form enctype="multipart/form-data" id="adminForm" action="<?php echo JRoute::_('index.php') ?>" method="post" class="form-validate">
-		<div class="buttons">
-			<button type="submit" class="positive" onclick="return submitbutton('saveevent')">
+		<div class="icons2">
+			<button type="submit" class="btn btn-primary" onclick="return submitbutton('saveevent')">
 				<?php echo JText::_('COM_JEM_SAVE'); ?>
 			</button>
-			<button type="reset" class="negative" onclick="submitbutton('cancelevent')">
+			<button type="reset" class="btn btn-danger" onclick="submitbutton('cancelevent')">
 				<?php echo JText::_('COM_JEM_CANCEL'); ?>
 			</button>
 		</div>

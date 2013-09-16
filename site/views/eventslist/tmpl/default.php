@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 ?>
 <div id="jem" class="jem_jem">
-	<div class="buttons">
+	<div class="icons">
 		<?php
 			echo JEMOutput::submitbutton( $this->dellink, $this->params );
 			echo JEMOutput::archivebutton( $this->params, $this->task );

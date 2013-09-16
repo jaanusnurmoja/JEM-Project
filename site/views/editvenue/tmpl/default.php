@@ -251,11 +251,11 @@ defined('_JEXEC') or die;
 
 <div id="jem" class="jem_editvenue">
 	<form enctype="multipart/form-data" id="adminForm" action="<?php echo JRoute::_('index.php') ?>" method="post" class="form-validate">
-		<div class="buttons">
-			<button type="button" class="positive" onclick="return submitbutton('savevenue')">
+		<div class="icons2">
+			<button type="button" class="btn btn-primary" onclick="return submitbutton('savevenue')">
 				<?php echo JText::_('COM_JEM_SAVE'); ?>
 			</button>
-			<button type="reset" class="negative" onclick="return submitbutton('cancelvenue')">
+			<button type="reset" class="btn btn-danger" onclick="return submitbutton('cancelvenue')">
 				<?php echo JText::_('COM_JEM_CANCEL'); ?>
 			</button>
 		</div>

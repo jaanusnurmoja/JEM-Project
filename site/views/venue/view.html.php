@@ -127,6 +127,7 @@ class JEMViewVenue extends JViewLegacy
 			$addvenuelink = 0;
 		}
 
+
 		//Check if the user has access to the edit-venueform
 		$maintainer3 = JEMUser::editvenuegroups();
 		$genaccess3 	= JEMUser::editaccess($jemsettings->venueowner, $venue->created, $jemsettings->venueeditrec, $jemsettings->venueedit);

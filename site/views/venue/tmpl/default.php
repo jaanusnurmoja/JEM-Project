@@ -10,7 +10,8 @@
 defined('_JEXEC') or die;
 ?>
 <div id="jem" class="jem_venue" itemscope="itemscope" itemtype="http://schema.org/Place">
-	<div class="buttons">
+
+	<div class="icons">
 		<?php
 			echo JEMOutput::addvenuebutton( $this->addvenuelink, $this->params, $this->jemsettings );
 			echo JEMOutput::submitbutton( $this->addeventlink, $this->params );
@@ -19,6 +20,7 @@ defined('_JEXEC') or die;
 			echo JEMOutput::printbutton( $this->print_link, $this->params );
 		?>
 	</div>
+
 	<?php if ($this->params->def('show_page_title', 1)) : ?>
 		<h1 class='componentheading'>
 		<span itemprop="name"><?php echo $this->escape($this->pagetitle); ?></span>
