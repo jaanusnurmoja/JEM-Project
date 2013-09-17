@@ -25,6 +25,18 @@
 
 
 /* focus */
+
+
+
+
+
+
+
+
+
+
+
+
 div#jem .inputbox:focus
 {
 border:1px solid grey;
@@ -145,9 +157,11 @@ div#jem fieldset {
 div#jem {
     overflow: hidden;
     /* background: none repeat scroll 0% 0% rgb(237, 237, 235); */
+    background-color: #EDF4F5;
     border: 1px solid black;
     border-radius: 5px 5px 5px 5px;
     padding: 10px;
+    padding-top:15px;
 }
 
 
@@ -181,7 +195,8 @@ div#jem h2 {
     font-size: normal !important;
     font-weight:normal !important;
     padding: 0.3em 0.3em;
-    margin: normal;
+    margin-bottom: 1em;
+    margin-top: 1em;
     background: none repeat scroll 0% 0% rgb(212, 214, 178);
     border: 1px solid grey;
 }

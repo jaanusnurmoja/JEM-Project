@@ -27,7 +27,7 @@ $detaillink = JRoute::_(JEMHelperRoute::getEventRoute($this->event->id.':'.$this
 </script>
 
 <div id="jem" class="jem_jem">
-<div class="buttons">
+<div class="icons">
 	<?php
 		echo JEMOutput::printbutton( $this->print_link, $this->params );
 		echo JEMOutput::exportbutton( $this->event->id);

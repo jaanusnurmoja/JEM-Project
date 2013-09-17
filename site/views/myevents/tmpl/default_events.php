@@ -25,29 +25,41 @@ defined('_JEXEC') or die;
 
 <form action="<?php echo $this->action; ?>" method="post" name="adminForm" id="adminForm">
 <?php if ($this->jemsettings->filter || $this->jemsettings->display) : ?>
-<div id="jem_filter" class="floattext">
+<div id="">
+
+
+<div id="filter-bar" class="btn-toolbar">
+
 	<?php if ($this->jemsettings->filter) : ?>
-	<div class="jem_fleft">
+	<div class="filter-search btn-group pull-left">
 		<?php
-		echo '<label for="filter">'.JText::_('COM_JEM_FILTER').'</label>&nbsp;';
 		echo $this->lists['filter'].'&nbsp;';
 		?>
 		<input type="text" name="filter_search" id="filter_search" value="<?php echo $this->lists['search'];?>" class="inputbox" onchange="document.adminForm.submit();" />
-		<button class="buttonfilter" type="submit"><?php echo JText::_('COM_JEM_GO'); ?></button>
-		<button class="buttonfilter" type="button" onclick="document.id('filter_search').value='';this.form.submit();"><?php echo JText::_('JSEARCH_FILTER_CLEAR'); ?></button>
+	</div>
+
+	<div class="btn-group pull-left">
+		<button type="submit" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_SUBMIT'); ?>"><i class="icon-search"></i></button>
+		<button type="button" class="btn hasTooltip" title="<?php echo JHtml::tooltipText('JSEARCH_FILTER_CLEAR'); ?>" onclick="document.id('filter_search').value='';this.form.submit();"><i class="icon-remove"></i></button>
 	</div>
 	<?php endif; ?>
+
 	<?php if ($this->jemsettings->display) : ?>
-	<div class="jem_fright">
+	<div class="btn-group pull-right hidden-phone">
 		<?php
-		echo '<label for="limit">'.JText::_('COM_JEM_DISPLAY_NUM').'</label>&nbsp;';
+		echo '<label for="limit" class="element-invisible">'.JText::_('JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC').'</label>&nbsp;';
 		echo $this->events_pagination->getLimitBox();
 		?>
 	</div>
 	<?php endif; ?>
+
+	</div>
+
+
 </div>
 <?php endif; ?>
 
+<div class="clearfix"> </div>
 
 <table class="eventtable" style="width:<?php echo $this->jemsettings->tablewidth; ?>;" summary="jem">
 	<colgroup>

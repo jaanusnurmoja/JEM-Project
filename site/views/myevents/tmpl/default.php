@@ -10,11 +10,11 @@
 defined('_JEXEC') or die;
 ?>
 <div id="jem" class="jem_jem">
-<div class="buttons">
+<div class="icons">
 	<?php
-		echo JEMOutput::publishbutton();
-		echo JEMOutput::unpublishbutton();
 		echo JEMOutput::trashbutton();
+		echo JEMOutput::unpublishbutton();
+		echo JEMOutput::publishbutton();
 	?>
 </div>
 <?php if ($this->params->def( 'show_page_title', 1 )) : ?>

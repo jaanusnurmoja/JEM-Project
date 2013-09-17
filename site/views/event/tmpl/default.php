@@ -15,8 +15,8 @@ JHtml::_('behavior.modal', 'a.flyermodal');
 
 <div id="jem" class="event_id<?php echo $this->row->did; ?> jem_event" itemscope="itemscope" itemtype="http://schema.org/Event">
 	<div class="icons">
-		<?php echo JEMOutput::mailbutton($this->row->slug, 'event', $this->params); ?>
 		<?php echo JEMOutput::printbutton($this->print_link, $this->params); ?>
+		<?php echo JEMOutput::mailbutton($this->row->slug, 'event', $this->params); ?>
 		<?php echo JEMOutput::icalbutton($this->row->slug, 'event'); ?>
 	</div>
 

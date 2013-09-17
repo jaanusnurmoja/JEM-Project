@@ -13,11 +13,11 @@ defined('_JEXEC') or die;
 
 	<div class="icons">
 		<?php
+			echo JEMOutput::printbutton( $this->print_link, $this->params );
 			echo JEMOutput::addvenuebutton( $this->addvenuelink, $this->params, $this->jemsettings );
 			echo JEMOutput::submitbutton( $this->addeventlink, $this->params );
 			echo JEMOutput::archivebutton( $this->params, $this->task, $this->venue->slug );
 			echo JEMOutput::mailbutton( $this->venue->slug, 'venue', $this->params );
-			echo JEMOutput::printbutton( $this->print_link, $this->params );
 		?>
 	</div>
 
@@ -103,6 +103,9 @@ defined('_JEXEC') or die;
 	<?php echo $this->loadTemplate('attachments'); ?>
 
 	<!--table-->
+
+
+	<h2><?php echo JText::_( 'COM_JEM_SEARCHAREA' ); ?></h2>
 	<form action="<?php echo $this->action; ?>" method="post" id="adminForm">
 		<?php echo $this->loadTemplate('table'); ?>
 

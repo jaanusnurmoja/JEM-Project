@@ -8,15 +8,15 @@
  */
 
 defined('_JEXEC') or die;
-JHtml::_('behavior.modal');
+JHtml::_('behavior.modal','a.flyermodal');
 ?>
 <div id="jem" class="jem_category">
-<div class="buttons">
+<div class="icons">
 	<?php
+		echo JEMOutput::printbutton( $this->print_link, $this->params );
 		echo JEMOutput::submitbutton( $this->dellink, $this->params );
 		echo JEMOutput::archivebutton( $this->params, $this->task, $this->category->slug );
 		echo JEMOutput::mailbutton( $this->category->slug, 'category', $this->params );
-		echo JEMOutput::printbutton( $this->print_link, $this->params );
 	?>
 </div>
 

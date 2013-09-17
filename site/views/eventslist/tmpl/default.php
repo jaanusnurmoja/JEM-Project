@@ -12,9 +12,10 @@ defined('_JEXEC') or die;
 <div id="jem" class="jem_jem">
 	<div class="icons">
 		<?php
+			echo JEMOutput::printbutton( $this->print_link, $this->params );
 			echo JEMOutput::submitbutton( $this->dellink, $this->params );
 			echo JEMOutput::archivebutton( $this->params, $this->task );
-			echo JEMOutput::printbutton( $this->print_link, $this->params );
+
 		?>
 	</div>
 
@@ -31,7 +32,7 @@ defined('_JEXEC') or die;
 	<?php endif; ?>
 
 	<!--table-->
-
+	<h2><?php echo JText::_( 'COM_JEM_SEARCHAREA' ); ?></h2>
 	<form action="<?php echo $this->action; ?>" method="post" name="adminForm" id="adminForm">
 		<?php echo $this->loadTemplate('events_table'); ?>
 
